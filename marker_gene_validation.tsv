@@ -371,3 +371,9 @@ thyroid_epi+.HSD11B1L_chr19_5690000	thyroid_epi	HSD11B1L	FALSE
 tongue_epi-.SLC7A1_chr13_29540000	tongue_epi	SLC7A1	FALSE	
 tongue_epi-.FAM83G_chr17_18970000	tongue_epi	FAM83G	FALSE	
 tongue_epi-.SLC7A5_chr16_87820000	tongue_epi	SLC7A5	FALSE	
+panEpith-.ELF3_chr1_202005002	panEpith	ELF3	TRUE	Epithelial cell
+panEpith-.MIR200BA_chr1_1160292	panEpith	MIR200BA	FALSE	
+panEpith-.MIR200C_chr12_6961406	panEpith	MIR200C	FALSE	
+panHema-.PTPRC_chr1_198633540	panHema	PTPRC	TRUE	Activated CD4+ T cell; Activated CD8+ T cell; B cell; CD4 T cell; CD4+ T cell; CD4+CD25+ regulatory T cell; CD8+ T cell; Chronically activated CD4+ T cell; Chronically activated CD8+ T cell; Conventional CD8+ T cell; Cytotoxic T cell; Double-negative T cell; Double-positive T cell; Follicular B cell; Germinal center B cell; IgM memory B cell; Leukocyte; Lymphocyte; Marginal zone B cell; Mast cell; Myeloid cell; Myeloid dendritic cell 1; Naive B cell; Pan leukocyte; Pan-leukocyte; Proliferative CD4+ T cell; Proliferative CD8+ T cell; Switched memory B cell(Sw MB); T cell; T1 (Transitional) B cell; T2 (Transitional) B cell; T2-MZP Regulatory B cell; Transitional B cell; Yolk sac-derived myeloid-biased progenitor cell(YSMP)
+panHema-.WDFY4_chr10_48678735	panHema	WDFY4	TRUE	B cell
+panNeural-.OMG_chr17_31267182	panNeural	OMG	TRUE	Oligodendrocyte; Oligodendrocyte progenitor cell
