@@ -1,68 +1,78 @@
-label	lineage	direction	n_mrmp	n_hm450_probes
-panEpith-	NA	-	86	2376
-panHema-	NA	-	33	1417
-panNeural-	NA	-	17	1177
-panNeural+	NA	+	13	690
-Neu_Exc-	Neural	-	1	648
-panMesench-	NA	-	24	600
-hepatocyte-	Epith	-	1	593
-skeletal_muscle-	Mesench	-	2	570
-Glia_Astro-	Neural	-	1	517
-lower_GI_epi-	Epith	-	3	461
-pancreas_acinar-	Epith	-	1	442
-oligodendrocyte-	Neural	-	3	418
-panEpith+	NA	+	14	406
-tongue_epi-	Epith	-	2	400
-Neu_Inh+	Neural	+	1	393
-endometrium_epi-	Epith	-	1	386
-panHema+	NA	+	5	376
-Mus_Crd-	Mesench	-	1	327
-breast_basal_epi-	Epith	-	2	313
-thyroid_epi-	Epith	-	1	307
-B_cell-	Hema	-	3	296
-granulocyte-	Hema	-	1	288
-hepatocyte+	Epith	+	1	252
-Hema_Mast-	Hema	-	1	245
-gastric_epithelial-	Epith	-	2	243
-lower_GI_epi+	Epith	+	2	232
-lung_alveolar_epi-	Epith	-	2	206
-Fibro_EndN-	Mesench	-	1	205
-Fallopian_epi-	Epith	-	1	189
-bladder_epi-	Epith	-	1	174
-Fibro_Brst-	Mesench	-	1	149
-lung_bronchus_epi-	Epith	-	1	138
-pancreas_acinar+	Epith	+	1	124
-Neu_Schw-	Neural	-	1	122
-skeletal_muscle+	Mesench	+	2	120
-NK_cell-	Hema	-	1	117
-Perivascular-	Mesench	-	1	111
-kidney_epi-	Epith	-	1	108
-T_cell-	Hema	-	4	105
-breast_basal_epi+	Epith	+	1	100
-Fibro_Myo-	Mesench	-	1	90
-Neu_Exc+	Neural	+	1	84
-endometrium_epi+	Epith	+	1	72
-heart_fibroblast-	Mesench	-	2	72
-bladder_epi+	Epith	+	1	58
-Fibro_Mus-	Mesench	-	1	58
-Fibro_Brst+	Mesench	+	1	57
-pancreas_duct-	Epith	-	1	57
-Fibro_Sk-	Mesench	-	1	55
-T_cell+	Hema	+	2	52
-pancreas_beta-	Epith	-	1	44
-Fibro_EpiN-	Mesench	-	1	40
-Mus_Crd+	Mesench	+	1	40
-Glia_Astro+	Neural	+	1	39
-pancreas_alpha-	Epith	-	1	39
-mononuc_phago-	Hema	-	1	37
-oligodendrocyte+	Neural	+	1	34
-breast_luminal_epi-	Epith	-	1	29
-pancreas_delta-	Epith	-	1	24
-lung_bronchus_epi+	Epith	+	1	21
-Perivascular+	Mesench	+	1	21
-panMesench+	NA	+	1	20
-thyroid_epi+	Epith	+	1	18
-tongue_epi+	Epith	+	1	18
-prostate_epi-	Epith	-	1	15
-Neu_Inh-	Neural	-	1	12
-Fallopian_epi+	Epith	+	1	10
+label	category	lineage	direction	n_mrmp	n_hm450_probes
+Neu_Exc-	specific	Neural	-	1	628
+hepatocyte-	specific	Epith	-	1	546
+skeletal_muscle-	specific	Mesench	-	2	539
+Glia_Astro-	specific	Neural	-	1	496
+Epi_AdrCtx-	specific	Adrenal	-	1	464
+panHema-	broad	Hema	-	16	452
+lower_GI_epi-	specific	Epith	-	3	437
+oligodendrocyte-	specific	Neural	-	3	404
+Neu_Inh+	specific	Neural	+	1	379
+tongue_epi-	specific	Epith	-	1	375
+pancreas_acinar-	specific	Epith	-	1	374
+endometrium_epi-	specific	Epith	-	1	365
+subNeural_neuronal+	subgroup	Neural	+	4	342
+Mus_Crd-	specific	Mesench	-	1	300
+thyroid_epi-	specific	Epith	-	1	298
+Endo_Lym-	specific	Mesench	-	1	293
+breast_basal_epi-	specific	Epith	-	1	290
+B_cell-	specific	Hema	-	3	281
+panHema+	broad	Hema	+	4	272
+granulocyte-	specific	Hema	-	1	266
+gastric_epithelial-	specific	Epith	-	2	232
+lower_GI_epi+	specific	Epith	+	2	227
+hepatocyte+	specific	Epith	+	1	226
+Hema_Mast-	specific	Hema	-	1	223
+lung_alveolar_epi-	specific	Epith	-	2	197
+Fibro_EndN-	specific	Mesench	-	1	192
+Fallopian_epi-	specific	Epith	-	1	176
+bladder_epi-	specific	Epith	-	1	158
+subMesench_endothelial-	subgroup	Mesench	-	3	149
+Fibro_Brst-	specific	Mesench	-	1	142
+lung_bronchus_epi-	specific	Epith	-	1	133
+Epi_AdrCtx+	specific	Adrenal	+	1	121
+pancreas_acinar+	specific	Epith	+	1	119
+skeletal_muscle+	specific	Mesench	+	2	119
+NK_cell-	specific	Hema	-	1	110
+Neu_Schw-	specific	Neural	-	1	108
+kidney_epi-	specific	Epith	-	1	103
+Perivascular-	specific	Mesench	-	1	101
+breast_basal_epi+	specific	Epith	+	1	100
+subNeural_neuronal-	subgroup	Neural	-	1	93
+subEpith_GI-	subgroup	Epith	-	2	90
+T_cell-	specific	Hema	-	3	88
+Fibro_Myo-	specific	Mesench	-	1	87
+Neu_Exc+	specific	Neural	+	1	83
+subNeural_glial-	subgroup	Neural	-	2	82
+endometrium_epi+	specific	Epith	+	1	71
+subHema_lymphoid-	subgroup	Hema	-	3	71
+endothelial_cell-	specific	Mesench	-	2	62
+heart_fibroblast-	specific	Mesench	-	2	60
+Fibro_Brst+	specific	Mesench	+	1	56
+Fibro_Sk-	specific	Mesench	-	1	54
+bladder_epi+	specific	Epith	+	1	53
+Fibro_Mus-	specific	Mesench	-	1	53
+pancreas_duct-	specific	Epith	-	1	50
+T_cell+	specific	Hema	+	2	47
+Fibro_EpiN-	specific	Mesench	-	1	41
+pancreas_beta-	specific	Epith	-	1	41
+Mus_Crd+	specific	Mesench	+	1	40
+panNeural-	broad	Neural	-	13	38
+mononuc_phago-	specific	Hema	-	1	37
+subMesench_skeletal-	subgroup	Mesench	-	9	36
+Glia_Astro+	specific	Neural	+	1	35
+pancreas_alpha-	specific	Epith	-	1	35
+subHema_myeloid-	subgroup	Hema	-	1	35
+Endo_Lym+	specific	Mesench	+	1	33
+oligodendrocyte+	specific	Neural	+	1	32
+panNeural+	broad	Neural	+	7	31
+breast_luminal_epi-	specific	Epith	-	1	27
+pancreas_delta-	specific	Epith	-	1	23
+lung_bronchus_epi+	specific	Epith	+	1	20
+subHema_lymphoid+	subgroup	Hema	+	1	17
+thyroid_epi+	specific	Epith	+	1	17
+tongue_epi+	specific	Epith	+	1	17
+prostate_epi-	specific	Epith	-	1	15
+subMesench_endothelial+	subgroup	Mesench	+	1	14
+Neu_Inh-	specific	Neural	-	1	12
+panEpith-	broad	Epith	-	2	12
