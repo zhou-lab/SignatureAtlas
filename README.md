@@ -11,7 +11,6 @@ signature_master.tsv              # one row per whole-genome signature (auto + m
 signature_master_hm450.tsv        # one row per HM450 label
 LineageMarker.20260619.cm         # is_best-per-folder auto + all manual signatures, fmt-s genome track
 LineageMarker_20260619_hm450.rds  # SummarizedExperiment: HM450 probe beta x 61 cells
-marker_gene_validation.tsv        # CellMarker cross-check of representative genes
 manual/                           # hand-defined signatures (NOT pipeline output; source=manual)
 ```
 
