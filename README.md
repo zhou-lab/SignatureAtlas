@@ -127,9 +127,7 @@ mesenchyme and is dropped. Cell-type labels are kept as-is.
 | 2 | `sa_02_classify.R` | `mrmp_class.tsv` (cell-type / pan-sublineage / pan-lineage / mixed) |
 | 3 | `sa_03_hm450_win.sh` | HM450 BED, Win10k set, HM450 MRMP probes |
 | 4 | `sa_04_enrich_curate.sh` (+ `sa_refine_select.R`) | per-region base curation + specificity refine (cell-type/pan + subgroup passes) |
-| 5 | `sa_05_wholegenome.sh` | `auto/` beds + `signature_master.tsv` + `LineageMarker.<date>.cm` |
+| 5 | `sa_05_auto.sh` | `auto/` beds + `signature_master.tsv` + `LineageMarker.<date>.cm` |
 | 5h | `sa_05_hm450.sh` + `sa_05_hm450.R` | `HM450/` panels/beds + master + RDS |
 | 6 | `sa_06_annotate_validate.R` | gene + CellMarker validation columns |
 | 7 | `sa_render_panels.R` | `auto/` `.ansi` panels (rendered last) |
-
-The prior 61-cell build is recoverable in this repo's git history.
