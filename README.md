@@ -1,121 +1,85 @@
 # SignatureAtlas
 
-Whole-genome and HM450 DNA-methylation **marker signatures** for human cell types and lineages,
-derived from a 61-cell-type deep WGBS reference (30 Loyfer per-cell-type pseudobulks + 31 Zhou
-"Major" pseudobulks). Markers are Most-Recurrent Methylation Patterns (MRMPs) curated into compact
-genomic regions, labelled `<cell_type>` (cell-type-specific) or `pan<Lineage>` (pan-lineage), with
-direction `-` = hypomethylated and `+` = hypermethylated in the target cell type(s).
+Whole-genome and HM450 DNA-methylation **marker signatures** for human cell types and lineages, derived from a 61-cell-type deep WGBS reference (30 Loyfer per-cell-type pseudobulks + 31 Zhou "Major" pseudobulks). Markers are Most-Recurrent Methylation Patterns (MRMPs) curated into compact genomic regions, labelled `<cell_type>` (cell-type-specific) or `pan<Lineage>` (pan-lineage), with direction `-` = hypomethylated and `+` = hypermethylated in the target cell type(s).
 
 ## Layout
 
 ```
-whole_genome/<cell_type|panLineage>/<label><dir>.<gene>_<chr>_<beg>.{cm,ansi}
+whole_genome/<cell_type|panLineage>/<label><dir>.<gene>_<chr>_<beg>.{bed,ansi}
 HM450/<label><dir>.{bed,ansi}
-signature_master.tsv          # one row per whole-genome signature
-signature_master_hm450.tsv    # one row per HM450 label
-LineageMarker.20260619.cm     # best auto signature/folder + manual signatures, fmt-s genome track
+signature_master.tsv              # one row per whole-genome signature (auto + manual)
+signature_master_hm450.tsv        # one row per HM450 label
+LineageMarker.20260619.cm         # is_best-per-folder auto + all manual signatures, fmt-s genome track
 LineageMarker_20260619_hm450.rds  # SummarizedExperiment: HM450 probe beta x 61 cells
-marker_gene_validation.tsv    # CellMarker cross-check of representative genes
-manual/                       # hand-curated signatures (NOT pipeline output; source=manual)
+marker_gene_validation.tsv        # CellMarker cross-check of representative genes
+manual/                           # hand-defined signatures (NOT pipeline output; source=manual)
 ```
 
-- `whole_genome/<…>/*.cm` — packed fmt-b genome-wide selection track (1 = selected CpG).
-- `whole_genome/<…>/*.ansi` — colored decile panel (SEL row, target cell type(s), then all 61
-  cells in lineage order) for visual inspection.
-- `HM450/<label>.bed` — all HM450 probes mapping to that label's MRMPs.
-- `HM450/<label>.ansi` — real-beta (`L<0.34 M H>0.67`) panel, cells × probes.
-- `manual/` — hand-curated signatures kept aside; they use the same naming as auto signatures, are
-  merged into `LineageMarker.20260619.cm`, and are indexed in `signature_master.tsv` (`source=manual`).
+- `whole_genome/<…>/*.bed` — the signature's selected CpG **locations** (the canonical, compact representation), in **beg0/end1** (0-based begin, 1-based end; a single CpG = `(C-1, C)`). A genome-wide binary `.cm` for any one signature is derived on demand:
+  `awk 'NR==FNR{a[$1"_"$3]=1;next}{print (($1"_"($2+1)) in a)?1:0}' sig.bed <(zcat cpg_nocontig.bed.gz) | yame pack -f b - sig.cm`
+- `whole_genome/<…>/*.ansi` — colored decile inspection panel: the SEL track (labeled with the **full signature name**) then all 61 cells in lineage order, cropped to the selection ± 50 flanking CpGs.
+- `HM450/<label>.bed` — all HM450 probes mapping to that label's MRMPs; `HM450/<label>.ansi` — real-beta (`L<0.34 M H>0.67`) panel, cells × probes.
+- `manual/` — see **Manual signatures** below.
 
-`signature_master.tsv` columns: `signature, cell_type, category (specific|broad),
-source (auto|manual), gene, chrm, region_beg, direction, n_cpg, is_best, overlaps_manual,
-validated, matched_cellmarker`.
-- `is_best` flags the largest-`n_cpg` **auto** signature per folder. It is computed from
-  `signature_master` alone and is **independent of `LineageMarker` membership**.
-- `overlaps_manual` names the manual signature an auto signature shares CpGs with. `LineageMarker`
-  holds one label per CpG with **manual priority**, so manual wins every shared CpG. If an auto
-  signature's CpGs are **entirely** claimed by a manual signature, it contributes nothing and is
-  **absent from `LineageMarker` even when it is `is_best`** — e.g. `panEpith-.AL390719.2_chr1_1100000`
-  (all 59 CpGs ceded to `panEpith-.MIR200BA_chr1_1160292`; still `is_best=1` in the master). This is
-  why `LineageMarker` has 53 keys rather than 48 best-auto + 6 manual = 54.
+`signature_master.tsv` columns: `signature, cell_type, category (specific|broad), source (auto|manual), gene, chrm, region_beg, direction, n_cpg, is_best, overlaps_manual, validated, matched_cellmarker`.
+- `is_best` flags the largest-`n_cpg` **auto** signature per folder; it is computed from `signature_master` alone and is **independent of `LineageMarker` membership**.
+- `LineageMarker` holds one label per CpG with **manual priority** (manual wins every shared CpG), then `MIN_CPG=5` is re-enforced on the final track. `overlaps_manual` names the manual signature an auto signature shares CpGs with. An `is_best` auto signature whose CpGs are mostly claimed by a manual signature drops below 5 CpGs here and is **removed from `LineageMarker`** — this happens to `panEpith-.AL390719.2_chr1_1100000` (a duplicate-discovery of the manual MIR200BA locus, left with 1 CpG). So `LineageMarker` has **52 labels** = 46 `is_best` auto − 1 + 7 manual.
 
 ## Contents
 
-- **48 folders** = 44 cell types + 4 pan-lineages (panEpith, panHema, panNeural, panMesench).
-- **381 auto whole-genome signatures** (362 cell-type-specific, 19 pan-lineage) + **6 manual**
-  signatures (`manual/`). `is_best` flags the highest-CpG auto signature per folder. (Signatures
-  with 0 selected CpGs are filtered out at generation.)
-- **`LineageMarker.20260619.cm`** = the best auto signature per folder + the 6 manual signatures,
-  conflict-resolved (manual wins) to **53 keys**, each keyed by its full signature name.
+- **46 folders** = 43 cell types + panEpith / panHema / panNeural. (`panMesench` and `tongue_epi` have no locus that survives the specificity refine and are dropped from the auto set.)
+- **355 auto whole-genome signatures** + **7 manual** signatures (`manual/`). Signatures with `< 5` selected CpGs after refine are dropped.
+- **`LineageMarker.20260619.cm`** = the `is_best` auto signature per folder + **all 7 manual** signatures (manual always enters; auto only via `is_best`), conflict-resolved (manual wins) and `MIN_CPG=5`-filtered on the final track to **52 labels**, each keyed by its full signature name.
 - **67 HM450 labels**; RDS = 17,457 probe × 61 cell beta matrix.
 - representative genes validated against CellMarker 2.0 (`validated` column).
 
+## Manual signatures (`manual/`)
+
+Hand-defined cell-type groups the automatic lineage taxonomy cannot express. A manual *region* may carry several bed **variants** (different selections at the same locus): `<region>_<variant>.bed`. The variant is the single source of truth — it is the SEL track label in the shared region `.ansi` and the `signature` name in `signature_master.tsv`. Current set:
+
+| folder | signatures | target group |
+|--------|-----------|--------------|
+| panEpith | `ELF3`, `MIR200C` | pan-epithelial |
+| panEpith | `MIR200BA_inclBasal` / `MIR200BA_exclBasal` | epithelial *with* / *without* breast-basal (myoepithelial) in the hypomethylated group — two **disjoint** variants (breast basal low vs high); hepatocyte & kidney are neutral (shown, not constrained) |
+| panHema | `PTPRC`, `WDFY4` | leukocyte / hematopoietic |
+| panNeural | `OMG` | neural |
+
+All are `source=manual`, `category=broad`, and **all** enter `LineageMarker` (unlike auto). Region matrices for manual panels are extracted with `yame rowsub -L <coords> sub.cg | yame unpack -a -f 5` (real β, NA if cov<5) — not `hprint` — and rendered with one SEL track per bed (label = bed filename). See the lab journal for the regeneration commands.
+
 ## Methods
 
-**Reference methylome panel.** A deep WGBS reference of 61 human cell types is assembled from two
-public sources. For the 30 Loyfer *et al.* cell types, all samples of each cell type are pooled into
-a single high-depth pseudobulk (`yame rowop -o musum`); for the 31 Zhou "Major" cell types the
-existing pseudobulks are used as-is. The two are concatenated and restricted to the 61 cell types
-flagged `include=1` in the control master sheet. Fourteen cell types measured in both datasets
-(e.g. NK_cell≡Hema_NK, oligodendrocyte≡Glia_Oligo, pancreas_acinar≡Epi_Aci) are declared as
-`equiv_group` twins and treated as a single biological entity throughout — removing spurious calls
-between technical replicates of the same cell type and yielding better-ranked markers.
+**Reference panel.** 61 cell types from two public sources: 30 Loyfer per-cell-type pseudobulks (`yame rowop -o musum`) + 31 Zhou "Major" pseudobulks, restricted to `include=1` in the control sheet. 14 cross-dataset twins (e.g. NK_cell≡Hema_NK) are collapsed by `equiv_group` into one folder each.
 
-**Binary methylation patterns and MRMP discovery.** At each of the 29,401,795 genomic CpGs the
-per-cell-type methylation level is summarised (`yame rowop -o stat`) and the site retained only if
-(i) all 61 cell types have depth ≥10 (M+U), (ii) the high- vs low-group mean difference is ≥0.6,
-and (iii) it is not on chrY. Each retained CpG is reduced to a 61-bit string of methylated vs
-unmethylated cell types (`yame rowop -o binstring`). These **Most-Recurrent Methylation Patterns
-(MRMPs)** are ranked by genome-wide frequency, and the 10,000 most frequent are kept — so signatures
-reflect methylation programs shared by many loci rather than isolated single-CpG events.
+**MRMP discovery.** At each of 29,401,795 CpGs, keep sites with all 61 cell types at depth ≥10, high-vs-low group mean Δ ≥0.6, not chrY; reduce to a 61-bit methylated/unmethylated string (`yame rowop -o stat`/`binstring`); rank by genome-wide frequency, keep the top 10,000 (MRMPs).
 
-**Signature classification.** Each MRMP's minority ("auto") group defines its discordant cell types.
-After collapsing `equiv_group` twins, an MRMP resolving to one cell type is **cell-type-specific**;
-one with ≥2 cell types all in one lineage (Epith / Hema / Neural / Mesench) is **pan-lineage**
-(`pan{Epith,Hema,Neural,Mesench}`); the rest are **mixed** and not curated. Direction is `-` (target
-hypomethylated) or `+` (hypermethylated). Pan-lineage signatures are thus derived objectively, in the
-same framework as cell-type markers.
+**Classification.** Each MRMP's minority ("auto") group, after twin-collapse, resolves to one cell type (**cell-type-specific**), ≥2 cell types in one lineage (**pan-lineage** `pan{Epith,Hema,Neural,Mesench}`), or **mixed** (not curated). Direction `-`/`+`.
 
-**Region enrichment and curation.** MRMPs are relabelled by class label and tested for enrichment
-against fixed 10 kb windows (`yame summary`, Log2 odds ratio; KYCG framework). Per label, windows
-overlapping ≥5 of its MRMP CpGs are kept, adjacent windows merged, and the top 5 regions curated.
-Within a region a CpG is selected (`curate_window.sh`, via `yame hprint -g` deciles) if it is
-unmethylated (β<0.4) in ≥90% of the target's hypo group **and** methylated (β≥0.6) in ≥80% of the
-complementary hyper group; a ±100-CpG flank avoids clipping boundary DMRs.
+**Region enrichment + base curation.** MRMPs are relabelled by class and enriched against fixed 10 kb windows (`yame summary`, Log2 odds, KYCG); per label, windows overlapping ≥5 of its MRMP CpGs are kept, merged, top 5 curated. `curate_window.sh` extracts each region's decile matrix once (`yame hprint -g`) and base-selects a CpG if it is unmethylated (β<0.4) in ≥90% of the target hypo group **and** methylated (β≥0.6) in ≥80% of the complementary hyper group (±100-CpG flank).
 
-**Whole-genome assembly.** Each curated CpG set is packed into a genome-wide track (`.cm`) and
-rendered as a colored decile panel (`.ansi`), annotated with its locally dominant gene (gencode.v36,
-±10 kb). The largest signature per folder is flagged `is_best`; their union forms
-`LineageMarker.<date>.cm`.
+**Specificity refine.** The pooled base test is diluted by panel composition — a CpG hypomethylated across the target's *entire lineage* can still clear the 80% bar (e.g. a B-cell marker that is really pan-leukocyte). A lineage-free filter (`sa_refine_select.R`) smooths each cell's per-CpG decile signal over a centered 5-CpG window and keeps a selected CpG only if the **worst-case** outgroup cell is still separated (hypo: min smoothed ≥5; hyper: max smoothed ≤4). Subtractive; signatures with `<5` CpGs are dropped. (`panMesench`, `tongue_epi` do not survive.)
 
-**HM450 signatures.** For each cell-type-specific / pan-lineage MRMP in the top 1000 with ≥10 HM450
-probes, all probes are retained; continuous β across the 61 cell types (`yame unpack -f 1`) is
-written per label as a real-β panel + probe BED, and shipped whole as a SummarizedExperiment
-(`LineageMarker_<date>_hm450.rds`, 17,457 probe × 61 cell).
+**Whole-genome output.** Each signature is stored as its CpG-location BED (beg0/end1); the genome-wide `.cm` is derived on demand. `LineageMarker.<date>.cm` (one label per CpG) is built by concatenating the per-folder `is_best` auto beds + all manual beds, labeling each by signature name, resolving overlaps (manual > auto), and a single `yame pack -f s` — turning ~356 genome scans into one. Panels (`.ansi`) are rendered **last** (after gene/validation) so each SEL track carries the full signature name.
 
-**Marker-gene validation.** Each signature's representative gene is cross-checked against CellMarker
-2.0 (cell-type→marker-name regex); results populate the `validated` / `matched_cellmarker` columns.
-Because a methylation DMR need not coincide with the canonical expression-marker gene, validation is
-supporting evidence, not a filter.
+**HM450.** For each cell-type-specific / pan-lineage MRMP in the top 1000 with ≥10 HM450 probes, all probes are kept; continuous β (`yame unpack -f 1`) is written per label and shipped as a SummarizedExperiment (17,457 probe × 61 cell).
+
+**Validation.** Each signature's representative gene is cross-checked against CellMarker 2.0; supporting evidence (`validated`/`matched_cellmarker`), not a filter.
 
 ## Reproducibility
 
-The entire atlas is regenerated from raw `.cg` by a staged pipeline in the lab journal
-(`labjournal/zhouw3/2026/tools/`), driven by `build_signature_atlas.sh`:
+Regenerated from raw `.cg` by self-contained staged scripts in the lab journal (`labjournal/zhouw3/2026/tools/`). There is no end-to-end driver — run the steps in order (each is one hop; see the org for the exact commands and the env preamble):
 
-| stage | script | output |
-|-------|--------|--------|
-| setup | `sa_setup_cellmarker.sh` | CellMarker 2.0 → references annotation dir |
+| step | script | output |
+|------|--------|--------|
+| setup | `sa_setup_cellmarker.R` (curl in the org) | CellMarker 2.0 → references annotation dir |
 | 0 | `sa_00_reference.sh` | 61-cell-type `sub.cg` (Loyfer musum + Zhou Major) |
-| 1 | `sa_01_mrmp.sh` | MRMP mask + def (delta_mean ≥0.6, count==61, top-10000) |
-| 2 | `sa_02_classify.sh` | cell_type_specific / pan_lineage / mixed per MRMP |
+| 1 | `sa_01_mrmp.sh` + `sa_01_def.R` | MRMP mask (Δmean ≥0.6, count==61, top-10000); def table |
+| 2 | `sa_02_classify.R` | cell_type_specific / pan_lineage / mixed per MRMP |
 | 3 | `sa_03_hm450_win.sh` | HM450 BED, Win10k set, HM450 MRMP probes |
-| 4 | `sa_04_enrich_curate.sh` | per-label Win10k enrichment → curated region signatures |
-| 5 | `sa_05_wholegenome.sh` | `whole_genome/`, masters, `LineageMarker.cm` |
-| 5 | `sa_05_hm450.sh` | `HM450/`, `signature_master_hm450.tsv`, RDS (real beta) |
-| 6 | `sa_06_annotate_validate.sh` | gene + CellMarker validation columns |
+| 4 | `sa_04_enrich_curate.sh` | per-label enrichment → base-curated region selections + decile matrices |
+| 4b | `sa_refine_select.R` | specificity refine (filter only) of each region's selection |
+| 5 | `sa_05_wholegenome.sh` | `whole_genome/*.bed`, `signature_master.tsv`, `LineageMarker.cm` |
+| 5h | `sa_05_hm450.sh` + `sa_05_hm450.R` | HM450 real-β probe matrix; `HM450/`, `signature_master_hm450.tsv`, RDS |
+| 6 | `sa_06_annotate_validate.R` | gene + CellMarker validation columns |
+| 7 | `sa_render_panels.R` | `whole_genome/*.ansi` (rendered last; SEL track = signature name) |
 
-Inputs: raw per-sample `.cg` under `/mnt/isilon/zhou_lab/projects/20230727_all_public_WGBS/hg38`,
-the control master sheet `labmeta/tsv/20260619_signature_atlas_celltypes.tsv` (cell-type →
-dataset/lineage/equiv_group/include mapping), gene coordinates (gencode.v36), HM450 manifest,
-and CellMarker 2.0. See `labjournal/zhouw3/2026/20260619_signature_atlas.org` for the full record.
+Inputs: raw per-sample `.cg` under `/mnt/isilon/zhou_lab/projects/20230727_all_public_WGBS/hg38`, the control master sheet `labmeta/tsv/20260619_signature_atlas_celltypes.tsv`, gene coordinates (gencode.v36), the HM450 manifest, and CellMarker 2.0. See `labjournal/zhouw3/2026/20260619_signature_atlas.org` for the full record.

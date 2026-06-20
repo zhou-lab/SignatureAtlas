@@ -1,387 +1,362 @@
 signature	cell_type	category	source	gene	chrm	region_beg	direction	n_cpg	is_best	overlaps_manual	validated	matched_cellmarker
-adipocyte-.MTATP6P2_chr5_100040000	adipocyte	specific	auto	MTATP6P2	chr5	100040000	-	113	1	NA	FALSE	
-adipocyte-.AC008670.1_chr5_134920000	adipocyte	specific	auto	AC008670.1	chr5	134920000	-	93	0	NA	FALSE	
-adipocyte-.AMPD3_chr11_10500000	adipocyte	specific	auto	AMPD3	chr11	10500000	-	67	0	NA	FALSE	
-adipocyte-.DHFR_chr5_80650000	adipocyte	specific	auto	DHFR	chr5	80650000	-	53	0	NA	FALSE	
-adipocyte-.KIAA0825_chr5_94560000	adipocyte	specific	auto	KIAA0825	chr5	94560000	-	40	0	NA	FALSE	
-B_cell-.TNFRSF13C_chr22_41920000	B_cell	specific	auto	TNFRSF13C	chr22	41920000	-	93	1	NA	TRUE	B cell; Marginal zone B cell
-B_cell-.BCAS4_chr20_50810000	B_cell	specific	auto	BCAS4	chr20	50810000	-	63	0	NA	TRUE	B cell
-B_cell-.SMIM14_chr4_39610000	B_cell	specific	auto	SMIM14	chr4	39610000	-	56	0	NA	TRUE	B cell
-B_cell-.RPTOR_chr17_80910000	B_cell	specific	auto	RPTOR	chr17	80910000	-	36	0	NA	FALSE	
-B_cell-.DTNB_chr2_25400000	B_cell	specific	auto	DTNB	chr2	25400000	-	23	0	NA	TRUE	B cell
-B_cell+.ANKRD13D_chr11_67300000	B_cell	specific	auto	ANKRD13D	chr11	67300000	+	21	0	NA	FALSE	
-B_cell+.BCL9L_chr11_118910000	B_cell	specific	auto	BCL9L	chr11	118910000	+	14	0	NA	FALSE	
-B_cell+.PAX5_chr9_36980000	B_cell	specific	auto	PAX5	chr9	36980000	+	14	0	NA	TRUE	B cell; Follicular B cell; Germinal center B cell; Immature B cell; Marginal zone B cell; Naive B cell
-bladder_epi+.AC091179.1_chr17_48720000	bladder_epi	specific	auto	AC091179.1	chr17	48720000	+	176	1	NA	FALSE	
-bladder_epi+.AC103702.2_chr17_48630000	bladder_epi	specific	auto	AC103702.2	chr17	48630000	+	149	0	NA	FALSE	
-bladder_epi-.AL031719.1_chr16_1520000	bladder_epi	specific	auto	AL031719.1	chr16	1520000	-	130	0	NA	FALSE	
-bladder_epi+.FER1L4_chr20_35600000	bladder_epi	specific	auto	FER1L4	chr20	35600000	+	126	0	NA	FALSE	
-bladder_epi-.KRT13_chr17_41500000	bladder_epi	specific	auto	KRT13	chr17	41500000	-	114	0	NA	FALSE	
-bladder_epi+.PLCH2_chr1_2440000	bladder_epi	specific	auto	PLCH2	chr1	2440000	+	111	0	NA	FALSE	
-bladder_epi-.DHRS2_chr14_23630000	bladder_epi	specific	auto	DHRS2	chr14	23630000	-	81	0	NA	FALSE	
-bladder_epi-.AC069288.1_chr7_1890000	bladder_epi	specific	auto	AC069288.1	chr7	1890000	-	61	0	NA	FALSE	
-bladder_epi-.ANKS1A_chr6_34990000	bladder_epi	specific	auto	ANKS1A	chr6	34990000	-	56	0	NA	FALSE	
-bladder_epi+.PTPRU_chr1_29250000	bladder_epi	specific	auto	PTPRU	chr1	29250000	+	48	0	NA	FALSE	
-breast_basal_epi-.PDGFA_chr7_480000	breast_basal_epi	specific	auto	PDGFA	chr7	480000	-	285	1	NA	FALSE	
-breast_basal_epi-.EME2_chr16_1760000	breast_basal_epi	specific	auto	EME2	chr16	1760000	-	150	0	NA	FALSE	
-breast_basal_epi-.AHDC1_chr1_27540000	breast_basal_epi	specific	auto	AHDC1	chr1	27540000	-	137	0	NA	FALSE	
-breast_basal_epi-.CASKIN1_chr16_2160000	breast_basal_epi	specific	auto	CASKIN1	chr16	2160000	-	119	0	NA	FALSE	
-breast_basal_epi-.AC027601.2_chr17_81190000	breast_basal_epi	specific	auto	AC027601.2	chr17	81190000	-	101	0	NA	FALSE	
-breast_basal_epi+.AC016595.1_chr5_3590000	breast_basal_epi	specific	auto	AC016595.1	chr5	3590000	+	94	0	NA	FALSE	
-breast_basal_epi+_chr5_140140000	breast_basal_epi	specific	auto	NA	chr5	140140000	+	40	0	NA	TRUE	Basal epithelial cell; Myoepithelial cell
-breast_basal_epi+.SIAH3_chr13_45850000	breast_basal_epi	specific	auto	SIAH3	chr13	45850000	+	25	0	NA	FALSE	
-breast_basal_epi+.SLC25A33_chr1_9530000	breast_basal_epi	specific	auto	SLC25A33	chr1	9530000	+	24	0	NA	FALSE	
-breast_basal_epi+.AC002996.1_chr12_111760000	breast_basal_epi	specific	auto	AC002996.1	chr12	111760000	+	20	0	NA	FALSE	
-breast_luminal_epi-.C12orf60_chr12_14880000	breast_luminal_epi	specific	auto	C12orf60	chr12	14880000	-	50	1	NA	FALSE	
-breast_luminal_epi+.LMX1B_chr9_126680000	breast_luminal_epi	specific	auto	LMX1B	chr9	126680000	+	47	0	NA	FALSE	
-breast_luminal_epi+.AC005041.3_chr2_74490000	breast_luminal_epi	specific	auto	AC005041.3	chr2	74490000	+	35	0	NA	FALSE	
-breast_luminal_epi-.RADIL_chr7_4830000	breast_luminal_epi	specific	auto	RADIL	chr7	4830000	-	29	0	NA	FALSE	
-breast_luminal_epi-.USP42_chr7_6140000	breast_luminal_epi	specific	auto	USP42	chr7	6140000	-	27	0	NA	FALSE	
-breast_luminal_epi-.DNAJC1_chr10_21750000	breast_luminal_epi	specific	auto	DNAJC1	chr10	21750000	-	19	0	NA	FALSE	
-breast_luminal_epi-.AL355102.2_chr14_96260000	breast_luminal_epi	specific	auto	AL355102.2	chr14	96260000	-	17	0	NA	FALSE	
+adipocyte-.MTATP6P2_chr5_100040000	adipocyte	specific	auto	MTATP6P2	chr5	100040000	-	34	1	NA	FALSE	
+adipocyte-.AC008670.1_chr5_134920000	adipocyte	specific	auto	AC008670.1	chr5	134920000	-	14	0	NA	FALSE	
+adipocyte-.KIAA0825_chr5_94560000	adipocyte	specific	auto	KIAA0825	chr5	94560000	-	12	0	NA	FALSE	
+adipocyte-.DHFR_chr5_80650000	adipocyte	specific	auto	DHFR	chr5	80650000	-	5	0	NA	FALSE	
+B_cell-.TNFRSF13C_chr22_41920000	B_cell	specific	auto	TNFRSF13C	chr22	41920000	-	54	1	NA	TRUE	B cell; Marginal zone B cell
+B_cell-.SMIM14_chr4_39610000	B_cell	specific	auto	SMIM14	chr4	39610000	-	48	0	NA	TRUE	B cell
+B_cell-.BCAS4_chr20_50810000	B_cell	specific	auto	BCAS4	chr20	50810000	-	44	0	NA	TRUE	B cell
+B_cell-.RPTOR_chr17_80910000	B_cell	specific	auto	RPTOR	chr17	80910000	-	27	0	NA	FALSE	
+B_cell+.ANKRD13D_chr11_67300000	B_cell	specific	auto	ANKRD13D	chr11	67300000	+	15	0	NA	FALSE	
+B_cell+.PAX5_chr9_36980000	B_cell	specific	auto	PAX5	chr9	36980000	+	13	0	NA	TRUE	B cell; Follicular B cell; Germinal center B cell; Immature B cell; Marginal zone B cell; Naive B cell
+B_cell-.DTNB_chr2_25400000	B_cell	specific	auto	DTNB	chr2	25400000	-	9	0	NA	TRUE	B cell
+bladder_epi+.AC091179.1_chr17_48720000	bladder_epi	specific	auto	AC091179.1	chr17	48720000	+	112	1	NA	FALSE	
+bladder_epi+.FER1L4_chr20_35600000	bladder_epi	specific	auto	FER1L4	chr20	35600000	+	95	0	NA	FALSE	
+bladder_epi+.PLCH2_chr1_2440000	bladder_epi	specific	auto	PLCH2	chr1	2440000	+	92	0	NA	FALSE	
+bladder_epi+.AC103702.2_chr17_48630000	bladder_epi	specific	auto	AC103702.2	chr17	48630000	+	55	0	NA	FALSE	
+bladder_epi-.AC019349.1_chr17_41500000	bladder_epi	specific	auto	AC019349.1	chr17	41500000	-	50	0	NA	FALSE	
+bladder_epi-.DHRS2_chr14_23630000	bladder_epi	specific	auto	DHRS2	chr14	23630000	-	43	0	NA	FALSE	
+bladder_epi+.PTPRU_chr1_29250000	bladder_epi	specific	auto	PTPRU	chr1	29250000	+	42	0	NA	FALSE	
+bladder_epi-.AL031719.1_chr16_1520000	bladder_epi	specific	auto	AL031719.1	chr16	1520000	-	35	0	NA	FALSE	
+bladder_epi-.ANKS1A_chr6_34990000	bladder_epi	specific	auto	ANKS1A	chr6	34990000	-	30	0	NA	FALSE	
+bladder_epi-.AC069288.1_chr7_1890000	bladder_epi	specific	auto	AC069288.1	chr7	1890000	-	26	0	NA	FALSE	
+breast_basal_epi-.PDGFA_chr7_480000	breast_basal_epi	specific	auto	PDGFA	chr7	480000	-	77	1	NA	FALSE	
+breast_basal_epi-.CASKIN1_chr16_2160000	breast_basal_epi	specific	auto	CASKIN1	chr16	2160000	-	67	0	NA	FALSE	
+breast_basal_epi-.AHDC1_chr1_27540000	breast_basal_epi	specific	auto	AHDC1	chr1	27540000	-	61	0	NA	FALSE	
+breast_basal_epi-.AC027601.2_chr17_81190000	breast_basal_epi	specific	auto	AC027601.2	chr17	81190000	-	57	0	NA	FALSE	
+breast_basal_epi-.EME2_chr16_1760000	breast_basal_epi	specific	auto	EME2	chr16	1760000	-	55	0	NA	FALSE	
+breast_basal_epi+.AC016595.1_chr5_3590000	breast_basal_epi	specific	auto	AC016595.1	chr5	3590000	+	34	0	NA	FALSE	
+breast_basal_epi+.SLC25A33_chr1_9530000	breast_basal_epi	specific	auto	SLC25A33	chr1	9530000	+	17	0	NA	FALSE	
+breast_basal_epi+.SIAH3_chr13_45850000	breast_basal_epi	specific	auto	SIAH3	chr13	45850000	+	16	0	NA	FALSE	
+breast_basal_epi+.AC002996.1_chr12_111760000	breast_basal_epi	specific	auto	AC002996.1	chr12	111760000	+	14	0	NA	FALSE	
+breast_basal_epi+_chr5_140140000	breast_basal_epi	specific	auto	NA	chr5	140140000	+	11	0	NA	TRUE	Basal epithelial cell; Myoepithelial cell
+breast_luminal_epi+.AC005041.3_chr2_74490000	breast_luminal_epi	specific	auto	AC005041.3	chr2	74490000	+	12	1	NA	FALSE	
+breast_luminal_epi-.C12orf60_chr12_14880000	breast_luminal_epi	specific	auto	C12orf60	chr12	14880000	-	12	0	NA	FALSE	
+breast_luminal_epi-.AL355102.2_chr14_96260000	breast_luminal_epi	specific	auto	AL355102.2	chr14	96260000	-	9	0	NA	FALSE	
 breast_luminal_epi+.AP1S1_chr7_101160000	breast_luminal_epi	specific	auto	AP1S1	chr7	101160000	+	9	0	NA	FALSE	
-endometrium_epi-.STX18_chr4_4450000	endometrium_epi	specific	auto	STX18	chr4	4450000	-	268	1	NA	FALSE	
-endometrium_epi-.RHEX_chr1_206050000	endometrium_epi	specific	auto	RHEX	chr1	206050000	-	207	0	NA	FALSE	
-endometrium_epi+.NAGS_chr17_44000000	endometrium_epi	specific	auto	NAGS	chr17	44000000	+	189	0	NA	FALSE	
-endometrium_epi+.MSX1_chr4_4870000	endometrium_epi	specific	auto	MSX1	chr4	4870000	+	159	0	NA	FALSE	
-endometrium_epi-.DYNC1I1_chr7_96070000	endometrium_epi	specific	auto	DYNC1I1	chr7	96070000	-	110	0	NA	FALSE	
-endometrium_epi-.DLGAP1_chr18_3580000	endometrium_epi	specific	auto	DLGAP1	chr18	3580000	-	82	0	NA	FALSE	
-endometrium_epi+.LINC02767_chr1_207950000	endometrium_epi	specific	auto	LINC02767	chr1	207950000	+	68	0	NA	FALSE	
-endometrium_epi+.PYY_chr17_43950000	endometrium_epi	specific	auto	PYY	chr17	43950000	+	66	0	NA	FALSE	
-endometrium_epi-.AC009704.2_chr18_74500000	endometrium_epi	specific	auto	AC009704.2	chr18	74500000	-	62	0	NA	FALSE	
-endometrium_epi+.AC080188.1_chr4_168830000	endometrium_epi	specific	auto	AC080188.1	chr4	168830000	+	56	0	NA	FALSE	
-Fallopian_epi+.FOXB2_chr9_77010000	Fallopian_epi	specific	auto	FOXB2	chr9	77010000	+	196	1	NA	FALSE	
-Fallopian_epi-.FBXO21_chr12_117150000	Fallopian_epi	specific	auto	FBXO21	chr12	117150000	-	111	0	NA	FALSE	
-Fallopian_epi-.OVGP1_chr1_111410000	Fallopian_epi	specific	auto	OVGP1	chr1	111410000	-	88	0	NA	FALSE	
-Fallopian_epi-.AC098583.2_chr4_22600000	Fallopian_epi	specific	auto	AC098583.2	chr4	22600000	-	78	0	NA	FALSE	
-Fallopian_epi-.INPP5A_chr10_132770000	Fallopian_epi	specific	auto	INPP5A	chr10	132770000	-	58	0	NA	FALSE	
-Fallopian_epi+.AC008620.1_chr5_181050000	Fallopian_epi	specific	auto	AC008620.1	chr5	181050000	+	44	0	NA	FALSE	
-Fallopian_epi-.TRAPPC10_chr21_44060000	Fallopian_epi	specific	auto	TRAPPC10	chr21	44060000	-	39	0	NA	FALSE	
-Fallopian_epi+.AC093484.3_chr17_16380000	Fallopian_epi	specific	auto	AC093484.3	chr17	16380000	+	14	0	NA	FALSE	
-Fallopian_epi+.FFAR4_chr10_93600000	Fallopian_epi	specific	auto	FFAR4	chr10	93600000	+	14	0	NA	FALSE	
+breast_luminal_epi-.RADIL_chr7_4830000	breast_luminal_epi	specific	auto	RADIL	chr7	4830000	-	9	0	NA	FALSE	
+breast_luminal_epi-.USP42_chr7_6140000	breast_luminal_epi	specific	auto	USP42	chr7	6140000	-	7	0	NA	FALSE	
+breast_luminal_epi+.LMX1B_chr9_126680000	breast_luminal_epi	specific	auto	LMX1B	chr9	126680000	+	6	0	NA	FALSE	
+endometrium_epi-.STX18_chr4_4450000	endometrium_epi	specific	auto	STX18	chr4	4450000	-	104	1	NA	FALSE	
+endometrium_epi+.NAGS_chr17_44000000	endometrium_epi	specific	auto	NAGS	chr17	44000000	+	102	0	NA	FALSE	
+endometrium_epi-.BX571818.1_chr1_206050000	endometrium_epi	specific	auto	BX571818.1	chr1	206050000	-	96	0	NA	FALSE	
+endometrium_epi+.MSX1_chr4_4870000	endometrium_epi	specific	auto	MSX1	chr4	4870000	+	76	0	NA	FALSE	
+endometrium_epi-.DYNC1I1_chr7_96070000	endometrium_epi	specific	auto	DYNC1I1	chr7	96070000	-	67	0	NA	FALSE	
+endometrium_epi+.PYY_chr17_43950000	endometrium_epi	specific	auto	PYY	chr17	43950000	+	55	0	NA	FALSE	
+endometrium_epi+.LINC02767_chr1_207950000	endometrium_epi	specific	auto	LINC02767	chr1	207950000	+	53	0	NA	FALSE	
+endometrium_epi-.AC009704.2_chr18_74500000	endometrium_epi	specific	auto	AC009704.2	chr18	74500000	-	45	0	NA	FALSE	
+endometrium_epi-.DLGAP1_chr18_3580000	endometrium_epi	specific	auto	DLGAP1	chr18	3580000	-	45	0	NA	FALSE	
+endometrium_epi+.AC080188.1_chr4_168830000	endometrium_epi	specific	auto	AC080188.1	chr4	168830000	+	39	0	NA	FALSE	
+Fallopian_epi+.FOXB2_chr9_77010000	Fallopian_epi	specific	auto	FOXB2	chr9	77010000	+	177	1	NA	FALSE	
+Fallopian_epi-.FBXO21_chr12_117150000	Fallopian_epi	specific	auto	FBXO21	chr12	117150000	-	51	0	NA	FALSE	
+Fallopian_epi-.OVGP1_chr1_111410000	Fallopian_epi	specific	auto	OVGP1	chr1	111410000	-	46	0	NA	FALSE	
+Fallopian_epi+.AC008620.1_chr5_181050000	Fallopian_epi	specific	auto	AC008620.1	chr5	181050000	+	41	0	NA	FALSE	
+Fallopian_epi-.AC098583.2_chr4_22600000	Fallopian_epi	specific	auto	AC098583.2	chr4	22600000	-	41	0	NA	FALSE	
+Fallopian_epi-.INPP5A_chr10_132770000	Fallopian_epi	specific	auto	INPP5A	chr10	132770000	-	38	0	NA	FALSE	
+Fallopian_epi-.TRAPPC10_chr21_44060000	Fallopian_epi	specific	auto	TRAPPC10	chr21	44060000	-	35	0	NA	FALSE	
 Fallopian_epi+.ATP2B2_chr3_10500000	Fallopian_epi	specific	auto	ATP2B2	chr3	10500000	+	6	0	NA	FALSE	
-Fibro_Adr-_chr10_129410000	Fibro_Adr	specific	auto	NA	chr10	129410000	-	19	1	NA	FALSE	
-Fibro_Adr-_chr18_38180000	Fibro_Adr	specific	auto	NA	chr18	38180000	-	13	0	NA	FALSE	
-Fibro_Brst+_chr12_114440000	Fibro_Brst	specific	auto	NA	chr12	114440000	+	225	1	NA	FALSE	
-Fibro_Brst+.IRX2_chr5_2740000	Fibro_Brst	specific	auto	IRX2	chr5	2740000	+	177	0	NA	FALSE	
-Fibro_Brst+.GATA6_chr18_22160000	Fibro_Brst	specific	auto	GATA6	chr18	22160000	+	117	0	NA	FALSE	
-Fibro_Brst+.ALX4_chr11_44310000	Fibro_Brst	specific	auto	ALX4	chr11	44310000	+	111	0	NA	FALSE	
-Fibro_Brst-.EGR2_chr10_62810000	Fibro_Brst	specific	auto	EGR2	chr10	62810000	-	83	0	NA	FALSE	
-Fibro_Brst-.ALX4_chr11_44300000	Fibro_Brst	specific	auto	ALX4	chr11	44300000	-	73	0	NA	FALSE	
-Fibro_Brst-.NFIC_chr19_3380000	Fibro_Brst	specific	auto	NFIC	chr19	3380000	-	60	0	NA	FALSE	
-Fibro_Brst-.GLI2_chr2_120980000	Fibro_Brst	specific	auto	GLI2	chr2	120980000	-	54	0	NA	FALSE	
-Fibro_Brst+.LPCAT2_chr16_55500000	Fibro_Brst	specific	auto	LPCAT2	chr16	55500000	+	46	0	NA	FALSE	
-Fibro_Brst-.GOLGA3_chr12_132780000	Fibro_Brst	specific	auto	GOLGA3	chr12	132780000	-	41	0	NA	FALSE	
-Fibro_EndN-.PTCH1_chr9_95440000	Fibro_EndN	specific	auto	PTCH1	chr9	95440000	-	553	1	NA	FALSE	
-Fibro_EndN-.TRIO_chr5_14480000	Fibro_EndN	specific	auto	TRIO	chr5	14480000	-	182	0	NA	FALSE	
-Fibro_EndN-.APOD_chr3_195560000	Fibro_EndN	specific	auto	APOD	chr3	195560000	-	178	0	NA	FALSE	
-Fibro_EndN-.LMF1_chr16_870000	Fibro_EndN	specific	auto	LMF1	chr16	870000	-	172	0	NA	FALSE	
-Fibro_EndN-.MTOR_chr1_11170000	Fibro_EndN	specific	auto	MTOR	chr1	11170000	-	146	0	NA	FALSE	
-Fibro_EndN+.AC099522.1_chr5_73380000	Fibro_EndN	specific	auto	AC099522.1	chr5	73380000	+	79	0	NA	FALSE	
-Fibro_EndN+.AL592490.1_chr13_61410000	Fibro_EndN	specific	auto	AL592490.1	chr13	61410000	+	9	0	NA	FALSE	
-Fibro_EpiN-.CICP26_chr1_227960000	Fibro_EpiN	specific	auto	CICP26	chr1	227960000	-	69	1	NA	FALSE	
-Fibro_EpiN-.AC009093.10_chr16_29230000	Fibro_EpiN	specific	auto	AC009093.10	chr16	29230000	-	53	0	NA	FALSE	
-Fibro_EpiN-.BCL2L13_chr22_17650000	Fibro_EpiN	specific	auto	BCL2L13	chr22	17650000	-	42	0	NA	FALSE	
-Fibro_EpiN-.SULF1_chr8_69570000	Fibro_EpiN	specific	auto	SULF1	chr8	69570000	-	35	0	NA	FALSE	
-Fibro_EpiN-.PBX1_chr1_164790000	Fibro_EpiN	specific	auto	PBX1	chr1	164790000	-	23	0	NA	FALSE	
-Fibro_GI-.AL359878.1_chr10_960000	Fibro_GI	specific	auto	AL359878.1	chr10	960000	-	19	1	NA	FALSE	
-Fibro_GI-.KRT8P23_chr15_76970000	Fibro_GI	specific	auto	KRT8P23	chr15	76970000	-	15	0	NA	FALSE	
-Fibro_GI-.LINC00683_chr18_76540000	Fibro_GI	specific	auto	LINC00683	chr18	76540000	-	14	0	NA	FALSE	
-Fibro_GI-.AC008033.1_chr12_68470000	Fibro_GI	specific	auto	AC008033.1	chr12	68470000	-	10	0	NA	FALSE	
-Fibro_GI-.KRT2_chr12_52640000	Fibro_GI	specific	auto	KRT2	chr12	52640000	-	5	0	NA	FALSE	
-Fibro_Mus+.AL049874.3_chr14_60500000	Fibro_Mus	specific	auto	AL049874.3	chr14	60500000	+	132	1	NA	FALSE	
-Fibro_Mus+.AL161910.1_chr9_89600000	Fibro_Mus	specific	auto	AL161910.1	chr9	89600000	+	43	0	NA	FALSE	
-Fibro_Mus-.TBC1D22A_chr22_47120000	Fibro_Mus	specific	auto	TBC1D22A	chr22	47120000	-	43	0	NA	FALSE	
-Fibro_Mus-_chr18_75170000	Fibro_Mus	specific	auto	NA	chr18	75170000	-	33	0	NA	FALSE	
-Fibro_Mus-.RPL30P4_chr3_32620000	Fibro_Mus	specific	auto	RPL30P4	chr3	32620000	-	32	0	NA	FALSE	
-Fibro_Mus-.TRPM2_chr21_44410000	Fibro_Mus	specific	auto	TRPM2	chr21	44410000	-	29	0	NA	FALSE	
-Fibro_Mus-.AC113404.1_chr5_76280000	Fibro_Mus	specific	auto	AC113404.1	chr5	76280000	-	22	0	NA	FALSE	
-Fibro_Myo-.FLNA_chrX_154350000	Fibro_Myo	specific	auto	FLNA	chrX	154350000	-	281	1	NA	FALSE	
-Fibro_Myo-.SMTN_chr22_31080000	Fibro_Myo	specific	auto	SMTN	chr22	31080000	-	280	0	NA	FALSE	
-Fibro_Myo+.AC027243.1_chr15_76330000	Fibro_Myo	specific	auto	AC027243.1	chr15	76330000	+	223	0	NA	FALSE	
-Fibro_Myo-.ACTG2_chr2_73890000	Fibro_Myo	specific	auto	ACTG2	chr2	73890000	-	185	0	NA	FALSE	
-Fibro_Myo-.DSTN_chr20_17570000	Fibro_Myo	specific	auto	DSTN	chr20	17570000	-	154	0	NA	FALSE	
-Fibro_Myo-.KANK2_chr19_11190000	Fibro_Myo	specific	auto	KANK2	chr19	11190000	-	123	0	NA	FALSE	
-Fibro_Myo+.FOXD1_chr5_73430000	Fibro_Myo	specific	auto	FOXD1	chr5	73430000	+	72	0	NA	FALSE	
-Fibro_Myo+.LINC01081_chr16_86280000	Fibro_Myo	specific	auto	LINC01081	chr16	86280000	+	60	0	NA	FALSE	
-Fibro_Myo+.AC004080.5_chr7_27140000	Fibro_Myo	specific	auto	AC004080.5	chr7	27140000	+	37	0	NA	FALSE	
-Fibro_Myo+.FOXQ1_chr6_1310000	Fibro_Myo	specific	auto	FOXQ1	chr6	1310000	+	35	0	NA	FALSE	
-Fibro_Sk-.TWIST2_chr2_238850000	Fibro_Sk	specific	auto	TWIST2	chr2	238850000	-	289	1	NA	FALSE	
-Fibro_Sk-.TWIST2_chr2_238890000	Fibro_Sk	specific	auto	TWIST2	chr2	238890000	-	179	0	NA	FALSE	
-Fibro_Sk+.PITX2_chr4_110620000	Fibro_Sk	specific	auto	PITX2	chr4	110620000	+	168	0	NA	FALSE	
-Fibro_Sk-.AC145625.1_chr2_238780000	Fibro_Sk	specific	auto	AC145625.1	chr2	238780000	-	85	0	NA	FALSE	
-Fibro_Sk+.AC004080.12_chr7_27180000	Fibro_Sk	specific	auto	AC004080.12	chr7	27180000	+	84	0	NA	FALSE	
-Fibro_Sk+.HAND1_chr5_154470000	Fibro_Sk	specific	auto	HAND1	chr5	154470000	+	59	0	NA	FALSE	
-Fibro_Sk+.LY86-AS1_chr6_6540000	Fibro_Sk	specific	auto	LY86-AS1	chr6	6540000	+	39	0	NA	FALSE	
-Fibro_Sk-.5S_rRNA_chr7_152600000	Fibro_Sk	specific	auto	5S_rRNA	chr7	152600000	-	26	0	NA	FALSE	
-Fibro_Sk-.RNU6-828P_chr1_10160000	Fibro_Sk	specific	auto	RNU6-828P	chr1	10160000	-	25	0	NA	FALSE	
-Fibro_Sk+.AC005597.1_chr19_30220000	Fibro_Sk	specific	auto	AC005597.1	chr19	30220000	+	22	0	NA	FALSE	
-gastric_epithelial-.PLXNB2_chr22_50280000	gastric_epithelial	specific	auto	PLXNB2	chr22	50280000	-	171	1	NA	FALSE	
-gastric_epithelial-.PGC_chr6_41730000	gastric_epithelial	specific	auto	PGC	chr6	41730000	-	169	0	NA	FALSE	
-gastric_epithelial-.CLDN18_chr3_137990000	gastric_epithelial	specific	auto	CLDN18	chr3	137990000	-	135	0	NA	FALSE	
-gastric_epithelial-.LIPF_chr10_88660000	gastric_epithelial	specific	auto	LIPF	chr10	88660000	-	89	0	NA	FALSE	
-gastric_epithelial+.AL136967.1_chr6_41370000	gastric_epithelial	specific	auto	AL136967.1	chr6	41370000	+	88	0	NA	FALSE	
-gastric_epithelial+.B3GNT6_chr11_77030000	gastric_epithelial	specific	auto	B3GNT6	chr11	77030000	+	52	0	NA	FALSE	
-gastric_epithelial-.BEND3_chr6_107060000	gastric_epithelial	specific	auto	BEND3	chr6	107060000	-	45	0	NA	FALSE	
-gastric_epithelial+.CPNE4_chr3_132030000	gastric_epithelial	specific	auto	CPNE4	chr3	132030000	+	10	0	NA	FALSE	
-Glia_Astro-.SLC1A2_chr11_35300000	Glia_Astro	specific	auto	SLC1A2	chr11	35300000	-	625	1	NA	TRUE	Astrocyte
-Glia_Astro-.MYO10_chr5_16660000	Glia_Astro	specific	auto	MYO10	chr5	16660000	-	434	0	NA	TRUE	Astrocyte
-Glia_Astro-.LRIG1_chr3_66400000	Glia_Astro	specific	auto	LRIG1	chr3	66400000	-	419	0	NA	TRUE	Astrocyte
-Glia_Astro-.PFKFB3_chr10_6200000	Glia_Astro	specific	auto	PFKFB3	chr10	6200000	-	385	0	NA	TRUE	Astrocyte
-Glia_Astro+.OBI1-AS1_chr13_78580000	Glia_Astro	specific	auto	OBI1-AS1	chr13	78580000	+	314	0	NA	FALSE	
-Glia_Astro-.FGFR3_chr4_1790000	Glia_Astro	specific	auto	FGFR3	chr4	1790000	-	299	0	NA	TRUE	Astrocyte
-Glia_Astro+.MIR6846_chr8_144040000	Glia_Astro	specific	auto	MIR6846	chr8	144040000	+	138	0	NA	FALSE	
-Glia_Astro+.MIR9-3HG_chr15_89370000	Glia_Astro	specific	auto	MIR9-3HG	chr15	89370000	+	69	0	NA	FALSE	
-Glia_Astro+.LINC00404_chr13_112100000	Glia_Astro	specific	auto	LINC00404	chr13	112100000	+	50	0	NA	FALSE	
-Glia_Astro+.LINC01396_chr4_4850000	Glia_Astro	specific	auto	LINC01396	chr4	4850000	+	49	0	NA	FALSE	
-granulocyte-.TFDP1_chr13_113600000	granulocyte	specific	auto	TFDP1	chr13	113600000	-	92	1	NA	FALSE	
-granulocyte-.AC069288.1_chr7_2070000	granulocyte	specific	auto	AC069288.1	chr7	2070000	-	68	0	NA	FALSE	
-granulocyte-.GALNS_chr16_88830000	granulocyte	specific	auto	GALNS	chr16	88830000	-	68	0	NA	FALSE	
-granulocyte-.AP5S1_chr20_3820000	granulocyte	specific	auto	AP5S1	chr20	3820000	-	59	0	NA	FALSE	
-granulocyte-.AC131009.2_chr12_131860000	granulocyte	specific	auto	AC131009.2	chr12	131860000	-	55	0	NA	FALSE	
-heart_fibroblast-.LINC01615_chr6_169160000	heart_fibroblast	specific	auto	LINC01615	chr6	169160000	-	67	1	NA	FALSE	
-heart_fibroblast+.AL049692.1_chr11_32420000	heart_fibroblast	specific	auto	AL049692.1	chr11	32420000	+	51	0	NA	FALSE	
-heart_fibroblast-.LINC02639_chr10_3820000	heart_fibroblast	specific	auto	LINC02639	chr10	3820000	-	30	0	NA	FALSE	
-heart_fibroblast-.GTSE1_chr22_46290000	heart_fibroblast	specific	auto	GTSE1	chr22	46290000	-	29	0	NA	FALSE	
-heart_fibroblast-.AL391832.4_chr1_234890000	heart_fibroblast	specific	auto	AL391832.4	chr1	234890000	-	26	0	NA	FALSE	
-heart_fibroblast-.AC098851.1_chr7_77250000	heart_fibroblast	specific	auto	AC098851.1	chr7	77250000	-	20	0	NA	FALSE	
-Hema_Mast-.KIT_chr4_54660000	Hema_Mast	specific	auto	KIT	chr4	54660000	-	274	1	NA	TRUE	Mast cell
-Hema_Mast-.HS6ST1_chr2_128290000	Hema_Mast	specific	auto	HS6ST1	chr2	128290000	-	254	0	NA	FALSE	
-Hema_Mast-.TPSAB1_chr16_1220000	Hema_Mast	specific	auto	TPSAB1	chr16	1220000	-	195	0	NA	TRUE	Mast cell
-Hema_Mast-.AC022400.5_chr10_73800000	Hema_Mast	specific	auto	AC022400.5	chr10	73800000	-	127	0	NA	FALSE	
+Fallopian_epi+.FFAR4_chr10_93600000	Fallopian_epi	specific	auto	FFAR4	chr10	93600000	+	6	0	NA	FALSE	
+Fallopian_epi+.AC093484.3_chr17_16380000	Fallopian_epi	specific	auto	AC093484.3	chr17	16380000	+	5	0	NA	FALSE	
+Fibro_Adr-_chr10_129410000	Fibro_Adr	specific	auto	NA	chr10	129410000	-	13	1	NA	FALSE	
+Fibro_Adr-_chr18_38180000	Fibro_Adr	specific	auto	NA	chr18	38180000	-	7	0	NA	FALSE	
+Fibro_Brst+_chr12_114440000	Fibro_Brst	specific	auto	NA	chr12	114440000	+	55	1	NA	FALSE	
+Fibro_Brst-.AC067751.1_chr10_62810000	Fibro_Brst	specific	auto	AC067751.1	chr10	62810000	-	52	0	NA	FALSE	
+Fibro_Brst+.AC091588.1_chr18_22160000	Fibro_Brst	specific	auto	AC091588.1	chr18	22160000	+	46	0	NA	FALSE	
+Fibro_Brst+.LPCAT2_chr16_55500000	Fibro_Brst	specific	auto	LPCAT2	chr16	55500000	+	45	0	NA	FALSE	
+Fibro_Brst-.ALX4_chr11_44300000	Fibro_Brst	specific	auto	ALX4	chr11	44300000	-	43	0	NA	FALSE	
+Fibro_Brst-.NFIC_chr19_3380000	Fibro_Brst	specific	auto	NFIC	chr19	3380000	-	40	0	NA	FALSE	
+Fibro_Brst-.GLI2_chr2_120980000	Fibro_Brst	specific	auto	GLI2	chr2	120980000	-	39	0	NA	FALSE	
+Fibro_Brst+.AC091891.1_chr5_2740000	Fibro_Brst	specific	auto	AC091891.1	chr5	2740000	+	38	0	NA	FALSE	
+Fibro_Brst+.ALX4_chr11_44310000	Fibro_Brst	specific	auto	ALX4	chr11	44310000	+	32	0	NA	FALSE	
+Fibro_Brst-.GOLGA3_chr12_132780000	Fibro_Brst	specific	auto	GOLGA3	chr12	132780000	-	29	0	NA	FALSE	
+Fibro_EndN-.PTCH1_chr9_95440000	Fibro_EndN	specific	auto	PTCH1	chr9	95440000	-	193	1	NA	FALSE	
+Fibro_EndN-.TRIO_chr5_14480000	Fibro_EndN	specific	auto	TRIO	chr5	14480000	-	95	0	NA	FALSE	
+Fibro_EndN-.LMF1_chr16_870000	Fibro_EndN	specific	auto	LMF1	chr16	870000	-	89	0	NA	FALSE	
+Fibro_EndN-.MTOR_chr1_11170000	Fibro_EndN	specific	auto	MTOR	chr1	11170000	-	87	0	NA	FALSE	
+Fibro_EndN-.APOD_chr3_195560000	Fibro_EndN	specific	auto	APOD	chr3	195560000	-	47	0	NA	FALSE	
+Fibro_EndN+.AL592490.1_chr13_61410000	Fibro_EndN	specific	auto	AL592490.1	chr13	61410000	+	7	0	NA	FALSE	
+Fibro_EpiN-.BCL2L13_chr22_17650000	Fibro_EpiN	specific	auto	BCL2L13	chr22	17650000	-	26	1	NA	FALSE	
+Fibro_EpiN-.AC009093.10_chr16_29230000	Fibro_EpiN	specific	auto	AC009093.10	chr16	29230000	-	20	0	NA	FALSE	
+Fibro_EpiN-.CICP26_chr1_227960000	Fibro_EpiN	specific	auto	CICP26	chr1	227960000	-	20	0	NA	FALSE	
+Fibro_EpiN-.SULF1_chr8_69570000	Fibro_EpiN	specific	auto	SULF1	chr8	69570000	-	19	0	NA	FALSE	
+Fibro_EpiN-.PBX1_chr1_164790000	Fibro_EpiN	specific	auto	PBX1	chr1	164790000	-	14	0	NA	FALSE	
+Fibro_GI-.AC008033.1_chr12_68470000	Fibro_GI	specific	auto	AC008033.1	chr12	68470000	-	9	1	NA	FALSE	
+Fibro_GI-.LINC00683_chr18_76540000	Fibro_GI	specific	auto	LINC00683	chr18	76540000	-	8	0	NA	FALSE	
+Fibro_GI-.AL359878.1_chr10_960000	Fibro_GI	specific	auto	AL359878.1	chr10	960000	-	7	0	NA	FALSE	
+Fibro_GI-.KRT8P23_chr15_76970000	Fibro_GI	specific	auto	KRT8P23	chr15	76970000	-	5	0	NA	FALSE	
+Fibro_Mus+.AL161910.1_chr9_89600000	Fibro_Mus	specific	auto	AL161910.1	chr9	89600000	+	29	1	NA	FALSE	
+Fibro_Mus-.TBC1D22A_chr22_47120000	Fibro_Mus	specific	auto	TBC1D22A	chr22	47120000	-	28	0	NA	FALSE	
+Fibro_Mus-_chr18_75170000	Fibro_Mus	specific	auto	NA	chr18	75170000	-	25	0	NA	FALSE	
+Fibro_Mus-.IGBP1P3_chr3_32620000	Fibro_Mus	specific	auto	IGBP1P3	chr3	32620000	-	24	0	NA	FALSE	
+Fibro_Mus-.TRPM2_chr21_44410000	Fibro_Mus	specific	auto	TRPM2	chr21	44410000	-	18	0	NA	FALSE	
+Fibro_Mus-.AC113404.1_chr5_76280000	Fibro_Mus	specific	auto	AC113404.1	chr5	76280000	-	17	0	NA	FALSE	
+Fibro_Mus+.AL049874.3_chr14_60500000	Fibro_Mus	specific	auto	AL049874.3	chr14	60500000	+	16	0	NA	FALSE	
+Fibro_Myo-.FLNA_chrX_154350000	Fibro_Myo	specific	auto	FLNA	chrX	154350000	-	141	1	NA	FALSE	
+Fibro_Myo-.SMTN_chr22_31080000	Fibro_Myo	specific	auto	SMTN	chr22	31080000	-	121	0	NA	FALSE	
+Fibro_Myo-.ACTG2_chr2_73890000	Fibro_Myo	specific	auto	ACTG2	chr2	73890000	-	85	0	NA	FALSE	
+Fibro_Myo-.DSTN_chr20_17570000	Fibro_Myo	specific	auto	DSTN	chr20	17570000	-	69	0	NA	FALSE	
+Fibro_Myo-.KANK2_chr19_11190000	Fibro_Myo	specific	auto	KANK2	chr19	11190000	-	61	0	NA	FALSE	
+Fibro_Myo+.AC027243.1_chr15_76330000	Fibro_Myo	specific	auto	AC027243.1	chr15	76330000	+	42	0	NA	FALSE	
+Fibro_Myo+.AC004080.5_chr7_27140000	Fibro_Myo	specific	auto	AC004080.5	chr7	27140000	+	27	0	NA	FALSE	
+Fibro_Myo+.FOXD1_chr5_73430000	Fibro_Myo	specific	auto	FOXD1	chr5	73430000	+	21	0	NA	FALSE	
+Fibro_Myo+.FOXQ1_chr6_1310000	Fibro_Myo	specific	auto	FOXQ1	chr6	1310000	+	21	0	NA	FALSE	
+Fibro_Myo+.LINC01081_chr16_86280000	Fibro_Myo	specific	auto	LINC01081	chr16	86280000	+	12	0	NA	FALSE	
+Fibro_Sk-.TWIST2_chr2_238850000	Fibro_Sk	specific	auto	TWIST2	chr2	238850000	-	86	1	NA	FALSE	
+Fibro_Sk-.TWIST2_chr2_238890000	Fibro_Sk	specific	auto	TWIST2	chr2	238890000	-	59	0	NA	FALSE	
+Fibro_Sk+.HAND1_chr5_154470000	Fibro_Sk	specific	auto	HAND1	chr5	154470000	+	48	0	NA	FALSE	
+Fibro_Sk+.LY86-AS1_chr6_6540000	Fibro_Sk	specific	auto	LY86-AS1	chr6	6540000	+	35	0	NA	FALSE	
+Fibro_Sk-.AC145625.1_chr2_238780000	Fibro_Sk	specific	auto	AC145625.1	chr2	238780000	-	24	0	NA	FALSE	
+Fibro_Sk+.PANCR_chr4_110620000	Fibro_Sk	specific	auto	PANCR	chr4	110620000	+	22	0	NA	FALSE	
+Fibro_Sk-.RNU6-828P_chr1_10160000	Fibro_Sk	specific	auto	RNU6-828P	chr1	10160000	-	22	0	NA	FALSE	
+Fibro_Sk-.5S_rRNA_chr7_152600000	Fibro_Sk	specific	auto	5S_rRNA	chr7	152600000	-	19	0	NA	FALSE	
+Fibro_Sk+.AC005597.1_chr19_30220000	Fibro_Sk	specific	auto	AC005597.1	chr19	30220000	+	18	0	NA	FALSE	
+Fibro_Sk+.AC004080.12_chr7_27180000	Fibro_Sk	specific	auto	AC004080.12	chr7	27180000	+	17	0	NA	FALSE	
+gastric_epithelial-.PGC_chr6_41730000	gastric_epithelial	specific	auto	PGC	chr6	41730000	-	113	1	NA	FALSE	
+gastric_epithelial-.AC016252.1_chr3_137990000	gastric_epithelial	specific	auto	AC016252.1	chr3	137990000	-	71	0	NA	FALSE	
+gastric_epithelial-.LIPF_chr10_88660000	gastric_epithelial	specific	auto	LIPF	chr10	88660000	-	66	0	NA	FALSE	
+gastric_epithelial-.PLXNB2_chr22_50280000	gastric_epithelial	specific	auto	PLXNB2	chr22	50280000	-	59	0	NA	FALSE	
+gastric_epithelial+.B3GNT6_chr11_77030000	gastric_epithelial	specific	auto	B3GNT6	chr11	77030000	+	38	0	NA	FALSE	
+gastric_epithelial-.BEND3_chr6_107060000	gastric_epithelial	specific	auto	BEND3	chr6	107060000	-	35	0	NA	FALSE	
+gastric_epithelial+.CPNE4_chr3_132030000	gastric_epithelial	specific	auto	CPNE4	chr3	132030000	+	9	0	NA	FALSE	
+gastric_epithelial+.AL136967.1_chr6_41370000	gastric_epithelial	specific	auto	AL136967.1	chr6	41370000	+	5	0	NA	FALSE	
+Glia_Astro-.SLC1A2_chr11_35300000	Glia_Astro	specific	auto	SLC1A2	chr11	35300000	-	343	1	NA	TRUE	Astrocyte
+Glia_Astro-.MYO10_chr5_16660000	Glia_Astro	specific	auto	MYO10	chr5	16660000	-	234	0	NA	TRUE	Astrocyte
+Glia_Astro+.OBI1-AS1_chr13_78580000	Glia_Astro	specific	auto	OBI1-AS1	chr13	78580000	+	161	0	NA	FALSE	
+Glia_Astro-.PFKFB3_chr10_6200000	Glia_Astro	specific	auto	PFKFB3	chr10	6200000	-	147	0	NA	TRUE	Astrocyte
+Glia_Astro-.LRIG1_chr3_66400000	Glia_Astro	specific	auto	LRIG1	chr3	66400000	-	115	0	NA	TRUE	Astrocyte
+Glia_Astro-.FGFR3_chr4_1790000	Glia_Astro	specific	auto	FGFR3	chr4	1790000	-	109	0	NA	TRUE	Astrocyte
+Glia_Astro+.MIR9-3HG_chr15_89370000	Glia_Astro	specific	auto	MIR9-3HG	chr15	89370000	+	33	0	NA	FALSE	
+Glia_Astro+.MIR6846_chr8_144040000	Glia_Astro	specific	auto	MIR6846	chr8	144040000	+	25	0	NA	FALSE	
+Glia_Astro+.LINC00404_chr13_112100000	Glia_Astro	specific	auto	LINC00404	chr13	112100000	+	24	0	NA	FALSE	
+Glia_Astro+.LINC01396_chr4_4850000	Glia_Astro	specific	auto	LINC01396	chr4	4850000	+	10	0	NA	FALSE	
+granulocyte-.GALNS_chr16_88830000	granulocyte	specific	auto	GALNS	chr16	88830000	-	49	1	NA	FALSE	
+granulocyte-.TFDP1_chr13_113600000	granulocyte	specific	auto	TFDP1	chr13	113600000	-	46	0	NA	FALSE	
+granulocyte-.AP5S1_chr20_3820000	granulocyte	specific	auto	AP5S1	chr20	3820000	-	42	0	NA	FALSE	
+granulocyte-.AC131009.2_chr12_131860000	granulocyte	specific	auto	AC131009.2	chr12	131860000	-	36	0	NA	FALSE	
+granulocyte-.AC069288.1_chr7_2070000	granulocyte	specific	auto	AC069288.1	chr7	2070000	-	29	0	NA	FALSE	
+heart_fibroblast-.GTSE1_chr22_46290000	heart_fibroblast	specific	auto	GTSE1	chr22	46290000	-	29	1	NA	FALSE	
+heart_fibroblast+.AL049692.1_chr11_32420000	heart_fibroblast	specific	auto	AL049692.1	chr11	32420000	+	19	0	NA	FALSE	
+heart_fibroblast-.LINC01615_chr6_169160000	heart_fibroblast	specific	auto	LINC01615	chr6	169160000	-	14	0	NA	FALSE	
+heart_fibroblast-.AC098851.1_chr7_77250000	heart_fibroblast	specific	auto	AC098851.1	chr7	77250000	-	13	0	NA	FALSE	
+heart_fibroblast-.AL391832.4_chr1_234890000	heart_fibroblast	specific	auto	AL391832.4	chr1	234890000	-	13	0	NA	FALSE	
+heart_fibroblast-.LINC02639_chr10_3820000	heart_fibroblast	specific	auto	LINC02639	chr10	3820000	-	12	0	NA	FALSE	
+Hema_Mast-.KIT_chr4_54660000	Hema_Mast	specific	auto	KIT	chr4	54660000	-	151	1	NA	TRUE	Mast cell
+Hema_Mast-.AC022400.5_chr10_73800000	Hema_Mast	specific	auto	AC022400.5	chr10	73800000	-	96	0	NA	FALSE	
+Hema_Mast-.HS6ST1_chr2_128290000	Hema_Mast	specific	auto	HS6ST1	chr2	128290000	-	91	0	NA	FALSE	
 Hema_Mast-.AC069288.1_chr7_2060000	Hema_Mast	specific	auto	AC069288.1	chr7	2060000	-	58	0	NA	FALSE	
-Hema_Mast+.A2M_chr12_9060000	Hema_Mast	specific	auto	A2M	chr12	9060000	+	48	0	NA	FALSE	
-Hema_Mast+.PARP10_chr8_143970000	Hema_Mast	specific	auto	PARP10	chr8	143970000	+	36	0	NA	FALSE	
-Hema_Mast+.GFI1_chr1_92480000	Hema_Mast	specific	auto	GFI1	chr1	92480000	+	28	0	NA	FALSE	
-Hema_Mast+.AC139149.1_chr17_81510000	Hema_Mast	specific	auto	AC139149.1	chr17	81510000	+	14	0	NA	FALSE	
-Hema_Mast+.IL18R1_chr2_102350000	Hema_Mast	specific	auto	IL18R1	chr2	102350000	+	11	0	NA	FALSE	
-hepatocyte-.APOC4_chr19_44910000	hepatocyte	specific	auto	APOC4	chr19	44910000	-	323	1	NA	FALSE	
-hepatocyte-.AGXT_chr2_240850000	hepatocyte	specific	auto	AGXT	chr2	240850000	-	317	0	NA	FALSE	
-hepatocyte+.AC132217.2_chr11_2130000	hepatocyte	specific	auto	AC132217.2	chr11	2130000	+	261	0	NA	FALSE	
-hepatocyte-.FGA_chr4_154560000	hepatocyte	specific	auto	FGA	chr4	154560000	-	223	0	NA	FALSE	
-hepatocyte-.ANGPTL8_chr19_11230000	hepatocyte	specific	auto	ANGPTL8	chr19	11230000	-	161	0	NA	FALSE	
-hepatocyte-.ABCG8_chr2_43820000	hepatocyte	specific	auto	ABCG8	chr2	43820000	-	157	0	NA	FALSE	
-hepatocyte+.F7_chr13_113100000	hepatocyte	specific	auto	F7	chr13	113100000	+	154	0	NA	FALSE	
-hepatocyte+.F12_chr5_177400000	hepatocyte	specific	auto	F12	chr5	177400000	+	151	0	NA	FALSE	
-hepatocyte+.TSPAN9_chr12_3190000	hepatocyte	specific	auto	TSPAN9	chr12	3190000	+	137	0	NA	FALSE	
-hepatocyte+.MIR4783_chr2_127420000	hepatocyte	specific	auto	MIR4783	chr2	127420000	+	87	0	NA	FALSE	
-kidney_epi-.DNAAF5_chr7_760000	kidney_epi	specific	auto	DNAAF5	chr7	760000	-	81	1	NA	FALSE	
-kidney_epi-.ADARB2_chr10_1460000	kidney_epi	specific	auto	ADARB2	chr10	1460000	-	64	0	NA	FALSE	
-kidney_epi-_chr18_78390000	kidney_epi	specific	auto	NA	chr18	78390000	-	58	0	NA	TRUE	Distal convoluted tubule Type 1(DCT1) cell; Distal convoluted tubule Type 2(DCT2) cell; Proximal tubule progenitor cell; Renal tubular cell
-kidney_epi-.AJ011931.1_chr21_45860000	kidney_epi	specific	auto	AJ011931.1	chr21	45860000	-	52	0	NA	FALSE	
-kidney_epi-.TCERG1L_chr10_131090000	kidney_epi	specific	auto	TCERG1L	chr10	131090000	-	39	0	NA	FALSE	
-kidney_epi+.RNY1P11_chr7_129160000	kidney_epi	specific	auto	RNY1P11	chr7	129160000	+	26	0	NA	FALSE	
-kidney_epi+.KIRREL3_chr11_126820000	kidney_epi	specific	auto	KIRREL3	chr11	126820000	+	11	0	NA	FALSE	
-kidney_epi+.KIRREL3_chr11_126850000	kidney_epi	specific	auto	KIRREL3	chr11	126850000	+	7	0	NA	FALSE	
-lower_GI_epi-.ST14_chr11_130160000	lower_GI_epi	specific	auto	ST14	chr11	130160000	-	200	1	NA	FALSE	
-lower_GI_epi+.AP000547.3_chr22_16600000	lower_GI_epi	specific	auto	AP000547.3	chr22	16600000	+	193	0	NA	FALSE	
-lower_GI_epi-.AC073111.2_chr7_150370000	lower_GI_epi	specific	auto	AC073111.2	chr7	150370000	-	189	0	NA	FALSE	
-lower_GI_epi-.ZBTB7A_chr19_4050000	lower_GI_epi	specific	auto	ZBTB7A	chr19	4050000	-	138	0	NA	FALSE	
-lower_GI_epi-.AC008982.1_chr19_38810000	lower_GI_epi	specific	auto	AC008982.1	chr19	38810000	-	135	0	NA	FALSE	
-lower_GI_epi-.EPCAM_chr2_47360000	lower_GI_epi	specific	auto	EPCAM	chr2	47360000	-	110	0	NA	FALSE	
-lower_GI_epi+.AC012349.1_chr8_56440000	lower_GI_epi	specific	auto	AC012349.1	chr8	56440000	+	75	0	NA	FALSE	
-lower_GI_epi+.AC003006.1_chr19_57700000	lower_GI_epi	specific	auto	AC003006.1	chr19	57700000	+	57	0	NA	FALSE	
-lower_GI_epi+_chr6_105980000	lower_GI_epi	specific	auto	NA	chr6	105980000	+	47	0	NA	TRUE	Activeintestinal stem cell; Colonocyte; Enterocyte; Intestinal gastric cancer cell; Intestinal stem cell; Small intestinal stem cell
+Hema_Mast-.TPSAB1_chr16_1220000	Hema_Mast	specific	auto	TPSAB1	chr16	1220000	-	57	0	NA	TRUE	Mast cell
+Hema_Mast+.A2M_chr12_9060000	Hema_Mast	specific	auto	A2M	chr12	9060000	+	27	0	NA	FALSE	
+Hema_Mast+.GFI1_chr1_92480000	Hema_Mast	specific	auto	GFI1	chr1	92480000	+	21	0	NA	FALSE	
+Hema_Mast+.PARP10_chr8_143970000	Hema_Mast	specific	auto	PARP10	chr8	143970000	+	15	0	NA	FALSE	
+Hema_Mast+.IL18R1_chr2_102350000	Hema_Mast	specific	auto	IL18R1	chr2	102350000	+	8	0	NA	FALSE	
+Hema_Mast+.AC139149.1_chr17_81510000	Hema_Mast	specific	auto	AC139149.1	chr17	81510000	+	5	0	NA	FALSE	
+hepatocyte-.APOC4_chr19_44910000	hepatocyte	specific	auto	APOC4	chr19	44910000	-	172	1	NA	FALSE	
+hepatocyte-.AGXT_chr2_240850000	hepatocyte	specific	auto	AGXT	chr2	240850000	-	160	0	NA	FALSE	
+hepatocyte+.AC132217.2_chr11_2130000	hepatocyte	specific	auto	AC132217.2	chr11	2130000	+	150	0	NA	FALSE	
+hepatocyte+.F12_chr5_177400000	hepatocyte	specific	auto	F12	chr5	177400000	+	148	0	NA	FALSE	
+hepatocyte-.ANGPTL8_chr19_11230000	hepatocyte	specific	auto	ANGPTL8	chr19	11230000	-	141	0	NA	FALSE	
+hepatocyte-.FGA_chr4_154560000	hepatocyte	specific	auto	FGA	chr4	154560000	-	136	0	NA	FALSE	
+hepatocyte+.F7_chr13_113100000	hepatocyte	specific	auto	F7	chr13	113100000	+	120	0	NA	FALSE	
+hepatocyte-.ABCG8_chr2_43820000	hepatocyte	specific	auto	ABCG8	chr2	43820000	-	119	0	NA	FALSE	
+hepatocyte+.TSPAN9_chr12_3190000	hepatocyte	specific	auto	TSPAN9	chr12	3190000	+	107	0	NA	FALSE	
+hepatocyte+.MIR4783_chr2_127420000	hepatocyte	specific	auto	MIR4783	chr2	127420000	+	86	0	NA	FALSE	
+kidney_epi-.AJ011931.1_chr21_45860000	kidney_epi	specific	auto	AJ011931.1	chr21	45860000	-	37	1	NA	FALSE	
+kidney_epi-.TCERG1L_chr10_131090000	kidney_epi	specific	auto	TCERG1L	chr10	131090000	-	31	0	NA	FALSE	
+kidney_epi-.ADARB2_chr10_1460000	kidney_epi	specific	auto	ADARB2	chr10	1460000	-	30	0	NA	FALSE	
+kidney_epi-_chr18_78390000	kidney_epi	specific	auto	NA	chr18	78390000	-	23	0	NA	TRUE	Distal convoluted tubule Type 1(DCT1) cell; Distal convoluted tubule Type 2(DCT2) cell; Proximal tubule progenitor cell; Renal tubular cell
+kidney_epi+.RNY1P11_chr7_129160000	kidney_epi	specific	auto	RNY1P11	chr7	129160000	+	17	0	NA	FALSE	
+kidney_epi-.DNAAF5_chr7_760000	kidney_epi	specific	auto	DNAAF5	chr7	760000	-	9	0	NA	FALSE	
+lower_GI_epi+.AP000547.3_chr22_16600000	lower_GI_epi	specific	auto	AP000547.3	chr22	16600000	+	153	1	NA	FALSE	
+lower_GI_epi-.AC073111.2_chr7_150370000	lower_GI_epi	specific	auto	AC073111.2	chr7	150370000	-	108	0	NA	FALSE	
+lower_GI_epi-.ZBTB7A_chr19_4050000	lower_GI_epi	specific	auto	ZBTB7A	chr19	4050000	-	92	0	NA	FALSE	
+lower_GI_epi-.ST14_chr11_130160000	lower_GI_epi	specific	auto	ST14	chr11	130160000	-	85	0	NA	FALSE	
+lower_GI_epi-.AC008982.1_chr19_38810000	lower_GI_epi	specific	auto	AC008982.1	chr19	38810000	-	80	0	NA	FALSE	
+lower_GI_epi+.AC012349.1_chr8_56440000	lower_GI_epi	specific	auto	AC012349.1	chr8	56440000	+	67	0	NA	FALSE	
+lower_GI_epi-.EPCAM_chr2_47360000	lower_GI_epi	specific	auto	EPCAM	chr2	47360000	-	61	0	NA	FALSE	
+lower_GI_epi+.AC003006.1_chr19_57700000	lower_GI_epi	specific	auto	AC003006.1	chr19	57700000	+	51	0	NA	FALSE	
 lower_GI_epi+.ZNF382_chr19_36600000	lower_GI_epi	specific	auto	ZNF382	chr19	36600000	+	46	0	NA	FALSE	
-lung_alveolar_epi-.SFTPB_chr2_85650000	lung_alveolar_epi	specific	auto	SFTPB	chr2	85650000	-	164	1	NA	TRUE	Alveolar cell Type 2; Alveolar epithelial cell Type 2; Alveolar type 2-like cell; Alveolar type II (ATII) cell
-lung_alveolar_epi-.RAB40C_chr16_610000	lung_alveolar_epi	specific	auto	RAB40C	chr16	610000	-	107	0	NA	FALSE	
-lung_alveolar_epi-.PRKCZ_chr1_2050000	lung_alveolar_epi	specific	auto	PRKCZ	chr1	2050000	-	82	0	NA	FALSE	
-lung_alveolar_epi+.CPAMD8_chr19_16890000	lung_alveolar_epi	specific	auto	CPAMD8	chr19	16890000	+	74	0	NA	FALSE	
-lung_alveolar_epi-.ABCA3_chr16_2320000	lung_alveolar_epi	specific	auto	ABCA3	chr16	2320000	-	64	0	NA	TRUE	Alveolar cell Type 2; Alveolar type II (ATII) cell; Type II pneumocyte
-lung_alveolar_epi-.ATP11A_chr13_112690000	lung_alveolar_epi	specific	auto	ATP11A	chr13	112690000	-	52	0	NA	FALSE	
-lung_alveolar_epi+.ACOXL_chr2_111110000	lung_alveolar_epi	specific	auto	ACOXL	chr2	111110000	+	39	0	NA	FALSE	
-lung_alveolar_epi+.SYNE1_chr6_152300000	lung_alveolar_epi	specific	auto	SYNE1	chr6	152300000	+	22	0	NA	FALSE	
-lung_alveolar_epi+.HAGLR_chr2_176170000	lung_alveolar_epi	specific	auto	HAGLR	chr2	176170000	+	11	0	NA	FALSE	
-lung_alveolar_epi+.AC108215.1_chr4_56650000	lung_alveolar_epi	specific	auto	AC108215.1	chr4	56650000	+	7	0	NA	FALSE	
-lung_bronchus_epi+.AL049637.1_chr1_50410000	lung_bronchus_epi	specific	auto	AL049637.1	chr1	50410000	+	314	1	NA	FALSE	
-lung_bronchus_epi+.AC008406.3_chr5_135030000	lung_bronchus_epi	specific	auto	AC008406.3	chr5	135030000	+	139	0	NA	FALSE	
-lung_bronchus_epi-.AC022211.4_chr17_75120000	lung_bronchus_epi	specific	auto	AC022211.4	chr17	75120000	-	133	0	NA	FALSE	
-lung_bronchus_epi+.SFTA3_chr14_36520000	lung_bronchus_epi	specific	auto	SFTA3	chr14	36520000	+	116	0	NA	FALSE	
-lung_bronchus_epi-.AQP3_chr9_33430000	lung_bronchus_epi	specific	auto	AQP3	chr9	33430000	-	113	0	NA	FALSE	
-lung_bronchus_epi+.EYA1_chr8_71550000	lung_bronchus_epi	specific	auto	EYA1	chr8	71550000	+	104	0	NA	FALSE	
-lung_bronchus_epi+.DMRT1_chr9_960000	lung_bronchus_epi	specific	auto	DMRT1	chr9	960000	+	88	0	NA	FALSE	
-lung_bronchus_epi-.AC104073.1_chr7_65250000	lung_bronchus_epi	specific	auto	AC104073.1	chr7	65250000	-	64	0	NA	FALSE	
-lung_bronchus_epi-.HDAC4_chr2_239040000	lung_bronchus_epi	specific	auto	HDAC4	chr2	239040000	-	62	0	NA	FALSE	
-lung_bronchus_epi-.STEAP3_chr2_119240000	lung_bronchus_epi	specific	auto	STEAP3	chr2	119240000	-	48	0	NA	FALSE	
-mononuc_phago-.ASGR2_chr17_7120000	mononuc_phago	specific	auto	ASGR2	chr17	7120000	-	61	1	NA	TRUE	Monocyte
-mononuc_phago-.IGSF6_chr16_21650000	mononuc_phago	specific	auto	IGSF6	chr16	21650000	-	45	0	NA	TRUE	Monocyte
-mononuc_phago-.RN7SL138P_chr17_30950000	mononuc_phago	specific	auto	RN7SL138P	chr17	30950000	-	42	0	NA	FALSE	
-mononuc_phago-.KDM2B_chr12_121450000	mononuc_phago	specific	auto	KDM2B	chr12	121450000	-	28	0	NA	FALSE	
-mononuc_phago-.KCNAB2_chr1_6050000	mononuc_phago	specific	auto	KCNAB2	chr1	6050000	-	19	0	NA	FALSE	
-Mus_Crd-.SORBS2_chr4_185720000	Mus_Crd	specific	auto	SORBS2	chr4	185720000	-	491	1	NA	FALSE	
-Mus_Crd-.RYR2_chr1_237040000	Mus_Crd	specific	auto	RYR2	chr1	237040000	-	479	0	NA	FALSE	
-Mus_Crd-.TSPAN9_chr12_3200000	Mus_Crd	specific	auto	TSPAN9	chr12	3200000	-	463	0	NA	FALSE	
-Mus_Crd-.MYBPC3_chr11_47320000	Mus_Crd	specific	auto	MYBPC3	chr11	47320000	-	354	0	NA	TRUE	Cardiomyocyte
-Mus_Crd-.SLC4A3_chr2_219610000	Mus_Crd	specific	auto	SLC4A3	chr2	219610000	-	227	0	NA	FALSE	
-Mus_Crd+.HAND1_chr5_154470000	Mus_Crd	specific	auto	HAND1	chr5	154470000	+	99	0	NA	FALSE	
-Mus_Crd+.FGF12_chr3_192400000	Mus_Crd	specific	auto	FGF12	chr3	192400000	+	88	0	NA	FALSE	
-Mus_Crd+.ABHD15-AS1_chr17_29610000	Mus_Crd	specific	auto	ABHD15-AS1	chr17	29610000	+	71	0	NA	FALSE	
-Mus_Crd+.FGF12_chr3_192510000	Mus_Crd	specific	auto	FGF12	chr3	192510000	+	63	0	NA	FALSE	
-Mus_Crd+.AL670729.2_chr1_228370000	Mus_Crd	specific	auto	AL670729.2	chr1	228370000	+	49	0	NA	FALSE	
-Neu_Exc-.CELF2_chr10_11240000	Neu_Exc	specific	auto	CELF2	chr10	11240000	-	775	1	NA	FALSE	
-Neu_Exc-.BAIAP2_chr17_81040000	Neu_Exc	specific	auto	BAIAP2	chr17	81040000	-	729	0	NA	FALSE	
-Neu_Exc-.KHDRBS3_chr8_135460000	Neu_Exc	specific	auto	KHDRBS3	chr8	135460000	-	375	0	NA	FALSE	
-Neu_Exc-.NGEF_chr2_232870000	Neu_Exc	specific	auto	NGEF	chr2	232870000	-	360	0	NA	FALSE	
-Neu_Exc-.ADGRB2_chr1_31720000	Neu_Exc	specific	auto	ADGRB2	chr1	31720000	-	284	0	NA	FALSE	
-Neu_Exc+.AC013733.1_chr2_181680000	Neu_Exc	specific	auto	AC013733.1	chr2	181680000	+	137	0	NA	FALSE	
-Neu_Exc+.AC044798.3_chr16_49270000	Neu_Exc	specific	auto	AC044798.3	chr16	49270000	+	113	0	NA	FALSE	
-Neu_Exc+.SLC17A6_chr11_22340000	Neu_Exc	specific	auto	SLC17A6	chr11	22340000	+	67	0	NA	TRUE	Glutamatergic neuron
-Neu_Exc+.LYRM4-AS1_chr6_5020000	Neu_Exc	specific	auto	LYRM4-AS1	chr6	5020000	+	34	0	NA	FALSE	
-Neu_Exc+.OR10N1P_chr11_124110000	Neu_Exc	specific	auto	OR10N1P	chr11	124110000	+	21	0	NA	FALSE	
-Neu_Inh+.OTX2_chr14_56790000	Neu_Inh	specific	auto	OTX2	chr14	56790000	+	178	1	NA	FALSE	
-Neu_Inh+.NAT16_chr7_101170000	Neu_Inh	specific	auto	NAT16	chr7	101170000	+	138	0	NA	FALSE	
-Neu_Inh+.MIR3663_chr10_117160000	Neu_Inh	specific	auto	MIR3663	chr10	117160000	+	137	0	NA	FALSE	
-Neu_Inh+.CCDC61_chr19_46010000	Neu_Inh	specific	auto	CCDC61	chr19	46010000	+	88	0	NA	FALSE	
-Neu_Inh-.NRXN3_chr14_78170000	Neu_Inh	specific	auto	NRXN3	chr14	78170000	-	77	0	NA	TRUE	Interneuron
-Neu_Inh+.PRRT4_chr7_128350000	Neu_Inh	specific	auto	PRRT4	chr7	128350000	+	68	0	NA	FALSE	
-Neu_Inh-.METAP1D_chr2_172070000	Neu_Inh	specific	auto	METAP1D	chr2	172070000	-	51	0	NA	FALSE	
-Neu_Inh-.AL512380.1_chr6_21520000	Neu_Inh	specific	auto	AL512380.1	chr6	21520000	-	44	0	NA	FALSE	
-Neu_Inh-.SHC2_chr19_430000	Neu_Inh	specific	auto	SHC2	chr19	430000	-	29	0	NA	FALSE	
+lower_GI_epi+_chr6_105980000	lower_GI_epi	specific	auto	NA	chr6	105980000	+	40	0	NA	TRUE	Activeintestinal stem cell; Colonocyte; Enterocyte; Intestinal gastric cancer cell; Intestinal stem cell; Small intestinal stem cell
+lung_alveolar_epi-.SFTPB_chr2_85650000	lung_alveolar_epi	specific	auto	SFTPB	chr2	85650000	-	124	1	NA	TRUE	Alveolar cell Type 2; Alveolar epithelial cell Type 2; Alveolar type 2-like cell; Alveolar type II (ATII) cell
+lung_alveolar_epi-.RAB40C_chr16_610000	lung_alveolar_epi	specific	auto	RAB40C	chr16	610000	-	34	0	NA	FALSE	
+lung_alveolar_epi-.PRKCZ_chr1_2050000	lung_alveolar_epi	specific	auto	PRKCZ	chr1	2050000	-	31	0	NA	FALSE	
+lung_alveolar_epi-.ABCA3_chr16_2320000	lung_alveolar_epi	specific	auto	ABCA3	chr16	2320000	-	29	0	NA	TRUE	Alveolar cell Type 2; Alveolar type II (ATII) cell; Type II pneumocyte
+lung_alveolar_epi+.ACOXL_chr2_111110000	lung_alveolar_epi	specific	auto	ACOXL	chr2	111110000	+	29	0	NA	FALSE	
+lung_alveolar_epi+.SYNE1_chr6_152300000	lung_alveolar_epi	specific	auto	SYNE1	chr6	152300000	+	17	0	NA	FALSE	
+lung_alveolar_epi-.ATP11A_chr13_112690000	lung_alveolar_epi	specific	auto	ATP11A	chr13	112690000	-	16	0	NA	FALSE	
+lung_alveolar_epi+.CPAMD8_chr19_16890000	lung_alveolar_epi	specific	auto	CPAMD8	chr19	16890000	+	12	0	NA	FALSE	
+lung_alveolar_epi+.HAGLR_chr2_176170000	lung_alveolar_epi	specific	auto	HAGLR	chr2	176170000	+	8	0	NA	FALSE	
+lung_bronchus_epi+.AL049637.1_chr1_50410000	lung_bronchus_epi	specific	auto	AL049637.1	chr1	50410000	+	94	1	NA	FALSE	
+lung_bronchus_epi-.AC104073.1_chr7_65250000	lung_bronchus_epi	specific	auto	AC104073.1	chr7	65250000	-	47	0	NA	FALSE	
+lung_bronchus_epi+.SFTA3_chr14_36520000	lung_bronchus_epi	specific	auto	SFTA3	chr14	36520000	+	46	0	NA	FALSE	
+lung_bronchus_epi-.AC022211.4_chr17_75120000	lung_bronchus_epi	specific	auto	AC022211.4	chr17	75120000	-	44	0	NA	FALSE	
+lung_bronchus_epi-.HDAC4_chr2_239040000	lung_bronchus_epi	specific	auto	HDAC4	chr2	239040000	-	44	0	NA	FALSE	
+lung_bronchus_epi-.AQP3_chr9_33430000	lung_bronchus_epi	specific	auto	AQP3	chr9	33430000	-	35	0	NA	FALSE	
+lung_bronchus_epi+.AC008406.3_chr5_135030000	lung_bronchus_epi	specific	auto	AC008406.3	chr5	135030000	+	30	0	NA	FALSE	
+lung_bronchus_epi+.DMRT1_chr9_960000	lung_bronchus_epi	specific	auto	DMRT1	chr9	960000	+	23	0	NA	FALSE	
+lung_bronchus_epi-.STEAP3_chr2_119240000	lung_bronchus_epi	specific	auto	STEAP3	chr2	119240000	-	19	0	NA	FALSE	
+lung_bronchus_epi+.EYA1_chr8_71550000	lung_bronchus_epi	specific	auto	EYA1	chr8	71550000	+	7	0	NA	FALSE	
+mononuc_phago-.IGSF6_chr16_21650000	mononuc_phago	specific	auto	IGSF6	chr16	21650000	-	23	1	NA	TRUE	Monocyte
+mononuc_phago-.RPL7AP64_chr17_7120000	mononuc_phago	specific	auto	RPL7AP64	chr17	7120000	-	18	0	NA	FALSE	
+mononuc_phago-.KCNAB2_chr1_6050000	mononuc_phago	specific	auto	KCNAB2	chr1	6050000	-	15	0	NA	FALSE	
+mononuc_phago-.KDM2B_chr12_121450000	mononuc_phago	specific	auto	KDM2B	chr12	121450000	-	11	0	NA	FALSE	
+mononuc_phago-.RN7SL138P_chr17_30950000	mononuc_phago	specific	auto	RN7SL138P	chr17	30950000	-	9	0	NA	FALSE	
+Mus_Crd-.MYBPC3_chr11_47320000	Mus_Crd	specific	auto	MYBPC3	chr11	47320000	-	227	1	NA	TRUE	Cardiomyocyte
+Mus_Crd-.RYR2_chr1_237040000	Mus_Crd	specific	auto	RYR2	chr1	237040000	-	190	0	NA	FALSE	
+Mus_Crd-.SORBS2_chr4_185720000	Mus_Crd	specific	auto	SORBS2	chr4	185720000	-	168	0	NA	FALSE	
+Mus_Crd-.TSPAN9_chr12_3200000	Mus_Crd	specific	auto	TSPAN9	chr12	3200000	-	160	0	NA	FALSE	
+Mus_Crd-.SLC4A3_chr2_219610000	Mus_Crd	specific	auto	SLC4A3	chr2	219610000	-	134	0	NA	FALSE	
+Mus_Crd+.AC026688.2_chr5_154470000	Mus_Crd	specific	auto	AC026688.2	chr5	154470000	+	70	0	NA	FALSE	
+Mus_Crd+.FGF12_chr3_192510000	Mus_Crd	specific	auto	FGF12	chr3	192510000	+	57	0	NA	FALSE	
+Mus_Crd+.FGF12_chr3_192400000	Mus_Crd	specific	auto	FGF12	chr3	192400000	+	37	0	NA	FALSE	
+Mus_Crd+.ABHD15-AS1_chr17_29610000	Mus_Crd	specific	auto	ABHD15-AS1	chr17	29610000	+	34	0	NA	FALSE	
+Mus_Crd+.AL670729.2_chr1_228370000	Mus_Crd	specific	auto	AL670729.2	chr1	228370000	+	33	0	NA	FALSE	
+Neu_Exc-.KHDRBS3_chr8_135460000	Neu_Exc	specific	auto	KHDRBS3	chr8	135460000	-	157	1	NA	FALSE	
+Neu_Exc-.BAIAP2_chr17_81040000	Neu_Exc	specific	auto	BAIAP2	chr17	81040000	-	138	0	NA	FALSE	
+Neu_Exc-.CELF2_chr10_11240000	Neu_Exc	specific	auto	CELF2	chr10	11240000	-	138	0	NA	FALSE	
+Neu_Exc-.NGEF_chr2_232870000	Neu_Exc	specific	auto	NGEF	chr2	232870000	-	128	0	NA	FALSE	
+Neu_Exc-.ADGRB2_chr1_31720000	Neu_Exc	specific	auto	ADGRB2	chr1	31720000	-	95	0	NA	FALSE	
+Neu_Exc+.AC007614.1_chr16_49270000	Neu_Exc	specific	auto	AC007614.1	chr16	49270000	+	91	0	NA	FALSE	
+Neu_Exc+.AC013733.1_chr2_181680000	Neu_Exc	specific	auto	AC013733.1	chr2	181680000	+	48	0	NA	FALSE	
+Neu_Exc+.AC104009.1_chr11_22340000	Neu_Exc	specific	auto	AC104009.1	chr11	22340000	+	37	0	NA	FALSE	
+Neu_Exc+.AL359643.2_chr6_5020000	Neu_Exc	specific	auto	AL359643.2	chr6	5020000	+	18	0	NA	FALSE	
+Neu_Exc+.OR10N1P_chr11_124110000	Neu_Exc	specific	auto	OR10N1P	chr11	124110000	+	11	0	NA	FALSE	
+Neu_Inh+.MIR3663_chr10_117160000	Neu_Inh	specific	auto	MIR3663	chr10	117160000	+	99	1	NA	FALSE	
+Neu_Inh+.OTX2_chr14_56790000	Neu_Inh	specific	auto	OTX2	chr14	56790000	+	87	0	NA	FALSE	
+Neu_Inh+.NAT16_chr7_101170000	Neu_Inh	specific	auto	NAT16	chr7	101170000	+	82	0	NA	FALSE	
+Neu_Inh+.CCDC61_chr19_46010000	Neu_Inh	specific	auto	CCDC61	chr19	46010000	+	68	0	NA	FALSE	
+Neu_Inh+.PRRT4_chr7_128350000	Neu_Inh	specific	auto	PRRT4	chr7	128350000	+	48	0	NA	FALSE	
+Neu_Inh-.NRXN3_chr14_78170000	Neu_Inh	specific	auto	NRXN3	chr14	78170000	-	41	0	NA	TRUE	Interneuron
+Neu_Inh-.METAP1D_chr2_172070000	Neu_Inh	specific	auto	METAP1D	chr2	172070000	-	31	0	NA	FALSE	
+Neu_Inh-.AL512380.1_chr6_21520000	Neu_Inh	specific	auto	AL512380.1	chr6	21520000	-	16	0	NA	FALSE	
 Neu_Inh-.TSNARE1_chr8_142320000	Neu_Inh	specific	auto	TSNARE1	chr8	142320000	-	14	0	NA	FALSE	
-Neu_Schw-.TPT1-AS1_chr13_45370000	Neu_Schw	specific	auto	TPT1-AS1	chr13	45370000	-	123	1	NA	FALSE	
-Neu_Schw+.LINC00461_chr5_88680000	Neu_Schw	specific	auto	LINC00461	chr5	88680000	+	91	0	NA	FALSE	
-Neu_Schw+.TFAP2B_chr6_50840000	Neu_Schw	specific	auto	TFAP2B	chr6	50840000	+	76	0	NA	FALSE	
-Neu_Schw-.AC004922.1_chr7_99350000	Neu_Schw	specific	auto	AC004922.1	chr7	99350000	-	58	0	NA	FALSE	
-Neu_Schw-.AC090907.2_chr15_101060000	Neu_Schw	specific	auto	AC090907.2	chr15	101060000	-	43	0	NA	FALSE	
-Neu_Schw+.DLX2_chr2_172090000	Neu_Schw	specific	auto	DLX2	chr2	172090000	+	40	0	NA	FALSE	
-Neu_Schw-.ITPR1_chr3_4790000	Neu_Schw	specific	auto	ITPR1	chr3	4790000	-	38	0	NA	FALSE	
-Neu_Schw-_chr14_98590000	Neu_Schw	specific	auto	NA	chr14	98590000	-	33	0	NA	TRUE	Schwann cell
-Neu_Schw+.AC108210.1_chr4_41880000	Neu_Schw	specific	auto	AC108210.1	chr4	41880000	+	28	0	NA	FALSE	
-NK_cell-.CD247_chr1_167470000	NK_cell	specific	auto	CD247	chr1	167470000	-	222	1	NA	TRUE	Natural killer T (NKT) cell; Natural killer cell
-NK_cell-.KLRD1_chr12_10290000	NK_cell	specific	auto	KLRD1	chr12	10290000	-	125	0	NA	TRUE	Natural killer T (NKT) cell; Natural killer T(NKT) cell; Natural killer cell
-NK_cell-.TBX21_chr17_47730000	NK_cell	specific	auto	TBX21	chr17	47730000	-	115	0	NA	TRUE	Circulating natural killer cell; Natural killer T (NKT) cell; Natural killer cell
-NK_cell-.PRF1_chr10_70590000	NK_cell	specific	auto	PRF1	chr10	70590000	-	113	0	NA	TRUE	Natural killer T (NKT) cell; Natural killer cell
-NK_cell-.ATP9B_chr18_79320000	NK_cell	specific	auto	ATP9B	chr18	79320000	-	56	0	NA	FALSE	
-oligodendrocyte-.MBP_chr18_76970000	oligodendrocyte	specific	auto	MBP	chr18	76970000	-	831	1	NA	TRUE	Mature oligodendrocyte; Oligodendrocyte
-oligodendrocyte+.PAX6_chr11_31790000	oligodendrocyte	specific	auto	PAX6	chr11	31790000	+	292	0	NA	FALSE	
-oligodendrocyte-.URM1_chr9_128380000	oligodendrocyte	specific	auto	URM1	chr9	128380000	-	210	0	NA	FALSE	
-oligodendrocyte-.LDLRAD4_chr18_13610000	oligodendrocyte	specific	auto	LDLRAD4	chr18	13610000	-	157	0	NA	FALSE	
-oligodendrocyte-.PIP4K2A_chr10_22660000	oligodendrocyte	specific	auto	PIP4K2A	chr10	22660000	-	124	0	NA	FALSE	
-oligodendrocyte+.AC116612.1_chr4_8850000	oligodendrocyte	specific	auto	AC116612.1	chr4	8850000	+	121	0	NA	FALSE	
-oligodendrocyte-.MOBP_chr3_39470000	oligodendrocyte	specific	auto	MOBP	chr3	39470000	-	100	0	NA	TRUE	Oligodendrocyte
+Neu_Inh-.SHC2_chr19_430000	Neu_Inh	specific	auto	SHC2	chr19	430000	-	12	0	NA	FALSE	
+Neu_Schw-.AC004922.1_chr7_99350000	Neu_Schw	specific	auto	AC004922.1	chr7	99350000	-	32	1	NA	FALSE	
+Neu_Schw-.ITPR1_chr3_4790000	Neu_Schw	specific	auto	ITPR1	chr3	4790000	-	31	0	NA	FALSE	
+Neu_Schw+.AC108210.1_chr4_41880000	Neu_Schw	specific	auto	AC108210.1	chr4	41880000	+	27	0	NA	FALSE	
+Neu_Schw+.TFAP2B_chr6_50840000	Neu_Schw	specific	auto	TFAP2B	chr6	50840000	+	26	0	NA	FALSE	
+Neu_Schw-.TPT1-AS1_chr13_45370000	Neu_Schw	specific	auto	TPT1-AS1	chr13	45370000	-	26	0	NA	FALSE	
+Neu_Schw-.AC090907.2_chr15_101060000	Neu_Schw	specific	auto	AC090907.2	chr15	101060000	-	24	0	NA	FALSE	
+Neu_Schw+.LINC00461_chr5_88680000	Neu_Schw	specific	auto	LINC00461	chr5	88680000	+	24	0	NA	FALSE	
+Neu_Schw+.DLX1_chr2_172090000	Neu_Schw	specific	auto	DLX1	chr2	172090000	+	20	0	NA	FALSE	
+Neu_Schw-_chr14_98590000	Neu_Schw	specific	auto	NA	chr14	98590000	-	16	0	NA	TRUE	Schwann cell
+NK_cell-.KLRD1_chr12_10290000	NK_cell	specific	auto	KLRD1	chr12	10290000	-	79	1	NA	TRUE	Natural killer T (NKT) cell; Natural killer T(NKT) cell; Natural killer cell
+NK_cell-.TBX21_chr17_47730000	NK_cell	specific	auto	TBX21	chr17	47730000	-	56	0	NA	TRUE	Circulating natural killer cell; Natural killer T (NKT) cell; Natural killer cell
+NK_cell-.ATP9B_chr18_79320000	NK_cell	specific	auto	ATP9B	chr18	79320000	-	46	0	NA	FALSE	
+NK_cell-.PRF1_chr10_70590000	NK_cell	specific	auto	PRF1	chr10	70590000	-	40	0	NA	TRUE	Natural killer T (NKT) cell; Natural killer cell
+NK_cell-.CD247_chr1_167470000	NK_cell	specific	auto	CD247	chr1	167470000	-	30	0	NA	TRUE	Natural killer T (NKT) cell; Natural killer cell
+oligodendrocyte-.MBP_chr18_76970000	oligodendrocyte	specific	auto	MBP	chr18	76970000	-	356	1	NA	TRUE	Mature oligodendrocyte; Oligodendrocyte
+oligodendrocyte-.URM1_chr9_128380000	oligodendrocyte	specific	auto	URM1	chr9	128380000	-	101	0	NA	FALSE	
+oligodendrocyte+.PAX6_chr11_31790000	oligodendrocyte	specific	auto	PAX6	chr11	31790000	+	90	0	NA	FALSE	
+oligodendrocyte-.LDLRAD4_chr18_13610000	oligodendrocyte	specific	auto	LDLRAD4	chr18	13610000	-	71	0	NA	FALSE	
+oligodendrocyte+.AC116612.1_chr4_8850000	oligodendrocyte	specific	auto	AC116612.1	chr4	8850000	+	69	0	NA	FALSE	
 oligodendrocyte+.AC005258.1_chr19_2280000	oligodendrocyte	specific	auto	AC005258.1	chr19	2280000	+	57	0	NA	FALSE	
-oligodendrocyte+.HMGB2P1_chr19_1200000	oligodendrocyte	specific	auto	HMGB2P1	chr19	1200000	+	19	0	NA	FALSE	
-oligodendrocyte+.AL157392.1_chr10_13700000	oligodendrocyte	specific	auto	AL157392.1	chr10	13700000	+	11	0	NA	FALSE	
-pancreas_acinar-.CELA2B_chr1_15430000	pancreas_acinar	specific	auto	CELA2B	chr1	15430000	-	593	1	NA	FALSE	
-pancreas_acinar-.PNLIPRP2_chr10_116590000	pancreas_acinar	specific	auto	PNLIPRP2	chr10	116590000	-	569	0	NA	TRUE	Acinar cell
-pancreas_acinar-.CEL_chr9_133040000	pancreas_acinar	specific	auto	CEL	chr9	133040000	-	533	0	NA	TRUE	Acinar cell
-pancreas_acinar-.AL590556.3_chr1_21970000	pancreas_acinar	specific	auto	AL590556.3	chr1	21970000	-	464	0	NA	FALSE	
-pancreas_acinar+.PDX1_chr13_27910000	pancreas_acinar	specific	auto	PDX1	chr13	27910000	+	352	0	NA	FALSE	
-pancreas_acinar-.SEL1L_chr14_81460000	pancreas_acinar	specific	auto	SEL1L	chr14	81460000	-	305	0	NA	FALSE	
-pancreas_acinar+.LRRC4_chr7_128030000	pancreas_acinar	specific	auto	LRRC4	chr7	128030000	+	193	0	NA	FALSE	
-pancreas_acinar+.AC092535.5_chr4_1160000	pancreas_acinar	specific	auto	AC092535.5	chr4	1160000	+	132	0	NA	FALSE	
-pancreas_acinar+.AC025262.3_chr12_64820000	pancreas_acinar	specific	auto	AC025262.3	chr12	64820000	+	122	0	NA	FALSE	
-pancreas_acinar+.CTNND2_chr5_11380000	pancreas_acinar	specific	auto	CTNND2	chr5	11380000	+	107	0	NA	FALSE	
-pancreas_alpha-.C7orf50_chr7_1100000	pancreas_alpha	specific	auto	C7orf50	chr7	1100000	-	127	1	NA	FALSE	
-pancreas_alpha+.PTPRN2_chr7_157690000	pancreas_alpha	specific	auto	PTPRN2	chr7	157690000	+	122	0	NA	FALSE	
-pancreas_alpha-.GCG_chr2_162140000	pancreas_alpha	specific	auto	GCG	chr2	162140000	-	74	0	NA	TRUE	Alpha cell (α cell); Stem-cell-derived-alpha cell
-pancreas_alpha+.AL161658.1_chr20_20360000	pancreas_alpha	specific	auto	AL161658.1	chr20	20360000	+	58	0	NA	FALSE	
-pancreas_alpha-.AC027601.3_chr17_81240000	pancreas_alpha	specific	auto	AC027601.3	chr17	81240000	-	55	0	NA	FALSE	
-pancreas_alpha-.EPB41L3_chr18_5390000	pancreas_alpha	specific	auto	EPB41L3	chr18	5390000	-	55	0	NA	FALSE	
-pancreas_alpha-.BTBD11_chr12_107460000	pancreas_alpha	specific	auto	BTBD11	chr12	107460000	-	28	0	NA	FALSE	
-pancreas_alpha+.ANKS1B_chr12_98740000	pancreas_alpha	specific	auto	ANKS1B	chr12	98740000	+	22	0	NA	FALSE	
-pancreas_alpha+.AC010883.1_chr2_43220000	pancreas_alpha	specific	auto	AC010883.1	chr2	43220000	+	21	0	NA	FALSE	
-pancreas_alpha+.ACVR1B_chr12_51950000	pancreas_alpha	specific	auto	ACVR1B	chr12	51950000	+	9	0	NA	FALSE	
-pancreas_beta-.ERO1B_chr1_236260000	pancreas_beta	specific	auto	ERO1B	chr1	236260000	-	144	1	NA	TRUE	Beta cell(β cell)
-pancreas_beta+.PLUT_chr13_27820000	pancreas_beta	specific	auto	PLUT	chr13	27820000	+	109	0	NA	FALSE	
-pancreas_beta-.C1orf127_chr1_10940000	pancreas_beta	specific	auto	C1orf127	chr1	10940000	-	73	0	NA	TRUE	Beta cell(β cell)
-pancreas_beta-.PIGG_chr4_520000	pancreas_beta	specific	auto	PIGG	chr4	520000	-	49	0	NA	FALSE	
-pancreas_beta-.AL136988.2_chr1_230260000	pancreas_beta	specific	auto	AL136988.2	chr1	230260000	-	48	0	NA	FALSE	
-pancreas_beta+.INSRR_chr1_156850000	pancreas_beta	specific	auto	INSRR	chr1	156850000	+	24	0	NA	FALSE	
-pancreas_beta-.AC004223.3_chr17_35110000	pancreas_beta	specific	auto	AC004223.3	chr17	35110000	-	18	0	NA	FALSE	
-pancreas_beta+.AC090241.2_chr18_46750000	pancreas_beta	specific	auto	AC090241.2	chr18	46750000	+	13	0	NA	FALSE	
-pancreas_delta+.AL358613.1_chr10_93060000	pancreas_delta	specific	auto	AL358613.1	chr10	93060000	+	190	1	NA	FALSE	
-pancreas_delta-.GSE1_chr16_85500000	pancreas_delta	specific	auto	GSE1	chr16	85500000	-	62	0	NA	FALSE	
-pancreas_delta-.RALGAPA2_chr20_20430000	pancreas_delta	specific	auto	RALGAPA2	chr20	20430000	-	59	0	NA	FALSE	
-pancreas_delta+.AL133325.3_chr20_21500000	pancreas_delta	specific	auto	AL133325.3	chr20	21500000	+	50	0	NA	FALSE	
-pancreas_delta-.CUX1_chr7_101930000	pancreas_delta	specific	auto	CUX1	chr7	101930000	-	31	0	NA	FALSE	
-pancreas_delta-.TBX19_chr1_168290000	pancreas_delta	specific	auto	TBX19	chr1	168290000	-	25	0	NA	FALSE	
-pancreas_delta-.NPHP4_chr1_5950000	pancreas_delta	specific	auto	NPHP4	chr1	5950000	-	15	0	NA	FALSE	
+oligodendrocyte-.PIP4K2A_chr10_22660000	oligodendrocyte	specific	auto	PIP4K2A	chr10	22660000	-	53	0	NA	FALSE	
+oligodendrocyte-.MOBP_chr3_39470000	oligodendrocyte	specific	auto	MOBP	chr3	39470000	-	31	0	NA	TRUE	Oligodendrocyte
+oligodendrocyte+.HMGB2P1_chr19_1200000	oligodendrocyte	specific	auto	HMGB2P1	chr19	1200000	+	16	0	NA	FALSE	
+oligodendrocyte+.AL157392.1_chr10_13700000	oligodendrocyte	specific	auto	AL157392.1	chr10	13700000	+	7	0	NA	FALSE	
+pancreas_acinar-.CELA2B_chr1_15430000	pancreas_acinar	specific	auto	CELA2B	chr1	15430000	-	413	1	NA	FALSE	
+pancreas_acinar-.CEL_chr9_133040000	pancreas_acinar	specific	auto	CEL	chr9	133040000	-	290	0	NA	TRUE	Acinar cell
+pancreas_acinar-.PNLIPRP2_chr10_116590000	pancreas_acinar	specific	auto	PNLIPRP2	chr10	116590000	-	256	0	NA	TRUE	Acinar cell
+pancreas_acinar-.AL590556.3_chr1_21970000	pancreas_acinar	specific	auto	AL590556.3	chr1	21970000	-	233	0	NA	FALSE	
+pancreas_acinar-.SEL1L_chr14_81460000	pancreas_acinar	specific	auto	SEL1L	chr14	81460000	-	203	0	NA	FALSE	
+pancreas_acinar+.AC025262.3_chr12_64820000	pancreas_acinar	specific	auto	AC025262.3	chr12	64820000	+	114	0	NA	FALSE	
+pancreas_acinar+.CTNND2_chr5_11380000	pancreas_acinar	specific	auto	CTNND2	chr5	11380000	+	98	0	NA	FALSE	
+pancreas_acinar+.AC092535.5_chr4_1160000	pancreas_acinar	specific	auto	AC092535.5	chr4	1160000	+	72	0	NA	FALSE	
+pancreas_acinar+.PDX1_chr13_27910000	pancreas_acinar	specific	auto	PDX1	chr13	27910000	+	70	0	NA	FALSE	
+pancreas_acinar+.LRRC4_chr7_128030000	pancreas_acinar	specific	auto	LRRC4	chr7	128030000	+	63	0	NA	FALSE	
+pancreas_alpha-.GCG_chr2_162140000	pancreas_alpha	specific	auto	GCG	chr2	162140000	-	46	1	NA	TRUE	Alpha cell (α cell); Stem-cell-derived-alpha cell
+pancreas_alpha-.C7orf50_chr7_1100000	pancreas_alpha	specific	auto	C7orf50	chr7	1100000	-	39	0	NA	FALSE	
+pancreas_alpha-.EPB41L3_chr18_5390000	pancreas_alpha	specific	auto	EPB41L3	chr18	5390000	-	27	0	NA	FALSE	
+pancreas_alpha+.AL161658.1_chr20_20360000	pancreas_alpha	specific	auto	AL161658.1	chr20	20360000	+	19	0	NA	FALSE	
+pancreas_alpha-.AC027601.3_chr17_81240000	pancreas_alpha	specific	auto	AC027601.3	chr17	81240000	-	18	0	NA	FALSE	
+pancreas_alpha+.AC010883.1_chr2_43220000	pancreas_alpha	specific	auto	AC010883.1	chr2	43220000	+	14	0	NA	FALSE	
+pancreas_alpha-.BTBD11_chr12_107460000	pancreas_alpha	specific	auto	BTBD11	chr12	107460000	-	13	0	NA	FALSE	
+pancreas_alpha+.PTPRN2_chr7_157690000	pancreas_alpha	specific	auto	PTPRN2	chr7	157690000	+	12	0	NA	FALSE	
+pancreas_alpha+.ANKS1B_chr12_98740000	pancreas_alpha	specific	auto	ANKS1B	chr12	98740000	+	8	0	NA	FALSE	
+pancreas_beta-.C1orf127_chr1_10940000	pancreas_beta	specific	auto	C1orf127	chr1	10940000	-	20	1	NA	TRUE	Beta cell(β cell)
+pancreas_beta-.ERO1B_chr1_236260000	pancreas_beta	specific	auto	ERO1B	chr1	236260000	-	20	0	NA	TRUE	Beta cell(β cell)
+pancreas_beta-.AC004223.3_chr17_35110000	pancreas_beta	specific	auto	AC004223.3	chr17	35110000	-	14	0	NA	FALSE	
+pancreas_beta-.PIGG_chr4_520000	pancreas_beta	specific	auto	PIGG	chr4	520000	-	14	0	NA	FALSE	
+pancreas_beta-.AL136988.2_chr1_230260000	pancreas_beta	specific	auto	AL136988.2	chr1	230260000	-	6	0	NA	FALSE	
+pancreas_beta+.AC090241.2_chr18_46750000	pancreas_beta	specific	auto	AC090241.2	chr18	46750000	+	5	0	NA	FALSE	
+pancreas_beta+.INSRR_chr1_156850000	pancreas_beta	specific	auto	INSRR	chr1	156850000	+	5	0	NA	FALSE	
+pancreas_delta+.AL358613.1_chr10_93060000	pancreas_delta	specific	auto	AL358613.1	chr10	93060000	+	31	1	NA	FALSE	
+pancreas_delta-.RALGAPA2_chr20_20430000	pancreas_delta	specific	auto	RALGAPA2	chr20	20430000	-	20	0	NA	FALSE	
+pancreas_delta+.AL133325.3_chr20_21500000	pancreas_delta	specific	auto	AL133325.3	chr20	21500000	+	13	0	NA	FALSE	
+pancreas_delta-.GSE1_chr16_85500000	pancreas_delta	specific	auto	GSE1	chr16	85500000	-	13	0	NA	FALSE	
+pancreas_delta-.TBX19_chr1_168290000	pancreas_delta	specific	auto	TBX19	chr1	168290000	-	13	0	NA	FALSE	
 pancreas_delta+.GRAMD2A_chr15_72180000	pancreas_delta	specific	auto	GRAMD2A	chr15	72180000	+	11	0	NA	FALSE	
-pancreas_delta+.SIL1_chr5_138950000	pancreas_delta	specific	auto	SIL1	chr5	138950000	+	5	0	NA	FALSE	
-pancreas_duct-.SLC4A4_chr4_71190000	pancreas_duct	specific	auto	SLC4A4	chr4	71190000	-	566	1	NA	TRUE	Ductal cell
-pancreas_duct-.ANXA4_chr2_69740000	pancreas_duct	specific	auto	ANXA4	chr2	69740000	-	151	0	NA	TRUE	Ductal cell
-pancreas_duct+.URAD_chr13_27970000	pancreas_duct	specific	auto	URAD	chr13	27970000	+	89	0	NA	FALSE	
-pancreas_duct-.UVSSA_chr4_1360000	pancreas_duct	specific	auto	UVSSA	chr4	1360000	-	61	0	NA	FALSE	
-pancreas_duct-.GMNN_chr6_24780000	pancreas_duct	specific	auto	GMNN	chr6	24780000	-	39	0	NA	FALSE	
-pancreas_duct-.INPP5A_chr10_132650000	pancreas_duct	specific	auto	INPP5A	chr10	132650000	-	37	0	NA	FALSE	
-pancreas_duct+.HHEX_chr10_92690000	pancreas_duct	specific	auto	HHEX	chr10	92690000	+	32	0	NA	FALSE	
-pancreas_duct+.LINCADL_chr5_115960000	pancreas_duct	specific	auto	LINCADL	chr5	115960000	+	28	0	NA	FALSE	
-pancreas_duct+.AC016044.1_chr15_52800000	pancreas_duct	specific	auto	AC016044.1	chr15	52800000	+	27	0	NA	FALSE	
-panEpith-.AL390719.2_chr1_1100000	panEpith	broad	auto	AL390719.2	chr1	1100000	-	59	1	panEpith-.MIR200BA_chr1_1160292	FALSE	
-panEpith-.SLC7A5_chr16_87820000	panEpith	broad	auto	SLC7A5	chr16	87820000	-	1	0	NA	FALSE	
-panHema+.AGAP2_chr12_57720000	panHema	broad	auto	AGAP2	chr12	57720000	+	371	1	NA	FALSE	
-panHema+.MIR1470_chr19_15450000	panHema	broad	auto	MIR1470	chr19	15450000	+	241	0	NA	FALSE	
-panHema+.CARMIL2_chr16_67640000	panHema	broad	auto	CARMIL2	chr16	67640000	+	213	0	NA	FALSE	
-panHema-.NCLN_chr19_3160000	panHema	broad	auto	NCLN	chr19	3160000	-	157	0	NA	FALSE	
-panHema+.ABCA7_chr19_1070000	panHema	broad	auto	ABCA7	chr19	1070000	+	119	0	NA	FALSE	
-panHema+.MYO1F_chr19_8520000	panHema	broad	auto	MYO1F	chr19	8520000	+	97	0	NA	TRUE	Cytotoxic CD4+ T cell; Goblet cell
-panHema-.USP20_chr9_129850000	panHema	broad	auto	USP20	chr9	129850000	-	58	0	NA	FALSE	
-panHema-.LINC01063_chr3_196610000	panHema	broad	auto	LINC01063	chr3	196610000	-	46	0	NA	FALSE	
-panHema-.AC090559.1_chr11_47350000	panHema	broad	auto	AC090559.1	chr11	47350000	-	36	0	NA	FALSE	
-panHema-.TRG-AS1_chr7_38290000	panHema	broad	auto	TRG-AS1	chr7	38290000	-	24	0	NA	FALSE	
-panMesench-.AC015909.3_chr17_50160000	panMesench	broad	auto	AC015909.3	chr17	50160000	-	5	1	NA	FALSE	
-panNeural+.APC2_chr19_1450000	panNeural	broad	auto	APC2	chr19	1450000	+	306	1	NA	FALSE	
-panNeural+.CCDC177_chr14_69570000	panNeural	broad	auto	CCDC177	chr14	69570000	+	137	0	NA	FALSE	
-panNeural+.SOX1-OT_chr13_112050000	panNeural	broad	auto	SOX1-OT	chr13	112050000	+	23	0	NA	FALSE	
-panNeural+.LINC01414_chr8_64360000	panNeural	broad	auto	LINC01414	chr8	64360000	+	7	0	NA	FALSE	
-panNeural+.AL355338.1_chr13_99970000	panNeural	broad	auto	AL355338.1	chr13	99970000	+	2	0	NA	FALSE	
-panNeural-.CELF2_chr10_11240000	panNeural	broad	auto	CELF2	chr10	11240000	-	1	0	NA	FALSE	
-Perivascular-.NEURL1B_chr5_172640000	Perivascular	specific	auto	NEURL1B	chr5	172640000	-	301	1	NA	FALSE	
-Perivascular-.ARHGEF17_chr11_73310000	Perivascular	specific	auto	ARHGEF17	chr11	73310000	-	200	0	NA	FALSE	
-Perivascular-.NOTCH3_chr19_15170000	Perivascular	specific	auto	NOTCH3	chr19	15170000	-	150	0	NA	TRUE	Pericyte
-Perivascular-.GJC1_chr17_44810000	Perivascular	specific	auto	GJC1	chr17	44810000	-	104	0	NA	FALSE	
-Perivascular-.SMIM12_chr1_34790000	Perivascular	specific	auto	SMIM12	chr1	34790000	-	101	0	NA	FALSE	
-Perivascular+.HLX_chr1_220880000	Perivascular	specific	auto	HLX	chr1	220880000	+	78	0	NA	FALSE	
-Perivascular+.AC009108.3_chr16_86510000	Perivascular	specific	auto	AC009108.3	chr16	86510000	+	71	0	NA	FALSE	
-Perivascular+.RTKN_chr2_74440000	Perivascular	specific	auto	RTKN	chr2	74440000	+	52	0	NA	FALSE	
-Perivascular+.FGF19_chr11_69700000	Perivascular	specific	auto	FGF19	chr11	69700000	+	42	0	NA	FALSE	
-Perivascular+.KLHDC9_chr1_161090000	Perivascular	specific	auto	KLHDC9	chr1	161090000	+	27	0	NA	FALSE	
-prostate_epi+.EVX2_chr2_176060000	prostate_epi	specific	auto	EVX2	chr2	176060000	+	204	1	NA	FALSE	
-prostate_epi+.AL079303.1_chr14_36650000	prostate_epi	specific	auto	AL079303.1	chr14	36650000	+	161	0	NA	FALSE	
-prostate_epi+.HOXD13_chr2_176090000	prostate_epi	specific	auto	HOXD13	chr2	176090000	+	126	0	NA	FALSE	
-prostate_epi-.RGS12_chr4_3400000	prostate_epi	specific	auto	RGS12	chr4	3400000	-	44	0	NA	FALSE	
-prostate_epi-.RN7SKP22_chr19_32860000	prostate_epi	specific	auto	RN7SKP22	chr19	32860000	-	40	0	NA	FALSE	
-prostate_epi-.AL583808.1_chr1_72890000	prostate_epi	specific	auto	AL583808.1	chr1	72890000	-	32	0	NA	FALSE	
-prostate_epi-.LINC01748_chr1_60640000	prostate_epi	specific	auto	LINC01748	chr1	60640000	-	26	0	NA	FALSE	
-prostate_epi+.DNAJC15_chr13_43020000	prostate_epi	specific	auto	DNAJC15	chr13	43020000	+	24	0	NA	FALSE	
-prostate_epi-.ZNF423_chr16_49730000	prostate_epi	specific	auto	ZNF423	chr16	49730000	-	19	0	NA	FALSE	
-skeletal_muscle-.C4orf54_chr4_99640000	skeletal_muscle	specific	auto	C4orf54	chr4	99640000	-	99	1	NA	FALSE	
-skeletal_muscle-.CARM1_chr19_10860000	skeletal_muscle	specific	auto	CARM1	chr19	10860000	-	85	0	NA	FALSE	
-skeletal_muscle+.CCDC140_chr2_222290000	skeletal_muscle	specific	auto	CCDC140	chr2	222290000	+	78	0	NA	FALSE	
-skeletal_muscle-.PRKAR1B_chr7_570000	skeletal_muscle	specific	auto	PRKAR1B	chr7	570000	-	74	0	NA	FALSE	
-skeletal_muscle+.LBX1_chr10_101210000	skeletal_muscle	specific	auto	LBX1	chr10	101210000	+	72	0	NA	FALSE	
-skeletal_muscle-.ANKRD23_chr2_96830000	skeletal_muscle	specific	auto	ANKRD23	chr2	96830000	-	42	0	NA	FALSE	
-skeletal_muscle+.AC018470.1_chr2_174330000	skeletal_muscle	specific	auto	AC018470.1	chr2	174330000	+	32	0	NA	FALSE	
-skeletal_muscle-.OBSCN_chr1_228210000	skeletal_muscle	specific	auto	OBSCN	chr1	228210000	-	22	0	NA	FALSE	
+pancreas_delta-.NPHP4_chr1_5950000	pancreas_delta	specific	auto	NPHP4	chr1	5950000	-	9	0	NA	FALSE	
+pancreas_delta-.CUX1_chr7_101930000	pancreas_delta	specific	auto	CUX1	chr7	101930000	-	6	0	NA	FALSE	
+pancreas_duct-.SLC4A4_chr4_71190000	pancreas_duct	specific	auto	SLC4A4	chr4	71190000	-	264	1	NA	TRUE	Ductal cell
+pancreas_duct-.ANXA4_chr2_69740000	pancreas_duct	specific	auto	ANXA4	chr2	69740000	-	65	0	NA	TRUE	Ductal cell
+pancreas_duct-.GMNN_chr6_24780000	pancreas_duct	specific	auto	GMNN	chr6	24780000	-	30	0	NA	FALSE	
+pancreas_duct-.INPP5A_chr10_132650000	pancreas_duct	specific	auto	INPP5A	chr10	132650000	-	26	0	NA	FALSE	
+pancreas_duct+.LINCADL_chr5_115960000	pancreas_duct	specific	auto	LINCADL	chr5	115960000	+	23	0	NA	FALSE	
+pancreas_duct-.UVSSA_chr4_1360000	pancreas_duct	specific	auto	UVSSA	chr4	1360000	-	22	0	NA	FALSE	
+pancreas_duct+.AC016044.1_chr15_52800000	pancreas_duct	specific	auto	AC016044.1	chr15	52800000	+	9	0	NA	FALSE	
+panEpith-.AL390719.2_chr1_1100000	panEpith	broad	auto	AL390719.2	chr1	1100000	-	39	1	panEpith-.MIR200BA_chr1_1160292_exclBasal,panEpith-.MIR200BA_chr1_1160292_inclBasal	FALSE	
+panHema+.AGAP2_chr12_57720000	panHema	broad	auto	AGAP2	chr12	57720000	+	277	1	NA	FALSE	
+panHema+.MIR1470_chr19_15450000	panHema	broad	auto	MIR1470	chr19	15450000	+	204	0	NA	FALSE	
+panHema+.ACD_chr16_67640000	panHema	broad	auto	ACD	chr16	67640000	+	144	0	NA	FALSE	
+panHema+.MYO1F_chr19_8520000	panHema	broad	auto	MYO1F	chr19	8520000	+	95	0	NA	TRUE	Cytotoxic CD4+ T cell; Goblet cell
+panHema-.NCLN_chr19_3160000	panHema	broad	auto	NCLN	chr19	3160000	-	93	0	NA	FALSE	
+panHema+.ABCA7_chr19_1070000	panHema	broad	auto	ABCA7	chr19	1070000	+	82	0	NA	FALSE	
+panHema-.NRROS_chr3_196610000	panHema	broad	auto	NRROS	chr3	196610000	-	15	0	NA	FALSE	
+panHema-.AC090559.1_chr11_47350000	panHema	broad	auto	AC090559.1	chr11	47350000	-	13	0	NA	FALSE	
+panHema-.TRG-AS1_chr7_38290000	panHema	broad	auto	TRG-AS1	chr7	38290000	-	13	0	NA	FALSE	
+panHema-.USP20_chr9_129850000	panHema	broad	auto	USP20	chr9	129850000	-	10	0	NA	FALSE	
+panNeural+.APC2_chr19_1450000	panNeural	broad	auto	APC2	chr19	1450000	+	278	1	NA	FALSE	
+panNeural+.CCDC177_chr14_69570000	panNeural	broad	auto	CCDC177	chr14	69570000	+	98	0	NA	FALSE	
+panNeural+.SOX1-OT_chr13_112050000	panNeural	broad	auto	SOX1-OT	chr13	112050000	+	17	0	NA	FALSE	
+panNeural+.LINC01414_chr8_64360000	panNeural	broad	auto	LINC01414	chr8	64360000	+	6	0	NA	FALSE	
+Perivascular-.NEURL1B_chr5_172640000	Perivascular	specific	auto	NEURL1B	chr5	172640000	-	110	1	NA	FALSE	
+Perivascular-.NOTCH3_chr19_15170000	Perivascular	specific	auto	NOTCH3	chr19	15170000	-	98	0	NA	TRUE	Pericyte
+Perivascular-.GJC1_chr17_44810000	Perivascular	specific	auto	GJC1	chr17	44810000	-	63	0	NA	FALSE	
+Perivascular-.ARHGEF17_chr11_73310000	Perivascular	specific	auto	ARHGEF17	chr11	73310000	-	42	0	NA	FALSE	
+Perivascular-.GJA4_chr1_34790000	Perivascular	specific	auto	GJA4	chr1	34790000	-	38	0	NA	FALSE	
+Perivascular+.HLX_chr1_220880000	Perivascular	specific	auto	HLX	chr1	220880000	+	29	0	NA	FALSE	
+Perivascular+.FGF19_chr11_69700000	Perivascular	specific	auto	FGF19	chr11	69700000	+	27	0	NA	FALSE	
+Perivascular+.KLHDC9_chr1_161090000	Perivascular	specific	auto	KLHDC9	chr1	161090000	+	25	0	NA	FALSE	
+Perivascular+.AC009108.3_chr16_86510000	Perivascular	specific	auto	AC009108.3	chr16	86510000	+	17	0	NA	FALSE	
+Perivascular+.RTKN_chr2_74440000	Perivascular	specific	auto	RTKN	chr2	74440000	+	17	0	NA	FALSE	
+prostate_epi+.AL079303.1_chr14_36650000	prostate_epi	specific	auto	AL079303.1	chr14	36650000	+	33	1	NA	FALSE	
+prostate_epi-.RGS12_chr4_3400000	prostate_epi	specific	auto	RGS12	chr4	3400000	-	19	0	NA	FALSE	
+prostate_epi+.DNAJC15_chr13_43020000	prostate_epi	specific	auto	DNAJC15	chr13	43020000	+	18	0	NA	FALSE	
+prostate_epi-.AL583808.1_chr1_72890000	prostate_epi	specific	auto	AL583808.1	chr1	72890000	-	16	0	NA	FALSE	
+prostate_epi-.ZNF423_chr16_49730000	prostate_epi	specific	auto	ZNF423	chr16	49730000	-	15	0	NA	FALSE	
+prostate_epi+.EVX2_chr2_176060000	prostate_epi	specific	auto	EVX2	chr2	176060000	+	14	0	NA	FALSE	
+prostate_epi-.RN7SKP22_chr19_32860000	prostate_epi	specific	auto	RN7SKP22	chr19	32860000	-	13	0	NA	FALSE	
+prostate_epi+.HOXD13_chr2_176090000	prostate_epi	specific	auto	HOXD13	chr2	176090000	+	10	0	NA	FALSE	
+prostate_epi-.LINC01748_chr1_60640000	prostate_epi	specific	auto	LINC01748	chr1	60640000	-	8	0	NA	FALSE	
+skeletal_muscle+.LBX1_chr10_101210000	skeletal_muscle	specific	auto	LBX1	chr10	101210000	+	61	1	NA	FALSE	
+skeletal_muscle+.CCDC140_chr2_222290000	skeletal_muscle	specific	auto	CCDC140	chr2	222290000	+	52	0	NA	FALSE	
+skeletal_muscle-.C4orf54_chr4_99640000	skeletal_muscle	specific	auto	C4orf54	chr4	99640000	-	39	0	NA	FALSE	
+skeletal_muscle-.PRKAR1B_chr7_570000	skeletal_muscle	specific	auto	PRKAR1B	chr7	570000	-	31	0	NA	FALSE	
+skeletal_muscle-.CARM1_chr19_10860000	skeletal_muscle	specific	auto	CARM1	chr19	10860000	-	29	0	NA	FALSE	
+skeletal_muscle+.AC018470.1_chr2_174330000	skeletal_muscle	specific	auto	AC018470.1	chr2	174330000	+	25	0	NA	FALSE	
+skeletal_muscle-.ANKRD23_chr2_96830000	skeletal_muscle	specific	auto	ANKRD23	chr2	96830000	-	24	0	NA	FALSE	
 skeletal_muscle+.ELOVL3_chr10_102230000	skeletal_muscle	specific	auto	ELOVL3	chr10	102230000	+	9	0	NA	FALSE	
-skeletal_muscle+_chr2_118850000	skeletal_muscle	specific	auto	NA	chr2	118850000	+	2	0	NA	TRUE	Cardiomyocyte; Cardiomyocyte progenitor cell
-smooth_muscle-.AC022182.1_chr8_60920000	smooth_muscle	specific	auto	AC022182.1	chr8	60920000	-	48	1	NA	FALSE	
-T_cell-.TRAJ38_chr14_22490000	T_cell	specific	auto	TRAJ38	chr14	22490000	-	366	1	NA	FALSE	
-T_cell-.BCL11B_chr14_99220000	T_cell	specific	auto	BCL11B	chr14	99220000	-	216	0	NA	TRUE	T cell
-T_cell-.FYB1_chr5_39170000	T_cell	specific	auto	FYB1	chr5	39170000	-	157	0	NA	TRUE	CD4+ T cell; Central memory T cell
-T_cell-.TCF7_chr5_134100000	T_cell	specific	auto	TCF7	chr5	134100000	-	76	0	NA	TRUE	Activated CD4+ T cell; CD4+ T cell; CD4+ central memory like T (Tcm-like) cell; CD8+ T cell; Central memory CD4+ T cell; Central memory CD8+ T cell; Central memory T cell precursor; Cytotoxic T cell; Effector memory T cell; Memory CD8+ T cell; Naive CD4 T cell; Naive CD4+ T cell; Naive CD8 T cell; Naive CD8+ T cell; Precursors CD8+ cell; Resting T cell; T cell
-T_cell+.AL139106.1_chr6_108560000	T_cell	specific	auto	AL139106.1	chr6	108560000	+	58	0	NA	FALSE	
-T_cell+.AC004687.1_chr17_58320000	T_cell	specific	auto	AC004687.1	chr17	58320000	+	14	0	NA	FALSE	
-T_cell+.AL590609.2_chr1_23900000	T_cell	specific	auto	AL590609.2	chr1	23900000	+	13	0	NA	FALSE	
-T_cell-.LEF1_chr4_108140000	T_cell	specific	auto	LEF1	chr4	108140000	-	11	0	NA	TRUE	CD4+ T cell; Central memory CD4+ T cell; Central memory CD8+ T cell; Memory CD8+ T cell; Naive CD4 T cell; Naive CD4+ T cell; Naive CD8 T cell; Naive CD8+ T cell; Resting regulatory T cell; T cell
-T_cell+.SLFN12L_chr17_35490000	T_cell	specific	auto	SLFN12L	chr17	35490000	+	5	0	NA	FALSE	
-T_cell+.CD6_chr11_61000000	T_cell	specific	auto	CD6	chr11	61000000	+	3	0	NA	TRUE	CD4+ T cell; T cell
-thyroid_epi-.TG_chr8_132860000	thyroid_epi	specific	auto	TG	chr8	132860000	-	153	1	NA	FALSE	
-thyroid_epi-.MARK4_chr19_45130000	thyroid_epi	specific	auto	MARK4	chr19	45130000	-	85	0	NA	FALSE	
-thyroid_epi-.RSPH6A_chr19_45800000	thyroid_epi	specific	auto	RSPH6A	chr19	45800000	-	72	0	NA	FALSE	
-thyroid_epi-.SOGA1_chr20_36810000	thyroid_epi	specific	auto	SOGA1	chr20	36810000	-	71	0	NA	FALSE	
-thyroid_epi-.TEPP_chr16_57990000	thyroid_epi	specific	auto	TEPP	chr16	57990000	-	60	0	NA	FALSE	
-thyroid_epi+.AC006058.2_chr3_43990000	thyroid_epi	specific	auto	AC006058.2	chr3	43990000	+	43	0	NA	FALSE	
-thyroid_epi+.AC241377.2_chr1_121040000	thyroid_epi	specific	auto	AC241377.2	chr1	121040000	+	36	0	NA	FALSE	
-thyroid_epi+.AP000866.2_chr11_124750000	thyroid_epi	specific	auto	AP000866.2	chr11	124750000	+	16	0	NA	FALSE	
-thyroid_epi+.CIRBP_chr19_1250000	thyroid_epi	specific	auto	CIRBP	chr19	1250000	+	15	0	NA	FALSE	
-thyroid_epi+.HSD11B1L_chr19_5690000	thyroid_epi	specific	auto	HSD11B1L	chr19	5690000	+	12	0	NA	FALSE	
-tongue_epi-.SLC7A1_chr13_29540000	tongue_epi	specific	auto	SLC7A1	chr13	29540000	-	9	1	NA	FALSE	
-tongue_epi-.FAM83G_chr17_18970000	tongue_epi	specific	auto	FAM83G	chr17	18970000	-	7	0	NA	FALSE	
-tongue_epi-.SLC7A5_chr16_87820000	tongue_epi	specific	auto	SLC7A5	chr16	87820000	-	5	0	NA	FALSE	
+skeletal_muscle-.OBSCN_chr1_228210000	skeletal_muscle	specific	auto	OBSCN	chr1	228210000	-	5	0	NA	FALSE	
+smooth_muscle-.AC022182.1_chr8_60920000	smooth_muscle	specific	auto	AC022182.1	chr8	60920000	-	15	1	NA	FALSE	
+T_cell-.TRAJ9_chr14_22490000	T_cell	specific	auto	TRAJ9	chr14	22490000	-	96	1	NA	FALSE	
+T_cell-.FYB1_chr5_39170000	T_cell	specific	auto	FYB1	chr5	39170000	-	43	0	NA	TRUE	CD4+ T cell; Central memory T cell
+T_cell-.BCL11B_chr14_99220000	T_cell	specific	auto	BCL11B	chr14	99220000	-	42	0	NA	TRUE	T cell
+T_cell+.AL139106.1_chr6_108560000	T_cell	specific	auto	AL139106.1	chr6	108560000	+	20	0	NA	FALSE	
+T_cell+.AL590609.2_chr1_23900000	T_cell	specific	auto	AL590609.2	chr1	23900000	+	8	0	NA	FALSE	
+thyroid_epi-.TG_chr8_132860000	thyroid_epi	specific	auto	TG	chr8	132860000	-	75	1	NA	FALSE	
+thyroid_epi-.MARK4_chr19_45130000	thyroid_epi	specific	auto	MARK4	chr19	45130000	-	59	0	NA	FALSE	
+thyroid_epi-.TEPP_chr16_57990000	thyroid_epi	specific	auto	TEPP	chr16	57990000	-	54	0	NA	FALSE	
+thyroid_epi-.RSPH6A_chr19_45800000	thyroid_epi	specific	auto	RSPH6A	chr19	45800000	-	44	0	NA	FALSE	
+thyroid_epi+.AC006058.2_chr3_43990000	thyroid_epi	specific	auto	AC006058.2	chr3	43990000	+	41	0	NA	FALSE	
+thyroid_epi-.SOGA1_chr20_36810000	thyroid_epi	specific	auto	SOGA1	chr20	36810000	-	40	0	NA	FALSE	
+thyroid_epi+.AC241377.2_chr1_121040000	thyroid_epi	specific	auto	AC241377.2	chr1	121040000	+	14	0	NA	FALSE	
+thyroid_epi+.HSD11B1L_chr19_5690000	thyroid_epi	specific	auto	HSD11B1L	chr19	5690000	+	10	0	NA	FALSE	
+thyroid_epi+.CIRBP_chr19_1250000	thyroid_epi	specific	auto	CIRBP	chr19	1250000	+	8	0	NA	FALSE	
+thyroid_epi+.AP000866.2_chr11_124750000	thyroid_epi	specific	auto	AP000866.2	chr11	124750000	+	7	0	NA	FALSE	
 panEpith-.ELF3_chr1_202005002	panEpith	broad	manual	ELF3	chr1	202005002	-	24	1	NA	TRUE	Epithelial cell
-panEpith-.MIR200BA_chr1_1160292	panEpith	broad	manual	MIR200BA	chr1	1160292	-	119	1	NA	FALSE	
+panEpith-.MIR200BA_chr1_1160292_exclBasal	panEpith	broad	manual	MIR200BA	chr1	1160292	-	52	1	NA	FALSE	
+panEpith-.MIR200BA_chr1_1160292_inclBasal	panEpith	broad	manual	MIR200BA	chr1	1160292	-	28	1	NA	FALSE	
 panEpith-.MIR200C_chr12_6961406	panEpith	broad	manual	MIR200C	chr12	6961406	-	53	1	NA	FALSE	
 panHema-.PTPRC_chr1_198633540	panHema	broad	manual	PTPRC	chr1	198633540	-	12	1	NA	TRUE	Activated CD4+ T cell; Activated CD8+ T cell; B cell; CD4 T cell; CD4+ T cell; CD4+CD25+ regulatory T cell; CD8+ T cell; Chronically activated CD4+ T cell; Chronically activated CD8+ T cell; Conventional CD8+ T cell; Cytotoxic T cell; Double-negative T cell; Double-positive T cell; Follicular B cell; Germinal center B cell; IgM memory B cell; Leukocyte; Lymphocyte; Marginal zone B cell; Mast cell; Myeloid cell; Myeloid dendritic cell 1; Naive B cell; Pan leukocyte; Pan-leukocyte; Proliferative CD4+ T cell; Proliferative CD8+ T cell; Switched memory B cell(Sw MB); T cell; T1 (Transitional) B cell; T2 (Transitional) B cell; T2-MZP Regulatory B cell; Transitional B cell; Yolk sac-derived myeloid-biased progenitor cell(YSMP)
 panHema-.WDFY4_chr10_48678735	panHema	broad	manual	WDFY4	chr10	48678735	-	17	1	NA	TRUE	B cell
