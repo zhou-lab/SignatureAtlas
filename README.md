@@ -61,8 +61,12 @@ overlaps_manual, validated, matched_cellmarker`.
   refine and are dropped. **416 auto signatures** + **7 manual**.
 - **`LineageMarker.20260619.cm`** → **64 labels** (is_best auto per folder + 7
   manual).
-- **HM450**: **77 labels** (5 broad + 62 specific + 10 subgroup);
-  `LineageMarker_20260619_hm450.rds` = **12,445 probe × 65 cell** β matrix.
+- **HM450**: **88 labels** (16 broad + 62 specific + 10 subgroup);
+  `LineageMarker_20260619_hm450.rds` = **12,474 probe × 65 cell** β matrix. The
+  broad `panEpith-` is the **hand-curated** set: the weak auto MRMP `panEpith-`
+  (12 probes) is replaced by the 12 per-region manual signatures
+  (e.g. `panEpith-.ELF3_chr1_202005002`, 41 probes total; `n_mrmp=0`), which take
+  priority over auto. `panHema-`/`panNeural-` stay auto.
 - `signature_master.tsv`: **423 rows** (416 auto + 7 manual).
 
 ## Manual signatures (`manual/`)
