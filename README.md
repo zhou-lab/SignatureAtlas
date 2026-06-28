@@ -1,137 +1,117 @@
 # SignatureAtlas
 
-Whole-genome and HM450 DNA-methylation **marker signatures** for human cell types,
-lineages, and within-lineage subgroups, derived from a **65-cell-type** deep WGBS
-reference (31 Loyfer per-cell-type pseudobulks + 34 Zhou "Major" pseudobulks across
-five lineages: Epith / Hema / Neural / Mesench / Adrenal). Markers are
-Most-Recurrent Methylation Patterns (MRMPs) curated into compact genomic regions,
-labelled `<cell_type>` (cell-type-specific), `pan<Lineage>` (pan-lineage), or
-`sub<Lineage>_<sublineage>` (within-lineage subgroup), with direction `-` =
-hypomethylated and `+` = hypermethylated in the target.
+Whole-genome (WGBS) and HM450 DNA-methylation **marker signatures** for human cell
+types and lineages, derived from an **87-cell-type** deep reference methylome. Each
+signature is one **Most-Recurrent Methylation Pattern (MRMP)** — a recurrent
+binary methylated/unmethylated partition of the panel — curated into compact genomic
+loci. A signature is named by its **`signature_id`** = `<annotation><dir>`, where
+`dir` is `-` (target **hypo**methylated) or `+` (target **hyper**methylated), e.g.
+`Squamous-`, `CD8_T_Cell-`, `Oligodendrocyte+`.
 
-The full reproducible pipeline (control sheet → this atlas) lives in the lab
-journal: `labjournal/zhouw3/2026/20260619_signature_atlas.org` + `tools/sa_0*`.
+## Workflow
+
+```
+   raw WGBS .cg stores (hg38, 29.4M CpGs)
+   2023_Loyfer  2025_Zhou_MajorPseudo  2018_Zhou(BLUEPRINT)  2023_TianMajorType
+        \________ per-cell-type / per-group musum pseudobulk ________/
+                                   |
+   [sa_00] -> sub.cg   87-cell reference panel
+                                   |
+   [sa_01] keep CpG iff: all 87 covered & delta_mean>=0.6 & not chrY
+           -> frequency-rank -> top-10,000 MRMPs
+                                   |   each MRMP (P#) = one unique in_group/out_group partition
+   [sa_02] + v2_defs.tsv  (HAND-CURATED: in_group cells -> signature name)
+           exact-match each MRMP in_group -> signature_id = <annotation><+/->
+                                   |
+        +--------------------------+----------------------------------+
+        | HM450 (sparse array)     | whole-genome (WGBS, curated)
+        v                          v
+   [sa_03 -> sa_05_hm450]     [sa_04 enrich+curate -> refine -> sa_05_auto]
+     per-probe delta-beta       Win10k enrich -> top-5 windows -> decile base-curation
+        v                       -> worst-case specificity refine -> per-region gene
+   HM450/<sig>.ansi              v
+   v2_hm450.bed                  WG/<sig>.<gene>_<chr>_<beg>.ansi
+                                 v2_wg.bed
+```
 
 ## Layout
 
 ```
-auto/<cell_type|panLineage|subLineage_sublineage>/<label><dir>.<gene>_<chr>_<beg>.{bed,ansi}
-HM450/<label><dir>.{bed,ansi}
-manual/<lineage>/<region>[_<variant>].bed + shared region .ansi   # hand-defined
-signature_master.tsv               # one row per whole-genome signature (auto + manual)
-signature_master_hm450.tsv         # one row per HM450 label
-LineageMarker.20260619.cm          # is_best-per-folder auto + all manual, fmt-s genome track
-LineageMarker_20260619_hm450.rds   # SummarizedExperiment: HM450 probe beta x 65 cells
+HM450/<signature_id>.ansi                 # per-signature HM450 inspection panel
+WG/<signature_id>.<gene>_<chr>_<beg>.ansi # per-region whole-genome inspection panel
+v2_wg.bed                                 # all curated whole-genome CpGs (1 row/CpG)
+v2_hm450.bed                              # all selected HM450 probes (1 row/probe)
+v2_defs.tsv                               # the MRMP annotation (only hand-curated input)
+ARCHIVE/                                  # frozen previous atlases (flattened beds)
+  v0_hm450.bed                            #   v0 (2026-02-03) HM450 signatures
+  v1_hm450.bed                            #   v1 (65-cell) HM450
+  v1_wg.bed                               #   v1 (65-cell) whole-genome
 ```
 
-- `auto/<…>/*.bed` — the signature's selected CpG **locations** (the canonical,
-  compact representation), in **beg0/end1** (0-based begin, 1-based end; a single
-  CpG = `(C-1, C)`). A genome-wide binary `.cm` for any one signature is derived on
-  demand:
-  `awk 'NR==FNR{a[$1"_"$3]=1;next}{print (($1"_"($2+1)) in a)?1:0}' sig.bed <(zcat cpg_nocontig.bed.gz) | yame pack -f b - sig.cm`
-- `auto/<…>/*.ansi` — colored decile inspection panel: the SEL track (labelled with
-  the **full signature name**) then all 65 cells in lineage→sublineage order, target
-  rows **underlined**, cropped to the selection ± 50 flanking CpGs.
-- `HM450/<label>.bed` — the label's selected HM450 probes; `HM450/<label>.ansi` —
-  real-beta (`L<0.34 M H>0.67`) panel, cells × probes, target rows underlined.
-- `manual/` — see **Manual signatures** below.
+- **`v2_wg.bed`** — every curated whole-genome CpG, 5 columns:
+  `chr`, `beg0`, `end1` (0-based begin / 1-based end; single CpG = `(C-1, C)`),
+  `chr:min_max` (the full span of that signature's region), `signature` (the region
+  name `<signature_id>.<gene>_<chr>_<beg>`). 582 gene-annotated regions.
+- **`v2_hm450.bed`** — every selected HM450 probe, 5 columns: `chr`, `beg0`,
+  `end1`, `probe_id` (cg number), `signature_id`. 11,105 probes across 112 signatures.
+- **`HM450/*.ansi` / `WG/*.ansi`** — colored decile/β inspection panels: stacked
+  HM450-probe track (cg_id labelled) + the selection (SEL) track + the 87-cell
+  heatmap, target rows **underlined**, cropped to the selection ± 50 flanking CpGs.
 
-## signature_master.tsv
+## v2_defs.tsv
 
-Columns: `signature, cell_type, category (specific|broad|subgroup),
-source (auto|manual), gene, chrm, region_beg, direction, n_cpg, is_best,
-overlaps_manual, validated, matched_cellmarker`.
+The **MRMP annotation** — the only hand-curated input to the atlas. Each row defines a
+**contrast** (an `in_group`/`out_group` partition of the panel) and gives it a
+hand-chosen `annotation` name; **everything else is automatic** (matching MRMPs, HM450
+probe / whole-genome region selection, curation, refine). One row per contrast; columns:
+`annotation`, `n_in`, `mrmp_neg`, `mrmp_pos`, `out_group`, `in_group`.
 
-- `category`: `specific` = one cell type, `broad` = pan-lineage, `subgroup` =
-  within-lineage subgroup.
-- `is_best` flags the largest-`n_cpg` **auto** signature per folder; computed from
-  `signature_master` alone, **independent of `LineageMarker` membership**.
-- `LineageMarker.20260619.cm` holds one label per CpG: the `is_best` auto signature
-  per folder (cell-type + pan + subgroup) **+ all manual** signatures, overlaps
-  resolved **manual > auto** then master order, `MIN_CPG=5` re-enforced on the final
-  track → **64 labels**. `overlaps_manual` names the manual signature an auto
-  signature shares CpGs with (and loses to).
+- `annotation`, `in_group` — *(curated)* the contrast name and the comma-list of panel
+  cell types on its `in_group` side. Cell-type **equivalence is implicit** in the list
+  (e.g. `NK_cell,Hema_NK,BP_NKCell`), and a contrast may be a single cell, a lineage, or
+  any hand-chosen set (vascular, microglia, inhibitory-neuron, oligodendrocyte-lineage, …).
+- `mrmp_neg` / `mrmp_pos` — *(automatic)* the P-numbers of the MRMPs realizing this
+  contrast as a `-` (in_group hypo) or `+` (in_group hyper) **signature**, i.e. the MRMP
+  whose minority **equals** `in_group`. A contrast matching no MRMP yields no signature
+  and is dropped.
+- `n_in`, `out_group` — *(automatic)* the in_group size and the out-group (`COMPLEMENT`
+  = every other cell).
 
-## Contents
-
-- **auto/**: **57 folders** = cell types + `panEpith` / `panHema` / `panNeural` +
-  **8 subgroup folders** (`subHema_{lymphoid,myeloid}`, `subNeural_{neuronal,glial}`,
-  `subMesench_{skeletal,smoothfibro,endothelial}`, `subEpith_GI`). `panMesench`,
-  `tongue_epi`, and `subEpith_nonGI` have no locus that survives the specificity
-  refine and are dropped. **416 auto signatures** + **7 manual**.
-- **`LineageMarker.20260619.cm`** → **64 labels** (is_best auto per folder + 7
-  manual).
-- **HM450**: **88 labels** (16 broad + 62 specific + 10 subgroup);
-  `LineageMarker_20260619_hm450.rds` = **12,474 probe × 65 cell** β matrix. The
-  broad `panEpith-` is the **hand-curated** set: the weak auto MRMP `panEpith-`
-  (12 probes) is replaced by the 12 per-region manual signatures
-  (e.g. `panEpith-.ELF3_chr1_202005002`, 41 probes total; `n_mrmp=0`), which take
-  priority over auto. `panHema-`/`panNeural-` stay auto.
-- `signature_master.tsv`: **423 rows** (416 auto + 7 manual).
-
-## Manual signatures (`manual/`)
-
-Hand-defined cell-type groups the automatic taxonomy cannot express. A manual
-*region* may carry several bed **variants** (different selections at the same
-locus): `<region>_<variant>.bed`. The variant is the single source of truth — it is
-the SEL track label in the shared region `.ansi` and the `signature` name in
-`signature_master.tsv`. Current set: `panEpith/` (ELF3, MIR200C, MIR200BA with
-`_inclBasal`/`_exclBasal` variants), `panHema/` (PTPRC, WDFY4), `panNeural/` (OMG).
-All are `source=manual`, `category=broad`, and **all** enter `LineageMarker`
-(unlike auto, where only `is_best` does). Region matrices are extracted with
-`yame rowsub -L <coords> sub.cg | yame unpack -a -f 5` (real β, NA if cov<5) — not
-`hprint` — and rendered with one SEL track per bed. See the lab journal for the
-regeneration commands.
+Currently **83 contrasts → 144 signatures** (each realized `+`/`-` direction is a signed
+`signature_id`). Only the curated `v2_defs.tsv` + the panel (`sub.cg`) drive
+everything downstream; edit a contrast's `annotation`/`in_group`, then re-run from `sa_02`.
 
 ## Methods (summary)
 
-**Reference panel.** 65 cell types: 31 Loyfer per-cell-type pseudobulks
-(`yame rowop -o musum`) + 34 Zhou "Major" pseudobulks, restricted to `include=1` in
-the control sheet, across 5 lineages. 15 cross-dataset twins (e.g. NK_cell≡Hema_NK,
-endothelial_cell≡Endo_Vsc) are collapsed by `equiv_group`. Adrenal cortex
-(`Epi_AdrCtx`) is its own `Adrenal` lineage (it is methylated at pan-epithelial
-markers, so it is not epithelial); endothelial cells are included (`Mesench`).
+**Reference panel (87 cell types).** 31 Loyfer per-cell-type pseudobulks
+(`yame rowop -o musum`) + 34 Zhou "Major" pseudobulks + **8 BLUEPRINT** disease-free
+immune pseudobulks (Monocyte, Macrophage, Dendritic, Neutrophil, CD4/CD8 T, NK, B) +
+**14 Tian** brain groups (excitatory + Pvalb/Sst/Vip/Lamp5/MSN interneurons + ASC/ODC/
+OPC/MGC/EC/PC/VLMC glia & vascular). The BLUEPRINT + Tian additions give immune and
+brain granularity beyond the Loyfer/Zhou base.
 
-**MRMP discovery.** At each of 29,401,795 CpGs, keep sites with all 65 cell types at
-depth ≥10, high-vs-low group mean Δ ≥0.6, not chrY; reduce to a 65-bit
-methylated/unmethylated string; rank by genome-wide frequency, keep the top 10,000
-(MRMPs). The MRMP set carries no lineage info — lineage/sublineage are applied only
-downstream.
+**MRMP discovery.** At each of 29,401,795 CpGs, keep sites with all 87 cell types
+covered, high-vs-low group-mean Δ ≥ 0.6 (`delta_mean`, a *derivation* filter — every
+MRMP CpG inherits it), and not on chrY; reduce to an 87-bit methylated/unmethylated
+string; rank by genome-wide frequency; keep the top 10,000. The MRMP set carries **no**
+label — each P-number is just a unique `in_group`/`out_group` partition; names are
+applied only in `sa_02`.
 
-**Classification.** Each MRMP's minority ("auto") group, after twin-collapse, by
-finest exact match: one cell type (**cell-type-specific**); its projection onto one
-lineage equals one **sublineage** (**pan-sublineage** `sub<L>_<sub>`, other lineages
-don't-care); ≥2 cell types all in one lineage (**pan-lineage** `pan{Epith,Hema,
-Neural,Mesench}`); else **mixed**. Direction `-`/`+`.
+**Annotation.** An MRMP already *defines* its contrast (the `in_group`/`out_group`
+partition); annotation just gives that partition a biological **name**. Each MRMP's
+minority set is matched **exactly** against the `in_group` lists in `v2_defs.tsv`;
+a match assigns `signature_id = <annotation><direction>`. One MRMP ⇒ one signed
+signature; HM450 and whole-genome share the *same* signatures, differing only in
+projection (sparse array vs curated genome-wide).
 
-**Curation + refine.** Per-label Win10k enrichment → top-5 merged windows → decile
-base-curation; a lineage-free worst-case **specificity refine** removes
-lineage-confounded CpGs. Subgroups curate against an explicit *rest-of-lineage*
-outgroup (other lineages don't-care). Signatures with `< 5` CpGs are dropped.
+## TODO / Known issues
 
-**LineageMarker.** Per-signature CpG-location BEDs; the genome-wide `.cm` is built
-once by concatenating the `is_best` auto + all manual beds, labelling by signature
-name, resolving overlaps (manual > auto), and a single `yame pack -f s`. Panels
-(`.ansi`) are rendered last (after gene/validation).
-
-**HM450.** For each cell-type-specific / pan-lineage / pan-sublineage MRMP in the
-top 1000 with ≥10 HM450 probes, continuous β (`yame unpack -f 1`) is taken. Broad
-and subgroup labels are tightened by a per-probe **AUC rank-separation** filter
-(target vs **all other cells**, AUC ≥0.99): a probe is kept only if its β cleanly
-separates the target from every other cell — removing cross-lineage false positives
-and heterogeneous targets. `panMesench` has no probe that separates all of
-mesenchyme and is dropped. Cell-type labels are kept as-is.
-
-## Pipeline
-
-| step | script | output |
-|---|---|---|
-| 0 | `sa_00_reference.sh` | 65-cell `sub.cg` (Loyfer musum + Zhou Major) + cellorder |
-| 1 | `sa_01_mrmp.sh` + `sa_01_def.R` | MRMP mask (Δmean ≥0.6, count==65, top-10000); def table |
-| 2 | `sa_02_classify.R` | `mrmp_class.tsv` (cell-type / pan-sublineage / pan-lineage / mixed) |
-| 3 | `sa_03_hm450_win.sh` | HM450 BED, Win10k set, HM450 MRMP probes |
-| 4 | `sa_04_enrich_curate.sh` (+ `sa_refine_select.R`) | per-region base curation + specificity refine (cell-type/pan + subgroup passes) |
-| 5 | `sa_05_auto.sh` | `auto/` beds + `signature_master.tsv` + `LineageMarker.<date>.cm` |
-| 5h | `sa_05_hm450.sh` + `sa_05_hm450.R` | `HM450/` panels/beds + master + RDS |
-| 6 | `sa_06_annotate_validate.R` | gene + CellMarker validation columns |
-| 7 | `sa_render_panels.R` | `auto/` `.ansi` panels (rendered last) |
+- **`skeletal_muscle` (Loyfer) appears impure** (sorting / whole-tissue): no standalone
+  MRMP, only co-segregates with Zhou `Mus_Skl` ± scattered epithelial contaminants. The
+  exact-partition MRMP scheme splits the skeletal signal (`{Mus_Skl}` only vs
+  `{Mus_Skl, skeletal_muscle}`), so the signature loses ~3–4k sites. **Fix (deferred):**
+  drop `skeletal_muscle` and re-derive so `Mus_Skl` consolidates. Low priority — the
+  both-hypo signature is adequate.
+- **`cortex_neuron` (Loyfer) is impure** and biases the broad `Neuronal` contrast:
+  no standalone MRMP, excitatory-dominated, drags in `Fibro_Brst` contamination.
+  **Fix (deferred):** exclude it from the `Neuronal` signature (re-derive without it).
