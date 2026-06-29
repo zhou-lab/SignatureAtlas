@@ -156,8 +156,9 @@ first selected CpG. (Win10k window *enrichment* — used in earlier versions to 
 regions — has been removed in favour of this direct clustering.)
 
 **HM450 projection (`sa_03` → `sa_05_hm450`).** MRMP CpGs that carry an HM450 probe are
-kept per signature when the in-vs-out **delta-beta** effect is strong & signed and the
-signature retains ≥5 probes.
+taken per signature; a signature is kept iff it retains ≥5 probes. (Every MRMP CpG already
+separates in_group from out_group by `delta_mean` ≥ 0.6, so no extra per-probe
+effect-size filter is needed.)
 
 ## Pipeline scripts (in order)
 
