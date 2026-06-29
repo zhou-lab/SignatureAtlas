@@ -1,64 +1,100 @@
 # SignatureAtlas
 
+> **Release v3.** Versioning is by git tag (`v2`, `v3`, …) — data files are unprefixed
+> (`wg.bed`, `hm450.bed`, `defs.tsv`); check out a tag or a GitHub release for an earlier
+> atlas. v3 (957 WGBS regions / 28,306 CpGs · 120 HM450 signatures / 11,166 probes)
+> supersedes v2 with direct-clustering region selection, best-separation dedup, and the
+> probe-span-seeded HM450 loci.
+
 Whole-genome (WGBS) and HM450 DNA-methylation **marker signatures** for human cell
 types and lineages, derived from an **87-cell-type** deep reference methylome. Each
-signature is one **Most-Recurrent Methylation Pattern (MRMP)** — a recurrent
-binary methylated/unmethylated partition of the panel — curated into compact genomic
-loci. A signature is named by its **`signature_id`** = `<annotation><dir>`, where
-`dir` is `-` (target **hypo**methylated) or `+` (target **hyper**methylated), e.g.
-`Squamous-`, `CD8_T_Cell-`, `Oligodendrocyte+`.
+signature is one **Most-Recurrent Methylation Pattern (MRMP)** — a recurrent binary
+methylated/unmethylated partition of the panel — curated into compact genomic loci.
+A signature is named by its **`signature_id`** = `<annotation><dir>`, where `dir` is
+`-` (target **hypo**methylated) or `+` (target **hyper**methylated), e.g. `Squamous-`,
+`CD8_T_Cell-`, `Oligodendrocyte+`.
 
 ## Workflow
 
 ```
    raw WGBS .cg stores (hg38, 29.4M CpGs)
-   2023_Loyfer  2025_Zhou_MajorPseudo  2018_Zhou(BLUEPRINT)  2023_TianMajorType
+   2023_Loyfer   2025_Zhou_MajorPseudo   2018_Zhou(BLUEPRINT)   2023_TianMajorType
         \________ per-cell-type / per-group musum pseudobulk ________/
-                                   |
-   [sa_00] -> sub.cg   87-cell reference panel
-                                   |
+                                    |
+   [sa_00] --> sub.cg   87-cell reference panel        (yame = ~/repo/YAME/yame)
+                                    |
+ == Step A: MRMP layer =================================================
    [sa_01] keep CpG iff: all 87 covered & delta_mean>=0.6 & not chrY
-           -> frequency-rank -> top-10,000 MRMPs
-                                   |   each MRMP (P#) = one unique in_group/out_group partition
-   [sa_02] + v2_defs.tsv  (HAND-CURATED: in_group cells -> signature name)
-           exact-match each MRMP in_group -> signature_id = <annotation><+/->
-                                   |
-        +--------------------------+----------------------------------+
-        | HM450 (sparse array)     | whole-genome (WGBS, curated)
-        v                          v
-   [sa_03 -> sa_05_hm450]     [sa_04 enrich+curate -> refine -> sa_05_auto]
-     per-probe delta-beta       Win10k enrich -> top-5 windows -> decile base-curation
-        v                       -> worst-case specificity refine -> per-region gene
-   HM450/<sig>.ansi              v
-   v2_hm450.bed                  WG/<sig>.<gene>_<chr>_<beg>.ansi
-                                 v2_wg.bed
+           --> frequency-rank --> top-10,000 MRMPs (P1..P10000)
+                                    |   each MRMP = one unique in_group/out_group partition
+   [sa_02] + defs.tsv  (HAND-CURATED: in_group cells --> annotation name)
+           exact-match each MRMP minority set --> signature_id = <annotation><+/->
+           >> CONSISTENCY GATE: re-derived P-numbers must equal defs.tsv <<
+                                    |
+                   88 contrasts --> 149 signed signatures
+                                    |
+ == Step B: projection + curation ======================================
+        +---------------------------+-------------------------------------+
+        | HM450 (sparse array)      | whole-genome (WGBS, curated)
+        v                           v
+   [sa_03]  MRMP -> HM450 probes    [sa_04]  per-signature MRMP CpGs:
+   [sa_05_hm450.sh] real beta         direct NR-distance clustering
+   [sa_05_hm450.R]  keep a            (GAP = 100 CpGs, keep >=5-CpG runs)
+       signature iff it has             + top-5 HM450-probe-dense loci (probe-span seeded)
+       >= 5 probes                    --> base-curate on real beta (rowsub sub_small.cg)
+        |                            [sa_refine_select]  worst-case outgroup separation
+        |                            [sa_05_auto] region-gene (+/-10 kb) + sa_dedup_wg.R:
+        |                              - MERGE overlapping same-signature regions
+        |                              - BEST-SEPARATION: each CpG kept only in the
+        |                                signature with the largest in-vs-out margin
+        |                                (=> no duplicate coordinates)
+        |                              - NAME each region by its first selected CpG
+        |                            [sa_render_panels]  1 panel / region (merged windows)
+        v                           v
+   HM450/<signature_id>.ansi        WG/<signature_id>.<gene>_<chr>_<firstCpG>.ansi
+   hm450.bed                     wg.bed
+   120 signatures, 11,166 probes    144 signatures, 957 regions, 28,306 CpGs (0 dup)
 ```
 
 ## Layout
 
 ```
-HM450/<signature_id>.ansi                 # per-signature HM450 inspection panel
-WG/<signature_id>.<gene>_<chr>_<beg>.ansi # per-region whole-genome inspection panel
-v2_wg.bed                                 # all curated whole-genome CpGs (1 row/CpG)
-v2_hm450.bed                              # all selected HM450 probes (1 row/probe)
-v2_defs.tsv                               # the MRMP annotation (only hand-curated input)
-ARCHIVE/                                  # frozen previous atlases (flattened beds)
-  v0_hm450.bed                            #   v0 (2026-02-03) HM450 signatures
-  v1_hm450.bed                            #   v1 (65-cell) HM450
-  v1_wg.bed                               #   v1 (65-cell) whole-genome
+WG/<signature_id>.<gene>_<chr>_<firstCpG>.ansi   # per-region whole-genome panel
+HM450/<signature_id>.ansi                        # per-signature HM450 panel
+wg.bed                                         # all curated WGBS CpGs (1 row/CpG)
+hm450.bed                                      # all selected HM450 probes (1 row/probe)
+defs.tsv                                       # MRMP annotation (only hand-curated input)
 ```
 
-- **`v2_wg.bed`** — every curated whole-genome CpG, 5 columns:
-  `chr`, `beg0`, `end1` (0-based begin / 1-based end; single CpG = `(C-1, C)`),
-  `chr:min_max` (the full span of that signature's region), `signature` (the region
-  name `<signature_id>.<gene>_<chr>_<beg>`). 582 gene-annotated regions.
-- **`v2_hm450.bed`** — every selected HM450 probe, 5 columns: `chr`, `beg0`,
-  `end1`, `probe_id` (cg number), `signature_id`. 11,105 probes across 112 signatures.
-- **`HM450/*.ansi` / `WG/*.ansi`** — colored decile/β inspection panels: stacked
-  HM450-probe track (cg_id labelled) + the selection (SEL) track + the 87-cell
-  heatmap, target rows **underlined**, cropped to the selection ± 50 flanking CpGs.
+- **`wg.bed`** — every curated whole-genome CpG, 5 columns: `chr`, `beg0`, `end1`
+  (0-based begin / 1-based end; a CpG is the **2 bp** dinucleotide `(C-1, C+1)`, so
+  `end1 - beg0 == 2`), `chr:min_max` (the region's full CpG span `firstCpG_lastCpG`),
+  `region_name` (`<signature_id>.<gene>_<chr>_<firstCpG>`). **957** gene-named regions,
+  **28,306** CpGs, **no duplicate coordinates**.
+- **`hm450.bed`** — every selected HM450 probe, 5 columns: `chr`, `beg0`, `end1`
+  (2 bp CpG), `probe_id` (cg number), `signature_id`. **11,166** probes across **120**
+  signatures.
+- **`WG/*.ansi` / `HM450/*.ansi`** — colored real-β inspection panels (**panels only —
+  no per-signature beds**): stacked HM450-probe track (cg_id-labelled) + the selection
+  (SEL) track + the 87-cell β heatmap, target rows **underlined**, cropped to the
+  selection ± 50 flanking CpGs. WG panels are **1:1** with `wg.bed` regions over the
+  merged β window; a CpG reassigned away by best-separation still appears in the donor
+  panel's heatmap (context) but not in its SEL track.
 
-## v2_defs.tsv
+## Coordinate & naming conventions
+
+- **2 bp CpG, 0-based beg / 1-based end** in both BEDs: for a CpG whose C is at 1-based
+  `pos`, `beg0 = pos - 1`, `end1 = pos + 1` (`end1 - beg0 == 2`).
+- **Region identity = its selected CpGs.** A WGBS region is named by its **first
+  (lowest-coordinate) selected CpG** plus the dominant gene within ±10 kb; the
+  `chr:min_max` span is `firstCpG_lastCpG`. The 10 kb HM450 bucketing only *ranks*
+  array-dense loci to seed extraction — it never names a region.
+- **No duplicate coordinates.** Overlapping regions of the **same** signature are
+  merged into one; a CpG selected by **multiple** signatures is kept only in its
+  **best-separation** signature (largest worst-case in-vs-out β margin) and dropped
+  from the others.
+
+## defs.tsv
 
 The **MRMP annotation** — the only hand-curated input to the atlas. Each row defines a
 **contrast** (an `in_group`/`out_group` partition of the panel) and gives it a
@@ -69,17 +105,21 @@ probe / whole-genome region selection, curation, refine). One row per contrast; 
 - `annotation`, `in_group` — *(curated)* the contrast name and the comma-list of panel
   cell types on its `in_group` side. Cell-type **equivalence is implicit** in the list
   (e.g. `NK_cell,Hema_NK,BP_NKCell`), and a contrast may be a single cell, a lineage, or
-  any hand-chosen set (vascular, microglia, inhibitory-neuron, oligodendrocyte-lineage, …).
+  any hand-chosen set (vascular, microglia, inhibitory-neuron, oligodendrocyte-lineage…).
 - `mrmp_neg` / `mrmp_pos` — *(automatic)* the P-numbers of the MRMPs realizing this
   contrast as a `-` (in_group hypo) or `+` (in_group hyper) **signature**, i.e. the MRMP
-  whose minority **equals** `in_group`. A contrast matching no MRMP yields no signature
-  and is dropped.
+  whose minority set **equals** `in_group`. A contrast matching no MRMP yields no
+  signature and is dropped.
 - `n_in`, `out_group` — *(automatic)* the in_group size and the out-group (`COMPLEMENT`
   = every other cell).
 
-Currently **83 contrasts → 144 signatures** (each realized `+`/`-` direction is a signed
-`signature_id`). Only the curated `v2_defs.tsv` + the panel (`sub.cg`) drive
-everything downstream; edit a contrast's `annotation`/`in_group`, then re-run from `sa_02`.
+Currently **88 contrasts → 149 signatures** (each realized `+`/`-` direction is a signed
+`signature_id`); **144** are realized as curated WGBS regions and **120** carry ≥5 HM450
+probes. Only the curated `defs.tsv` + the panel (`sub.cg`) drive everything
+downstream; edit a contrast's `annotation`/`in_group`, then re-run from `sa_02`. The
+`sa_02` consistency gate re-derives the P-numbers from `in_group` and **fails the build**
+if they disagree with the `mrmp_neg`/`mrmp_pos` already in `defs.tsv` — so the
+hand-curated P-numbers stay locked to the panel.
 
 ## Methods (summary)
 
@@ -90,28 +130,53 @@ immune pseudobulks (Monocyte, Macrophage, Dendritic, Neutrophil, CD4/CD8 T, NK, 
 OPC/MGC/EC/PC/VLMC glia & vascular). The BLUEPRINT + Tian additions give immune and
 brain granularity beyond the Loyfer/Zhou base.
 
-**MRMP discovery.** At each of 29,401,795 CpGs, keep sites with all 87 cell types
-covered, high-vs-low group-mean Δ ≥ 0.6 (`delta_mean`, a *derivation* filter — every
-MRMP CpG inherits it), and not on chrY; reduce to an 87-bit methylated/unmethylated
-string; rank by genome-wide frequency; keep the top 10,000. The MRMP set carries **no**
-label — each P-number is just a unique `in_group`/`out_group` partition; names are
+**MRMP discovery (`sa_01`).** At each of 29,401,795 CpGs, keep sites with all 87 cell
+types covered, high-vs-low group-mean Δ ≥ 0.6 (`delta_mean`, a *derivation* filter —
+every MRMP CpG inherits it; emitted by `yame rowop -o stat`), and not on chrY; reduce to
+an 87-bit methylated/unmethylated string; rank by genome-wide frequency; keep the top
+10,000. Each P-number is just a unique `in_group`/`out_group` partition; names are
 applied only in `sa_02`.
 
-**Annotation.** An MRMP already *defines* its contrast (the `in_group`/`out_group`
-partition); annotation just gives that partition a biological **name**. Each MRMP's
-minority set is matched **exactly** against the `in_group` lists in `v2_defs.tsv`;
-a match assigns `signature_id = <annotation><direction>`. One MRMP ⇒ one signed
-signature; HM450 and whole-genome share the *same* signatures, differing only in
-projection (sparse array vs curated genome-wide).
+**Annotation (`sa_02`).** An MRMP already *defines* its contrast; annotation gives it a
+biological **name** by matching the MRMP minority set **exactly** against the `in_group`
+lists in `defs.tsv`, assigning `signature_id = <annotation><direction>`. HM450 and
+whole-genome share the *same* signatures, differing only in projection (sparse array vs
+curated genome-wide).
+
+**Whole-genome curation (`sa_04` → `sa_05_auto`).** For each signature, its own MRMP
+CpGs are clustered **directly** in genomic order — consecutive same-signature CpGs within
+**GAP = 100 CpG-indices** join a run; runs of ≥5 CpGs are candidate DMR seeds (top-5 by
+size) — plus the top-5 HM450-probe-dense 10 kb loci (so the WGBS view also covers
+array-anchored regions). Each seed is base-curated on **real β** (`yame rowsub` of a
+pooled `sub_small.cg` → `unpack -a -f 5`; hypo β<0.4 in the in_group / hyper β≥0.6) with a
+±100-CpG flank, then `sa_refine_select` keeps only CpGs whose worst-case smoothed
+out-group separation holds. `sa_dedup_wg.R` then merges overlapping same-signature
+regions, resolves cross-signature CpGs by best separation, and names each region by its
+first selected CpG. (Win10k window *enrichment* — used in earlier versions to pick
+regions — has been removed in favour of this direct clustering.)
+
+**HM450 projection (`sa_03` → `sa_05_hm450`).** MRMP CpGs that carry an HM450 probe are
+kept per signature when the in-vs-out **delta-beta** effect is strong & signed and the
+signature retains ≥5 probes.
+
+## Pipeline scripts (in order)
+
+```
+Step A:  sa_01_mrmp.sh -> sa_01_def.R -> sa_02_classify.R   (+ consistency gate)
+Step B:  sa_03_hm450_win.sh -> sa_05_hm450.sh -> sa_05_hm450.R
+         sa_04_enrich_curate.sh -> sa_refine_select.R
+         sa_05_auto.sh (region_gene + sa_dedup_wg.R) -> sa_render_panels.R
+```
 
 ## TODO / Known issues
 
 - **`skeletal_muscle` (Loyfer) appears impure** (sorting / whole-tissue): no standalone
   MRMP, only co-segregates with Zhou `Mus_Skl` ± scattered epithelial contaminants. The
   exact-partition MRMP scheme splits the skeletal signal (`{Mus_Skl}` only vs
-  `{Mus_Skl, skeletal_muscle}`), so the signature loses ~3–4k sites. **Fix (deferred):**
-  drop `skeletal_muscle` and re-derive so `Mus_Skl` consolidates. Low priority — the
-  both-hypo signature is adequate.
+  `{Mus_Skl, skeletal_muscle}`), so the signature loses sites. **Fix (deferred):** drop
+  `skeletal_muscle` and re-derive so `Mus_Skl` consolidates.
 - **`cortex_neuron` (Loyfer) is impure** and biases the broad `Neuronal` contrast:
   no standalone MRMP, excitatory-dominated, drags in `Fibro_Brst` contamination.
   **Fix (deferred):** exclude it from the `Neuronal` signature (re-derive without it).
+- **`OPC+` has no WGBS region** (rank-8228 MRMP, scattered CpGs form no ≥5-CpG cluster
+  and it carries no HM450 probe). Accepted — no robust local DMR exists for it.
