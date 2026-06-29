@@ -1,10 +1,10 @@
 # SignatureAtlas
 
-> **Release v3.** Versioning is by git tag (`v2`, `v3`, …) — data files are unprefixed
+> **Release v4.** Versioning is by git tag (`v2`, `v3`, `v4`, …) — data files are unprefixed
 > (`wg.bed`, `hm450.bed`, `defs.tsv`); check out a tag or a GitHub release for an earlier
-> atlas. v3 (957 WGBS regions / 28,306 CpGs · 120 HM450 signatures / 11,166 probes)
-> supersedes v2 with direct-clustering region selection, best-separation dedup, and the
-> probe-span-seeded HM450 loci.
+> atlas. v4 (1,075 WGBS regions / 31,122 CpGs · 139 HM450 signatures / 11,760 probes)
+> extends v3 from 88 to 100 cell-type/lineage contrasts; v3 introduced direct-clustering
+> region selection, best-separation dedup, and the probe-span-seeded HM450 loci.
 
 Whole-genome (WGBS) and HM450 DNA-methylation **marker signatures** for human cell
 types and lineages, derived from an **87-cell-type** deep reference methylome. Each
@@ -31,7 +31,7 @@ A signature is named by its **`signature_id`** = `<annotation><dir>`, where `dir
            exact-match each MRMP minority set --> signature_id = <annotation><+/->
            >> CONSISTENCY GATE: re-derived P-numbers must equal defs.tsv <<
                                     |
-                   88 contrasts --> 149 signed signatures
+                  100 contrasts --> 169 signed signatures
                                     |
  == Step B: projection + curation ======================================
         +---------------------------+-------------------------------------+
@@ -53,7 +53,7 @@ A signature is named by its **`signature_id`** = `<annotation><dir>`, where `dir
         v                           v
    HM450/<signature_id>.ansi        WG/<signature_id>.<gene>_<chr>_<firstCpG>.ansi
    hm450.bed                     wg.bed
-   120 signatures, 11,166 probes    144 signatures, 957 regions, 28,306 CpGs (0 dup)
+   139 signatures, 11,760 probes    164 signatures, 1,075 regions, 31,122 CpGs (0 dup)
 ```
 
 ## Layout
@@ -69,10 +69,10 @@ defs.tsv                                       # MRMP annotation (only hand-cura
 - **`wg.bed`** — every curated whole-genome CpG, 5 columns: `chr`, `beg0`, `end1`
   (0-based begin / 1-based end; a CpG is the **2 bp** dinucleotide `(C-1, C+1)`, so
   `end1 - beg0 == 2`), `chr:min_max` (the region's full CpG span `firstCpG_lastCpG`),
-  `region_name` (`<signature_id>.<gene>_<chr>_<firstCpG>`). **957** gene-named regions,
-  **28,306** CpGs, **no duplicate coordinates**.
+  `region_name` (`<signature_id>.<gene>_<chr>_<firstCpG>`). **1,075** gene-named regions,
+  **31,122** CpGs, **no duplicate coordinates**.
 - **`hm450.bed`** — every selected HM450 probe, 5 columns: `chr`, `beg0`, `end1`
-  (2 bp CpG), `probe_id` (cg number), `signature_id`. **11,166** probes across **120**
+  (2 bp CpG), `probe_id` (cg number), `signature_id`. **11,760** probes across **139**
   signatures.
 - **`WG/*.ansi` / `HM450/*.ansi`** — colored real-β inspection panels (**panels only —
   no per-signature beds**): stacked HM450-probe track (cg_id-labelled) + the selection
@@ -113,8 +113,8 @@ probe / whole-genome region selection, curation, refine). One row per contrast; 
 - `n_in`, `out_group` — *(automatic)* the in_group size and the out-group (`COMPLEMENT`
   = every other cell).
 
-Currently **88 contrasts → 149 signatures** (each realized `+`/`-` direction is a signed
-`signature_id`); **144** are realized as curated WGBS regions and **120** carry ≥5 HM450
+Currently **100 contrasts → 169 signatures** (each realized `+`/`-` direction is a signed
+`signature_id`); **164** are realized as curated WGBS regions and **139** carry ≥5 HM450
 probes. Only the curated `defs.tsv` + the panel (`sub.cg`) drive everything
 downstream; edit a contrast's `annotation`/`in_group`, then re-run from `sa_02`. The
 `sa_02` consistency gate re-derives the P-numbers from `in_group` and **fails the build**
@@ -171,7 +171,7 @@ Step B:  sa_03_hm450_win.sh -> sa_05_hm450.sh -> sa_05_hm450.R
 
 ## TODO / Known issues
 
-- **Curate the unannotated MRMPs in `mrmp_annotated.tsv`.** Only 149 of the 10,000 MRMPs
+- **Curate the unannotated MRMPs in `mrmp_annotated.tsv`.** Only 169 of the 10,000 MRMPs
   match a curated contrast in `defs.tsv`; the rest are unnamed partitions (`signature_id`
   = `NA`). Adding contrasts to `defs.tsv` for the recurrent unannotated patterns would
   extend cell-type/lineage coverage.
