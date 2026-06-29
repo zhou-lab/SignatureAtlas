@@ -170,6 +170,10 @@ Step B:  sa_03_hm450_win.sh -> sa_05_hm450.sh -> sa_05_hm450.R
 
 ## TODO / Known issues
 
+- **Curate the unannotated MRMPs in `mrmp_annotated.tsv`.** Only 149 of the 10,000 MRMPs
+  match a curated contrast in `defs.tsv`; the rest are unnamed partitions (`signature_id`
+  = `NA`). Adding contrasts to `defs.tsv` for the recurrent unannotated patterns would
+  extend cell-type/lineage coverage.
 - **`skeletal_muscle` (Loyfer) appears impure** (sorting / whole-tissue): no standalone
   MRMP, only co-segregates with Zhou `Mus_Skl` ± scattered epithelial contaminants. The
   exact-partition MRMP scheme splits the skeletal signal (`{Mus_Skl}` only vs
