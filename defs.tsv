@@ -12,12 +12,14 @@ Neural_CNS	16	P624	P228	COMPLEMENT	cortex_neuron,Glia_Astro,Glia_Oligo,Neu_Exc,N
 Smooth_Fibro	15	P2629	NA	COMPLEMENT	adipocyte,Fibro_Adr,Fibro_Brst,Fibro_EndN,Fibro_EpiN,Fibro_GI,Fibro_HT,Fibro_Mus,Fibro_Myo,Fibro_Sk,heart_fibroblast,Perivascular,smooth_muscle,Tian_PC,Tian_VLMC
 Lymphoid	11	P160	P1644	COMPLEMENT	B_cell,BP_BCell,BP_NKCell,BP_TCell_CD4,BP_TCell_CD8,Hema_B,Hema_NK,Hema_Tmem,Hema_Tnaive,NK_cell,T_cell
 Neuronal	10	P317	P56	COMPLEMENT	cortex_neuron,Neu_Exc,Neu_Inh,Tian_Lamp5,Tian_MSN,Tian_Neu_Exc,Tian_Neu_NonTelenceph,Tian_Pvalb,Tian_Sst,Tian_Vip
-Myeloid_Microglia	9	P119	NA	COMPLEMENT	BP_DendriticCell,BP_Macrophage,BP_Monocyte,BP_Neutrophil,granulocyte,Hema_Mast,Hema_Myeloid,mononuc_phago,Tian_MGC
+Myeloid_MGC_Mast	9	P119	NA	COMPLEMENT	BP_DendriticCell,BP_Macrophage,BP_Monocyte,BP_Neutrophil,granulocyte,Hema_Mast,Hema_Myeloid,mononuc_phago,Tian_MGC
 Glial	8	P4936	NA	COMPLEMENT	Glia_Astro,Glia_Oligo,Neu_Schw,oligodendrocyte,Tian_ASC,Tian_MGC,Tian_ODC,Tian_OPC
-Myeloid	8	P257	NA	COMPLEMENT	BP_DendriticCell,BP_Macrophage,BP_Monocyte,BP_Neutrophil,granulocyte,Hema_Mast,Hema_Myeloid,mononuc_phago
+Myeloid_Mast	8	P257	NA	COMPLEMENT	BP_DendriticCell,BP_Macrophage,BP_Monocyte,BP_Neutrophil,granulocyte,Hema_Mast,Hema_Myeloid,mononuc_phago
+Myeloid_Microglia	8	P43	NA	COMPLEMENT	BP_DendriticCell,BP_Macrophage,BP_Monocyte,BP_Neutrophil,granulocyte,Hema_Myeloid,mononuc_phago,Tian_MGC
 Pancreas	8	P217	P1016	COMPLEMENT	Epi_Aci,Epi_Duc,Epi_Endcri,pancreas_acinar,pancreas_alpha,pancreas_beta,pancreas_delta,pancreas_duct
 Squamous	8	P133	NA	COMPLEMENT	bladder_epi,breast_basal_epi,breast_luminal_epi,Epi_BrstBasal,Epi_Krt_Lum,lung_bronchus_epi,prostate_epi,tongue_epi
 T_NK	8	P95	P2597	COMPLEMENT	BP_NKCell,BP_TCell_CD4,BP_TCell_CD8,Hema_NK,Hema_Tmem,Hema_Tnaive,NK_cell,T_cell
+Myeloid	7	P50	NA	COMPLEMENT	BP_DendriticCell,BP_Macrophage,BP_Monocyte,BP_Neutrophil,granulocyte,Hema_Myeloid,mononuc_phago
 Inhibitory_Neuron	6	P3885	P294	COMPLEMENT	Neu_Inh,Tian_Lamp5,Tian_MSN,Tian_Pvalb,Tian_Sst,Tian_Vip
 Macroglia	6	P78	P1217	COMPLEMENT	Glia_Astro,Glia_Oligo,oligodendrocyte,Tian_ASC,Tian_ODC,Tian_OPC
 Cortical_Interneuron	5	P593	P269	COMPLEMENT	Neu_Inh,Tian_Lamp5,Tian_Pvalb,Tian_Sst,Tian_Vip
