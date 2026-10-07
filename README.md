@@ -1,12 +1,16 @@
 # SignatureAtlas
 
-> **Release v5.** Versioning is by git tag (`v2`, `v3`, `v4`, `v5`, …) — data files are
+> **Release v6.** Versioning is by git tag (`v2` … `v6`) — data files are
 > unprefixed (`wg.bed`, `hm450.bed`, `defs.tsv`); check out a tag or a GitHub release for an
-> earlier atlas. v5 (1,092 WGBS regions / 31,327 CpGs · 141 HM450 signatures / 11,885 probes)
-> refines the myeloid contrasts — mast-free `Myeloid` (7→47 HM450 probes) and
-> `Myeloid_Microglia` (19→78), with the original mast-containing sets preserved as
-> `Myeloid_Mast` / `Myeloid_MGC_Mast`. v4 extended v3 from 88 to 100 contrasts; v3 introduced
-> direct-clustering region selection, best-separation dedup, and probe-span-seeded HM450 loci.
+> earlier atlas. v6 renames the four myeloid contrasts and changes nothing else (same CpGs,
+> probes and panels as v5): `Myeloid_MGC_Mast` → `Pan_Myeloid`, `Myeloid` →
+> `Mature_Myeloid`, `Myeloid_Mast` → `Mature_Myeloid_Mast`, `Myeloid_Microglia` →
+> `Mature_Myeloid_Microglia`. v5 (1,092 WGBS regions / 31,327 CpGs · 141 HM450 signatures /
+> 11,885 probes) refined the myeloid contrasts (mast-free 7-cell set, 7→47 HM450 probes);
+> v4 extended v3 from 88 to 100 contrasts; v3 introduced direct-clustering region
+> selection, best-separation dedup, and probe-span-seeded HM450 loci.
+>
+> Browse: <https://zhou-lab.github.io/SignatureAtlas/>
 
 Whole-genome (WGBS) and HM450 DNA-methylation **marker signatures** for human cell
 types and lineages, derived from an **87-cell-type** deep reference methylome. Each
