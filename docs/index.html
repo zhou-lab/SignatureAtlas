@@ -169,7 +169,7 @@ lineages, derived from a 87-cell-type deep WGBS reference.</p>
 <thead><tr><th>Signature ID<span class="tip" tabindex="0">&#9432;<span><b>Signature ID = &lt;annotation&gt;&lt;dir&gt;</b><br><code>-</code>: in-group <i>hypo</i>methylated; <code>+</code>: in-group <i>hyper</i>methylated.<br>Annotation names one cell type (<code>Hepatocyte</code>), a lineage (<code>Epith</code>) or a curated set (<code>Brain_Vascular</code>). <code>_No&lt;X&gt;</code> marks a lineage with X left out.<br>Rows nest under the smallest contrast whose in-group contains theirs.</span></span></th><th>In-group</th>
 <th>Out-group<span class="tip" tabindex="0">&#9432;<span>Every other panel cell type. All contrasts in this release use the complement as the out-group.</span></span></th>
 <th class="num">WG regions<span class="tip" tabindex="0">&#9432;<span>Click the count to list the regions.<br><b>Region name = &lt;signature_id&gt;.&lt;gene&gt;_&lt;chr&gt;_&lt;firstCpG&gt;</b><br>Gene: dominant gene within &plusmn;10 kb. firstCpG: 1-based C of the first selected CpG. Intergenic regions drop the gene.</span></span></th>
-<th class="num">WG CpGs<span class="tip" tabindex="0">&#9432;<span>CpGs in <code>wg.bed</code>. Each CpG is the 2-bp dinucleotide, 0-based begin, 1-based end (<code>end1 &minus; beg0 = 2</code>). No CpG is in two regions; a CpG chosen by several signatures stays in the one with the widest in-vs-out &beta; margin.</span></span></th>
+<th class="num">WG CpGs<span class="tip" tabindex="0">&#9432;<span>CpGs in <code>wg.bed</code>. Each CpG is the 2-bp dinucleotide, 0-based begin, 1-based end (<code>end1 &minus; beg0 = 2</code>). No CpG is in two regions; a CpG chosen by several signatures stays in the one with the widest in-vs-out &beta; margin; an exact tie goes to the lower MRMP P-number (rebuilds after v6).</span></span></th>
 <th class="num">HM450 probes<span class="tip" tabindex="0">&#9432;<span>HM450 probes in <code>hm450.bed</code>. A signature is listed on HM450 only if it keeps &ge; 5 probes.</span></span></th></tr></thead>
 <tbody>
 <tr class="sig" data-c="Epith" data-anc="" data-r="r_Epith_n"><td class="mono" style="padding-left:8px"><button class="fold" data-c="Epith">&#9656;</button>Epith<b class="hypo" title="in-group hypomethylated">-</b></td><td><details><summary>27 cells</summary><div class="cells">bladder_epi, breast_basal_epi, breast_luminal_epi, endometrium_epi, Epi_Aci, Epi_Alv, Epi_BrstBasal, Epi_Duc, Epi_Endcri, Epi_Ent, Epi_Gas, Epi_Krt_Lum, Fallopian_epi, gastric_epithelial, hepatocyte, kidney_epi, lower_GI_epi, lung_alveolar_epi, lung_bronchus_epi, pancreas_acinar, pancreas_alpha, pancreas_beta, pancreas_delta, pancreas_duct, prostate_epi, thyroid_epi, tongue_epi</div></details></td><td><details><summary>60 cells</summary><div class="cells">B_cell, T_cell, NK_cell, granulocyte, mononuc_phago, adipocyte, endothelial_cell, heart_fibroblast, oligodendrocyte, skeletal_muscle, cortex_neuron, smooth_muscle, Hema_B, Hema_Mast, Hema_Myeloid, Hema_NK, Hema_Tmem, Hema_Tnaive, Fibro_Adr, Fibro_Brst, Fibro_EndN, Fibro_EpiN, Fibro_GI, Fibro_HT, Fibro_Mus, Fibro_Myo, Fibro_Sk, Mus_Crd, Mus_Skl, Perivascular, Glia_Astro, Glia_Oligo, Neu_Exc, Neu_Inh, Neu_Schw, Endo_Lym, Endo_Vsc, Epi_AdrCtx, BP_BCell, BP_TCell_CD4, BP_TCell_CD8, BP_NKCell, BP_DendriticCell, BP_Monocyte, BP_Macrophage, BP_Neutrophil, Tian_Neu_Exc, Tian_Pvalb, Tian_Sst, Tian_Vip, Tian_Lamp5, Tian_MSN, Tian_ASC, Tian_ODC, Tian_OPC, Tian_MGC, Tian_EC, Tian_PC, Tian_VLMC, Tian_Neu_NonTelenceph</div></details></td><td class="num"><button class="regbtn" data-r="r_Epith_n">7</button></td><td class="num">40</td><td class="num"><a href="#" class="panel" data-p="HM450/Epith-.ansi">8</a></td></tr>
@@ -532,7 +532,13 @@ has &beta; &lt; 0.4 and &ge; 80% of the hyper side has
 <li>Refinement: a CpG is kept only if every single out-group cell type stays
 separated (&beta; smoothed over 5 CpGs).</li>
 <li>Deduplication: overlapping regions merge. A CpG claimed by several
-signatures stays in the one with the widest &beta; margin.</li>
+signatures stays in the one with the widest &beta; margin (the worst-case
+in-group vs out-group &beta; difference at that CpG).</li>
+<li>Tie-breaking: on an exact margin tie, the CpG goes to the signature from the
+more recurrent MRMP (lower P-number). P-numbers are fixed by the panel, so
+renaming a contrast never changes selection. This rule applies to rebuilds
+after v6. Through v6, ties went to the alphabetically first signature; this
+decided 4 CpGs (<code>Neural+</code> over <code>Neural_CNS+</code>).</li>
 </ul></li>
 <li><span class="term">Annotation.</span> A curated contrast names a set of
 cell types (the in-group) against all others (the out-group). An MRMP that
