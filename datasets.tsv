@@ -1,0 +1,7 @@
+dataset_id	name	mark	assay	genome	store	description
+DLOY1	Loyfer2023	5modC	WGBS	hg38	2023_Loyfer.cg	Sorted primary human cell types; Loyfer et al. 2023 Nature, GEO GSE186458
+DZHO1	Zhou2025_MajorPseudo	5modC	scWGBS pseudobulk	hg38	2025_Zhou_MajorPseudo.cg	Zhou lab 2025 single-cell methylome atlas, major cell-type pseudobulks
+DBLU1	BLUEPRINT	5modC	WGBS	hg38	2018_Zhou.cg	BLUEPRINT haematopoietic reference epigenomes, disease-free samples
+DTIA1	Tian2023	5modC	snmC-seq3 pseudobulk	hg38	2023_TianMajorType.cg	Human brain single-nucleus methylomes, major types; Tian et al. 2023 Science
+DIMM1	Immune5hmC_EM	5modC	EM-seq	hg38	20240318_SortedImmune.cg	Sorted human blood immune cells (naive CD4 T, NK, monocyte, neutrophil); Zhou lab Immune5hmC project, EM-seq
+DIMM2	Immune5hmC_ACE	5hmC	ACE-seq	hg38	20240318_SortedImmune.cg	Sorted human blood immune cells (B, naive CD4 T, NK, monocyte, neutrophil); Zhou lab Immune5hmC project, ACE-seq
