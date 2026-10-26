@@ -1,14 +1,17 @@
 # SignatureAtlas
 
-> **Release v6.** Versioning is by git tag (`v2` … `v6`) — data files are
+> **Release v7.** Versioning is by git tag (`v2` … `v7`) — data files are
 > unprefixed (`wg.bed`, `hm450.bed`, `defs.tsv`); check out a tag or a GitHub release for an
-> earlier atlas. v6 renames the four myeloid contrasts and changes nothing else (same CpGs,
-> probes and panels as v5): `Myeloid_MGC_Mast` → `Pan_Myeloid`, `Myeloid` →
-> `Mature_Myeloid`, `Myeloid_Mast` → `Mature_Myeloid_Mast`, `Myeloid_Microglia` →
-> `Mature_Myeloid_Microglia`. v5 (1,092 WGBS regions / 31,327 CpGs · 141 HM450 signatures /
-> 11,885 probes) refined the myeloid contrasts (mast-free 7-cell set, 7→47 HM450 probes);
-> v4 extended v3 from 88 to 100 contrasts; v3 introduced direct-clustering region
-> selection, best-separation dedup, and probe-span-seeded HM450 loci.
+> earlier atlas. v7 keeps the v6 tissue regions, CpGs and probes unchanged (1,092 WGBS regions / 31,327
+> CpGs · 141 HM450 signatures / 11,885 probes) and adds two blood references: 10 blood
+> 5modC contrasts (`*_Blood`, 95 regions / 5,865 CpGs) and 7 blood 5hmC contrasts
+> (`*_hmC`, 67 regions / 11,650 CpGs). `defs.tsv` is now one row per contrast with
+> dataset-qualified sample IDs; `samples.tsv` + `datasets.tsv` replace
+> `reference_panel_samples.tsv`. v6 renamed the four myeloid contrasts (`Pan_Myeloid`,
+> `Mature_Myeloid`, `Mature_Myeloid_Mast`, `Mature_Myeloid_Microglia`); v5 refined the
+> myeloid contrasts; v4 extended v3 from 88 to 100 contrasts; v3 introduced
+> direct-clustering region selection, best-separation dedup, and probe-span-seeded HM450
+> loci.
 >
 > Browse: <https://zhou-lab.github.io/SignatureAtlas/>
 
