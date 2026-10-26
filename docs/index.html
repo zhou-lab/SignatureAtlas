@@ -53,6 +53,14 @@ h1 b { font-weight:800; }
   box-shadow:var(--shadow); }
 .full > h2 { font-size:1.1rem; margin:0 0 10px; letter-spacing:-.01em; }
 .full > h2 .m { color:var(--mute); font-weight:400; font-size:.85rem; }
+details.rel { border-top:1px solid var(--line); padding:6px 0; }
+details.rel:first-of-type { border-top:0; }
+details.rel > summary { font-size:.92rem; font-weight:700; color:var(--fg);
+  white-space:normal; }
+details.rel p.relstat { margin:6px 0 2px; color:var(--mute);
+  font-size:.82rem; font-variant-numeric:tabular-nums; }
+details.rel ul { margin:4px 0 4px; padding-left:20px; font-size:.86rem; }
+details.rel li { margin:3px 0; }
 code, .mono { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,
   monospace; font-size:.84em; }
 code { background:var(--accsoft); color:var(--acc); padding:1px 5px;
@@ -161,6 +169,12 @@ are pooled into a deep pseudobulk for pattern calling.</p>
 <a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/datasets.tsv">datasets.tsv</a>
 <a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/samples.tsv">samples.tsv</a></p>
 </header>
+
+<section class="full">
+<h2>Releases <span class="m">what is new in each tag
+(<a href="https://github.com/zhou-lab/SignatureAtlas/blob/main/NEWS.md">NEWS.md</a>)</span></h2>
+<details class="rel" open><summary>v7 (2026-10-25)</summary><p class="relstat">119 contrasts · 205 signatures · 1,254 regions / 48,842 CpGs · 11,885 HM450 probes / 141 signatures</p><ul><li>Two blood references join the tissue atlas. Blood 5modC adds 10 contrasts (<code>*_Blood</code>; 95 regions, 5,865 CpGs) from sorted immune cells (EM-seq) and BLUEPRINT. Blood 5hmC adds 7 contrasts (<code>*_hmC</code>; 67 regions, 11,650 CpGs) from ACE-seq.</li><li><code>defs.tsv</code> has one row per contrast. In-group and out-group are lists of sample IDs (<code>&lt;dataset&gt;:&lt;sample&gt;</code>). New columns give the mark (5modC or 5hmC) and the calling thresholds.</li><li><code>samples.tsv</code> (sample to cell type) and <code>datasets.tsv</code> (one row per source dataset) replace <code>reference_panel_samples.tsv</code>.</li><li>The tissue regions, CpGs, HM450 probes and HM450 panels are unchanged from v6. CpGs are unique within each reference; 622 appear in two references.</li><li>Rebuilds now break an exact margin tie between signatures by the MRMP&#x27;s rank in that build, so renaming a contrast never moves a CpG. The blood references used this rule.</li></ul></details><details class="rel"><summary>v6 (2026-10-07)</summary><p class="relstat">102 contrasts · 171 signatures · 1,092 regions / 31,327 CpGs · 11,885 HM450 probes / 141 signatures</p><ul><li>Four myeloid contrasts renamed; nothing else changed: <code>Myeloid_MGC_Mast</code> → <code>Pan_Myeloid</code>, <code>Myeloid</code> → <code>Mature_Myeloid</code>, <code>Myeloid_Mast</code> → <code>Mature_Myeloid_Mast</code>, <code>Myeloid_Microglia</code> → <code>Mature_Myeloid_Microglia</code>.</li><li>Adds <code>reference_panel_samples.tsv</code>, the raw samples behind each of the 87 pseudobulks.</li><li>First release with the browser at <a href="https://zhou-lab.github.io/SignatureAtlas/">https://zhou-lab.github.io/SignatureAtlas/</a>.</li></ul></details><details class="rel"><summary>v5 (2026-06-29)</summary><p class="relstat">102 contrasts · 171 signatures · 1,092 regions / 31,327 CpGs · 11,885 HM450 probes / 141 signatures</p><ul><li>Refines the myeloid contrasts. Mast cells are methylation-divergent and shrank the myeloid HM450 projection. A mast-free <code>Myeloid</code> (7 → 47 probes) and <code>Myeloid_Microglia</code> (19 → 78) are added. The mast-containing sets are kept as <code>Myeloid_Mast</code> and <code>Myeloid_MGC_Mast</code>.</li></ul></details><details class="rel"><summary>v4 (2026-06-29)</summary><p class="relstat">100 contrasts · 169 signatures · 1,075 regions / 31,122 CpGs · 11,760 HM450 probes / 139 signatures</p><ul><li>Adds 12 organ and lineage contrasts found among the top unannotated MRMPs: <code>Neural</code>, <code>Neural_CNS</code>, <code>Pancreas</code>, <code>Pancreatic_Exocrine</code>, <code>Respiratory_Thyroid</code>, <code>Hepato_Acinar</code>, <code>Mullerian_Renal</code>, <code>Mullerian_Epi</code>, <code>Striated_Muscle</code>, <code>Nerve_Fibroblast</code>, <code>Urogenital_Epi</code>, <code>Myelinating_Glia</code>.</li></ul></details><details class="rel"><summary>v3 (2026-06-29)</summary><p class="relstat">88 contrasts · 149 signatures · 957 regions / 28,306 CpGs · 11,166 HM450 probes / 120 signatures</p><ul><li>Regions come from direct clustering of each signature&#x27;s MRMP CpGs, plus the HM450-probe-dense loci seeded on their probe span.</li><li>Best-separation dedup: a CpG claimed by several signatures stays in the one with the widest margin, so no coordinate appears twice.</li><li>Files lose the <code>v2_</code> prefix; the release is the git tag.</li></ul></details><details class="rel"><summary>v2 (2026-06-28)</summary><p class="relstat">83 contrasts · 144 signatures · 582 regions / 24,782 CpGs · 11,105 HM450 probes / 112 signatures</p><ul><li>First 87-cell-type reference: Loyfer, Zhou, BLUEPRINT and Tian pseudobulks. Signatures named by <code>signature_id</code> contrasts. Regions chosen by 10 kb window enrichment. Files carry a <code>v2_</code> prefix.</li></ul></details>
+</section>
 
 <section class="full">
 <h2>Datasets</h2>
