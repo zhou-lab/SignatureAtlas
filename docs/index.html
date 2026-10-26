@@ -135,7 +135,7 @@ dialog pre { margin:0; padding:10px 12px; overflow:auto;
 <body><main>
 <header>
 <div class="titlerow"><h1><b>S</b>ignature<b>A</b>tlas</h1>
-<span class="badge">v6</span><span class="badge">hg38</span></div>
+<span class="badge">v7</span><span class="badge">hg38</span></div>
 <p class="tagline">DNA methylation marker signatures for human cell types and
 lineages. A signature is an in-group of samples against an out-group, each
 sample named <code>&lt;dataset&gt;:&lt;sample&gt;</code>
@@ -154,12 +154,12 @@ are pooled into a deep pseudobulk for pattern calling.</p>
 <span class="chip"><b>11,885</b>HM450 probes &middot;
 <b>141</b>signatures</span>
 </div>
-<p class="dl">Download v6
-<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v6/wg.bed">wg.bed</a>
-<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v6/hm450.bed">hm450.bed</a>
-<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v6/defs.tsv">defs.tsv</a>
-<a href="https://github.com/zhou-lab/SignatureAtlas/blob/main/datasets.tsv">datasets.tsv</a>
-<a href="https://github.com/zhou-lab/SignatureAtlas/blob/main/samples.tsv">samples.tsv</a></p>
+<p class="dl">Download v7
+<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/wg.bed">wg.bed</a>
+<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/hm450.bed">hm450.bed</a>
+<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/defs.tsv">defs.tsv</a>
+<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/datasets.tsv">datasets.tsv</a>
+<a href="https://github.com/zhou-lab/SignatureAtlas/blob/v7/samples.tsv">samples.tsv</a></p>
 </header>
 
 <section class="full">
@@ -629,7 +629,7 @@ Each contrast gives up to two signatures: in-group hypomethylated
 (<b class="hypo">-</b>) and hypermethylated (<b class="hyper">+</b>).</li>
 </ol>
 </section>
-<p class="foot">Releases are git tags (<code>v2</code>&hellip;<code>v6</code>);
+<p class="foot">Releases are git tags (<code>v2</code>&hellip;<code>v7</code>);
 file names carry no version.</p>
 </main>
 <dialog id="dlg"><div class="dlghead"><span id="dlgt" class="mono"></span>
@@ -694,7 +694,7 @@ document.getElementById('sigs').addEventListener('click', ev => {
 render();
 
 // ANSI panel viewer: fetch the release's .ansi and render SGR colours
-const RAW = 'https://raw.githubusercontent.com/zhou-lab/SignatureAtlas/v6';
+const RAW = 'https://raw.githubusercontent.com/zhou-lab/SignatureAtlas/v7';
 const BASE16 = ['#000','#cd3131','#0dbc79','#e5e510','#2472c8','#bc3fbc',
   '#11a8cd','#e5e5e5'];
 function c256(n) {
