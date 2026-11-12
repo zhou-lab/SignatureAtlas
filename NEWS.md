@@ -4,6 +4,31 @@ Each release is a git tag; the data files carry no version. Counts are for
 the files at that tag: contrasts in `defs.tsv`, signed signatures, whole-genome
 regions and CpGs in `wg.bed`, and HM450 probes and signatures in `hm450.bed`.
 
+## v8 (2026-11-12)
+
+131 contrasts · 228 signatures · 1,312 regions / 52,365 CpGs · 13,900 HM450
+probes / 163 signatures
+
+- A mesenchymal reference joins the atlas (`*_Mes`): 45 pseudobulks from 61
+  samples (Zhou subtype fibroblasts, pericytes, smooth muscle and striated
+  muscle; Tian PC and VLMC; Loyfer adipocyte, smooth muscle, skeletal muscle,
+  cardiomyocyte, colon and heart fibroblasts; endothelium). 16 contrasts, 30
+  signatures, 162 regions / 3,726 CpGs, 2,021 HM450 probes.
+- New tissue contrast `Fibroblast`: fibroblasts of 10 sites plus smooth
+  muscle, from near-matching patterns (each covers at least 9 of the 11 cell
+  types). Fibroblasts and smooth muscle share these collagen loci.
+- `Smooth_Fibro` is renamed `Stromal`.
+- Dropped signatures with no whole-genome regions: `CD4_T_Cell-`,
+  `Endocrine_Epi-`, `Glial-`, `Macrophage-` and `OPC+`. The site's Marker
+  check shows why for 16 classic marker genes: other cell types share the
+  in-group's low methylation. Also dropped on review: `Smooth_Muscle-` and
+  `Brain_Vascular+`.
+- Regions need at least 3 CpGs: 128 smaller regions (182 CpGs) leave the
+  atlas, across all references. `Monocyte_Blood+` is left with none and is
+  dropped.
+- New files: `signature_delta.tsv` (in- vs out-group mean methylation per
+  signature) and `marker_check.tsv` with its `MARKER/` panels.
+
 ## v7 (2026-10-25)
 
 119 contrasts · 205 signatures · 1,254 regions / 48,842 CpGs · 11,885 HM450

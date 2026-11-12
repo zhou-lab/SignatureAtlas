@@ -1,0 +1,46 @@
+# VLMC_Mes+  (mrmp=P303, hyper; in_group=DTIA1_VLMC)  8 probes x 45 cells  dBeta=0.63 [L<.34 M H>.67]
+[4mDTIA1_VLMC            [0m[4;33mM[0m[4;31mH[0m[4;33mM[0m[4;31mH[0m[4;31mH[0m[4;31mH[0m[4;31mH[0m[4;31mH[0m
+DZHO2_Fibro_Adr       [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Brst      [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_EndN      [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_EpiN      [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_PeriN     [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_GI_Alv    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_GI_Crypt_Co[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_GI_Esp    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_GI_RSPO_Int[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_GI_Stm    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_GI_WNT2B_Ileum[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_HT        [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Mus       [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Mus_AdipoP[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Myo_Esp   [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Sk_Mes    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[33mM[0m
+DZHO2_Fibro_Sk_Pap    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[33mM[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Sk_Proinf [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Fibro_Sk_Ret    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_PeriAtr         [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_PeriMix         [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_PeriMus         [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_PeriVen         [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_SmMus_HT        [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_SmMus_Mix       [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Mus_Crd_Atr     [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Mus_Crd_Ven     [34mL[0m[34mL[0m[33mM[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[33mM[0m
+DZHO2_Mus_Fast        [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Mus_Slow        [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Endo_Vsc_ArtAtr [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[33mM[0m
+DZHO2_Endo_Vsc_VenMix [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DZHO2_Endo_Lym_Mix    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DTIA1_PC              [34mL[0m[34mL[0m[33mM[0m[33mM[0m[33mM[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_Adipocyte       [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_SMC_Aorta       [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_SMC_Coronary    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_SMC_Bladder     [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_SMC_Prostate    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_SMC_Bronchus    [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_Skeletal_Muscle [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_Cardiomyocyte   [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_Colon_Fibroblast[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_Heart_Fibroblast[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m
+DLOY1_Endothelial     [34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m[34mL[0m

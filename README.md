@@ -1,7 +1,8 @@
 # SignatureAtlas
 
-> **Release v7** (2026-10-25): adds blood 5modC and 5hmC references to the
-> unchanged tissue atlas; `defs.tsv` is one row per contrast with sample IDs. Versioning
+> **Release v8** (2026-11-12): adds a mesenchymal reference (`*_Mes`) and a
+> tissue `Fibroblast` contrast, renames `Smooth_Fibro` to `Stromal`, and keeps
+> only regions of at least 3 CpGs. Versioning
 > is by git tag; data files carry no version. Every release is summarized in
 > [NEWS.md](NEWS.md).
 >
@@ -79,15 +80,16 @@ samples.tsv                                    # raw samples -> cell types
 - **`wg.bed`** — every curated whole-genome CpG, 5 columns: `chr`, `beg0`, `end1`
   (0-based begin / 1-based end; a CpG is the **2 bp** dinucleotide `(C-1, C+1)`, so
   `end1 - beg0 == 2`), `chr:min_max` (the region's full CpG span `firstCpG_lastCpG`),
-  `region_name` (`<signature_id>.<gene>_<chr>_<firstCpG>`). **1,254** gene-named
-  regions, **48,842** CpG rows: 1,092 regions / 31,327 CpGs from the 87-cell-type
-  tissue reference, 95 regions / 5,865 CpGs from the blood 5modC reference and 67
-  regions / 11,650 CpGs from the blood 5hmC reference. No
+  `region_name` (`<signature_id>.<gene>_<chr>_<firstCpG>`). **1,312** gene-named
+  regions, **52,365** CpG rows: 993 regions / 31,131 CpGs from the 87-cell-type
+  tissue reference, 92 regions / 5,861 CpGs from the blood 5modC reference, 65
+  regions / 11,647 CpGs from the blood 5hmC reference and 162 regions / 3,726
+  CpGs from the mesenchymal reference. Every region has at least 3 CpGs. No
   duplicate coordinates **within** a reference; a CpG may appear once per reference
-  (622 do).
+  (1,559 do).
 - **`hm450.bed`** — every selected HM450 probe, 5 columns: `chr`, `beg0`, `end1`
-  (2 bp CpG), `probe_id` (cg number), `signature_id`. **11,885** probes across **141**
-  signatures.
+  (2 bp CpG), `probe_id` (cg number), `signature_id`. **13,900** probes across **163**
+  signatures (140 tissue, 23 mesenchymal).
 - **`datasets.tsv`** — one row per source dataset: `dataset_id`, `name`, `mark`,
   `assay`, `genome`, `store` (the hg38 `.cg` in the lab's public WGBS store),
   `description` (what the data is, with citation and accession).
@@ -148,21 +150,26 @@ selection, curation, refine).
   selection context: the mark and the MRMP rule (min M+U per pseudobulk, β above
   `binarize_beta` = methylated, group-mean Δ floor).
 
-Currently **120 contrasts → 205 signatures**:
+Currently **131 contrasts → 228 signatures**:
 
 - *Tissue reference* (87 deep cell-type pseudobulks from DLOY1, DZHO1, DBLU1, DTIA1;
-  5modC): 102 contrasts → 171 signatures; **166** realized as curated WGBS regions,
-  **141** with ≥5 HM450 probes.
+  5modC): 98 contrasts → 165 signatures, all realized as curated WGBS regions;
+  **140** with ≥5 HM450 probes.
 - *Blood 5modC reference* (9 pseudobulks: DIMM1 EM-seq naive CD4 T, NK, monocyte,
   neutrophil + DBLU1 naive B, CD8 T, NK, classical monocyte, mature neutrophil,
   adult venous blood only): 10 contrasts named `<X>_Blood` (6 cell types, T cell,
-  T+NK, cytotoxic CD8+NK, myeloid) → 20 signatures, all realized as regions (95).
+  T+NK, cytotoxic CD8+NK, myeloid) → 19 signatures, all realized as regions (92).
   Its panels' probe track is EPICv2 (the array the DIMM1 samples were profiled on).
 - *Blood 5hmC reference* (5 pseudobulks of DIMM2 ACE-seq: B, naive CD4 T, NK,
   monocyte, neutrophil; `mark` = 5hmC): split at β 0.1, Δmean ≥ 0.1, depth ≥ 10;
   base curation β < 0.05 (low side) / ≥ 0.1 (high side); refine out-group ≤ 0.05
-  (`+`) / ≥ 0.1 (`-`). 7 contrasts named `<X>_hmC` → 14 signatures, 67 regions /
-  11,650 CpGs, mostly in-group-high (`+`). Only the curated `defs.tsv` + the reference
+  (`+`) / ≥ 0.1 (`-`). 7 contrasts named `<X>_hmC` → 14 signatures, 65 regions /
+  11,647 CpGs, mostly in-group-high (`+`).
+- *Mesenchymal reference* (45 pseudobulks from 61 samples of DZHO2 subtype
+  pseudobulks, DTIA1 PC and VLMC, and DLOY1 sorted cells; 5modC): 16 contrasts
+  named `<X>_Mes` (fibroblasts by site, smooth muscle, cardiac and skeletal
+  muscle, pericyte, VLMC, endothelium, adipocyte) → 30 signatures, 162 regions
+  / 3,726 CpGs, 23 with ≥5 HM450 probes. Only the curated `defs.tsv` + the reference
 (`sub.cg`) drive everything downstream; edit a contrast's `signature_id`/`in_group`, then
 re-run from `sa_02`. The `sa_02` consistency gate re-derives every contrast from the
 MRMPs and **fails the build** if the set differs from `defs.tsv`. MRMP P-numbers are
